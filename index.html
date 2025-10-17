@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PCtek Pro - Soluzioni informatiche personalizzate per aziende e professionisti.">
+    <title>PCtek Pro | Soluzioni Informatiche Professionali</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #00bfa6;
+            --accent: #f39c12;
+            --text-dark: #1c1c1c;
+            --text-light: #ffffff;
+            --bg-light: #f5f7fb;
+            --border: #e0e6ed;
+            --shadow: 0 18px 40px rgba(25, 30, 70, 0.12);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            backdrop-filter: blur(16px);
+            background: rgba(255, 255, 255, 0.9);
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .top-bar {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.2rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary);
+            letter-spacing: 0.05em;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+
+        nav a:hover {
+            color: var(--secondary);
+        }
+
+        .hero {
+            position: relative;
+            background: linear-gradient(135deg, rgba(44, 62, 80, 0.95), rgba(0, 191, 166, 0.9));
+            color: var(--text-light);
+            padding: 6.5rem 1.5rem 5rem;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at top right, rgba(243, 156, 18, 0.55), transparent 45%);
+            mix-blend-mode: screen;
+        }
+
+        .hero-container {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            align-items: center;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(2.6rem, 5vw, 3.6rem);
+            margin: 0 0 1rem;
+            line-height: 1.1;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .hero-cta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.85rem 1.8rem;
+            border-radius: 999px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--text-dark);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-outline {
+            border: 2px solid rgba(255, 255, 255, 0.6);
+            color: var(--text-light);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+        }
+
+        .section {
+            padding: 5rem 1.5rem;
+        }
+
+        .section-header {
+            max-width: 1200px;
+            margin: 0 auto 3rem;
+            text-align: center;
+        }
+
+        .section-header h2 {
+            font-size: 2.1rem;
+            margin: 0 0 0.75rem;
+            color: var(--primary);
+        }
+
+        .section-header p {
+            color: #5a6473;
+            margin: 0 auto;
+            max-width: 620px;
+        }
+
+        .cards-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 18px;
+            border: 1px solid var(--border);
+            box-shadow: 0 12px 24px rgba(20, 36, 64, 0.08);
+            transition: transform 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+        }
+
+        .card h3 {
+            margin: 0 0 0.75rem;
+            color: var(--primary);
+        }
+
+        .card p {
+            margin: 0;
+            color: #54606f;
+            font-size: 0.95rem;
+        }
+
+        .about-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .about-section img {
+            width: 100%;
+            border-radius: 18px;
+            box-shadow: var(--shadow);
+        }
+
+        .about-section ul {
+            margin: 1.5rem 0 0;
+            padding: 0;
+            list-style: none;
+            display: grid;
+            gap: 1rem;
+        }
+
+        .about-section li {
+            position: relative;
+            padding-left: 1.8rem;
+        }
+
+        .about-section li::before {
+            content: "\2713";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--secondary);
+            font-weight: 600;
+        }
+
+        .portfolio {
+            background: #ffffff;
+        }
+
+        .portfolio-item {
+            background: linear-gradient(145deg, rgba(44, 62, 80, 0.06), rgba(0, 191, 166, 0.08));
+            border-radius: 18px;
+            padding: 2rem;
+        }
+
+        .portfolio-item h3 {
+            margin-top: 0;
+        }
+
+        .portfolio-tags {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        .tag {
+            background: rgba(44, 62, 80, 0.08);
+            color: var(--primary);
+            padding: 0.4rem 1rem;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .testimonials {
+            background: var(--primary);
+            color: var(--text-light);
+            position: relative;
+        }
+
+        .testimonials::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at bottom left, rgba(0, 191, 166, 0.5), transparent 55%);
+            opacity: 0.6;
+        }
+
+        .testimonials .section-header {
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-card {
+            position: relative;
+            z-index: 1;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 18px;
+            padding: 2rem;
+            box-shadow: 0 24px 50px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .testimonial-card footer {
+            margin-top: 1.5rem;
+            font-weight: 600;
+        }
+
+        .cta-section {
+            background: linear-gradient(130deg, rgba(0, 191, 166, 0.95), rgba(44, 62, 80, 0.9));
+            color: var(--text-light);
+            text-align: center;
+            padding: 4rem 1.5rem;
+            border-radius: 24px;
+            box-shadow: var(--shadow);
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .cta-section h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact {
+            background: #ffffff;
+        }
+
+        .contact-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .contact-info {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .contact-info div {
+            padding: 1.5rem;
+            border-radius: 18px;
+            border: 1px solid var(--border);
+            background: var(--bg-light);
+        }
+
+        .contact-info strong {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        form {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 18px;
+            border: 1px solid var(--border);
+            display: grid;
+            gap: 1.2rem;
+        }
+
+        label {
+            font-weight: 500;
+            color: var(--primary);
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 0.85rem 1rem;
+            border-radius: 12px;
+            border: 1px solid rgba(44, 62, 80, 0.2);
+            font-size: 0.95rem;
+            font-family: inherit;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 4px rgba(0, 191, 166, 0.2);
+        }
+
+        textarea {
+            min-height: 140px;
+            resize: vertical;
+        }
+
+        footer {
+            background: #0f172a;
+            color: rgba(255, 255, 255, 0.75);
+            padding: 3rem 1.5rem;
+        }
+
+        .footer-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .footer-content h4 {
+            margin-top: 0;
+            color: #ffffff;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: 0.75rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.75);
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+
+        .footer-bottom {
+            max-width: 1100px;
+            margin: 2rem auto 0;
+            text-align: center;
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1.5rem;
+        }
+
+        @media (max-width: 720px) {
+            nav ul {
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .top-bar {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .hero {
+                padding-top: 7.5rem;
+            }
+
+            .cta-section {
+                border-radius: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <div class="logo">PCtek Pro</div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#servizi">Servizi</a></li>
+                    <li><a href="#chi-siamo">Chi sono</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#testimonianze">Testimonianze</a></li>
+                    <li><a href="#contatti">Contatti</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1>Soluzioni informatiche su misura per te</h1>
+                    <p>PCtek Pro accompagna imprese e professionisti nella trasformazione digitale con consulenza strategica, sviluppo software e assistenza tecnica di livello enterprise.</p>
+                    <div class="hero-cta">
+                        <a class="btn btn-primary" href="#contatti">Prenota una consulenza</a>
+                        <a class="btn btn-outline" href="#servizi">Scopri i nostri servizi</a>
+                    </div>
+                </div>
+                <div class="hero-card card">
+                    <h3>Perch&eacute; sceglierci</h3>
+                    <p>Un unico partner per progettare, sviluppare e mantenere l'infrastruttura digitale del tuo business.</p>
+                    <ul style="margin-top: 1.5rem; list-style: none; padding: 0; display: grid; gap: 0.75rem;">
+                        <li>&#10003; Analisi e consulenza dedicate</li>
+                        <li>&#10003; Tempi di risposta garantiti</li>
+                        <li>&#10003; Team certificato e multidisciplinare</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="servizi">
+            <div class="section-header">
+                <h2>I nostri servizi</h2>
+                <p>Dalla progettazione di infrastrutture IT alla manutenzione quotidiana: soluzioni integrate per far crescere la tua attivit&agrave; con la tecnologia.</p>
+            </div>
+            <div class="cards-grid">
+                <article class="card">
+                    <h3>Consulenza IT</h3>
+                    <p>Assessment tecnologici, roadmap digitali e piani di sviluppo per ottimizzare processi, costi e sicurezza informatica.</p>
+                </article>
+                <article class="card">
+                    <h3>Sviluppo Software</h3>
+                    <p>Applicazioni web e desktop personalizzate, integrazione con servizi esistenti e automazione dei workflow aziendali.</p>
+                </article>
+                <article class="card">
+                    <h3>Assistenza e Help Desk</h3>
+                    <p>Supporto tecnico continuo con SLA garantiti, monitoraggio proattivo e interventi rapidi in loco o da remoto.</p>
+                </article>
+                <article class="card">
+                    <h3>Cybersecurity</h3>
+                    <p>Audit di sicurezza, protezione degli endpoint, backup certificati e formazione del personale sulle buone pratiche.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" id="chi-siamo">
+            <div class="section-header">
+                <h2>Chi siamo</h2>
+                <p>Una squadra di professionisti dell'IT con oltre 15 anni di esperienza nel supportare PMI, studi professionali e start-up innovative.</p>
+            </div>
+            <div class="about-section">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1000&q=80" alt="Team PCtek Pro al lavoro">
+                </div>
+                <div>
+                    <h3>Il nostro approccio</h3>
+                    <p>Partiamo dall'ascolto delle esigenze e costruiamo soluzioni concrete, scalabili e misurabili. Collaboriamo a stretto contatto con il tuo team per ridurre la complessit&agrave; e generare valore tangibile.</p>
+                    <ul>
+                        <li>Metodologia agile e trasparenza in ogni fase</li>
+                        <li>Monitoraggio costante degli indicatori chiave</li>
+                        <li>Formazione e trasferimento di competenze</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section portfolio" id="portfolio">
+            <div class="section-header">
+                <h2>Progetti recenti</h2>
+                <p>Una selezione di interventi che hanno permesso ai nostri clienti di aumentare produttivit&agrave;, sicurezza e soddisfazione dei loro utenti.</p>
+            </div>
+            <div class="cards-grid">
+                <article class="card portfolio-item">
+                    <h3>RetailTech CRM</h3>
+                    <p>Piattaforma CRM personalizzata per una catena retail, integrata con sistemi di cassa e strumenti di marketing automation.</p>
+                    <div class="portfolio-tags">
+                        <span class="tag">SaaS</span>
+                        <span class="tag">Integrazioni API</span>
+                        <span class="tag">Analytics</span>
+                    </div>
+                </article>
+                <article class="card portfolio-item">
+                    <h3>Suite Managed Services</h3>
+                    <p>Implementazione di monitoraggio proattivo e help desk 24/7 per un gruppo di studi professionali distribuiti su tutto il territorio nazionale.</p>
+                    <div class="portfolio-tags">
+                        <span class="tag">Help Desk</span>
+                        <span class="tag">SLA 99,9%</span>
+                        <span class="tag">Cloud</span>
+                    </div>
+                </article>
+                <article class="card portfolio-item">
+                    <h3>Cyber Shield</h3>
+                    <p>Programma di sicurezza informatica con audit periodici, formazione per i dipendenti e strumenti di difesa multilivello.</p>
+                    <div class="portfolio-tags">
+                        <span class="tag">Security Ops</span>
+                        <span class="tag">Formazione</span>
+                        <span class="tag">Backup 3-2-1</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="section testimonials" id="testimonianze">
+            <div class="section-header">
+                <h2>La voce dei clienti</h2>
+                <p>Le partnership di lungo periodo sono il nostro vero biglietto da visita.</p>
+            </div>
+            <div class="cards-grid">
+                <blockquote class="testimonial-card">
+                    <p>"Con PCtek Pro abbiamo ottimizzato l'intero processo di supporto IT. Oggi i nostri collaboratori hanno tempi di risposta rapidi e tracciati, con un impatto concreto sulla produttivit&agrave;."</p>
+                    <footer>Giulia Ferri - COO, FinNext</footer>
+                </blockquote>
+                <blockquote class="testimonial-card">
+                    <p>"Ci hanno accompagnati nella realizzazione di una piattaforma digitale che ha rivoluzionato il rapporto con i clienti. Competenze elevate e grande disponibilit&agrave;."</p>
+                    <footer>Luca Bianchi - CEO, RetailPro</footer>
+                </blockquote>
+                <blockquote class="testimonial-card">
+                    <p>"Il team ha saputo comprendere le nostre necessit&agrave; e trasformarle in un servizio di cybersecurity che ci fa dormire sonni tranquilli."</p>
+                    <footer>Maria Rossi - IT Manager, StudioR</footer>
+                </blockquote>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="cta-section">
+                <h3>Pronti a far crescere la tua infrastruttura digitale?</h3>
+                <p>Fissa subito una call informativa: il nostro team analizzer&agrave; la tua situazione e preparer&agrave; una proposta personalizzata in 48 ore.</p>
+                <a class="btn btn-primary" href="#contatti">Richiedi una proposta</a>
+            </div>
+        </section>
+
+        <section class="section contact" id="contatti">
+            <div class="section-header">
+                <h2>Contattaci</h2>
+                <p>Ti rispondiamo entro un giorno lavorativo. Siamo disponibili per call da remoto o incontri presso la tua sede.</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div>
+                        <strong>Telefono</strong>
+                        <span>+39 02 1234 5678</span>
+                    </div>
+                    <div>
+                        <strong>Email</strong>
+                        <span><a href="mailto:info@pctekpro.it">info@pctekpro.it</a></span>
+                    </div>
+                    <div>
+                        <strong>Sede</strong>
+                        <span>Via Innovazione 24, 20100 Milano</span>
+                    </div>
+                    <div>
+                        <strong>Orari</strong>
+                        <span>Luned&igrave; - Venerd&igrave; &middot; 9:00 - 18:30</span>
+                    </div>
+                </div>
+                <form>
+                    <div>
+                        <label for="nome">Nome e cognome</label>
+                        <input id="nome" name="nome" type="text" placeholder="Inserisci il tuo nome" required>
+                    </div>
+                    <div>
+                        <label for="azienda">Azienda</label>
+                        <input id="azienda" name="azienda" type="text" placeholder="Nome della tua azienda">
+                    </div>
+                    <div>
+                        <label for="email">Email</label>
+                        <input id="email" name="email" type="email" placeholder="esempio@azienda.it" required>
+                    </div>
+                    <div>
+                        <label for="messaggio">Messaggio</label>
+                        <textarea id="messaggio" name="messaggio" placeholder="Descrivi le tue esigenze"></textarea>
+                    </div>
+                    <button class="btn btn-primary" type="submit">Invia messaggio</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h4>PCtek Pro</h4>
+                <p>Partner tecnologico per imprese e professionisti. Supportiamo la tua crescita con tecnologia affidabile e persone competenti.</p>
+            </div>
+            <div>
+                <h4>Link utili</h4>
+                <ul class="footer-links">
+                    <li><a href="#servizi">Servizi</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#testimonianze">Testimonianze</a></li>
+                    <li><a href="#contatti">Richiedi un preventivo</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Certificazioni</h4>
+                <p>Microsoft Certified Partner &middot; Cisco Certified &middot; ISO 27001 Ready</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; <span id="year"></span> PCtek Pro &middot; P.IVA 01234567890 &middot; Tutti i diritti riservati
+        </div>
+    </footer>
+
+    <script>
+        // Aggiorna automaticamente l'anno nel footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
