@@ -603,13 +603,19 @@
                         body: JSON.stringify(payload)
                     });
 
+                    const data = await response.json().catch(() => ({}));
+                    console.log("FormSubmit response:", data);
+
                     if (response.ok) {
-                        formStatus.textContent = "Messaggio inviato con successo! Controlla la tua email per confermare la richiesta e completare l'invio.";
+                        if (data && typeof data.message === "string" && data.message.toLowerCase().includes("confirm")) {
+                            formStatus.textContent = "Messaggio ricevuto! Apri l'email di verifica di FormSubmit per autorizzare gli invii verso la tua casella.";
+                        } else {
+                            formStatus.textContent = "Messaggio inviato con successo! Ti rispondero' al piu' presto.";
+                        }
                         formStatus.className = "form-status success is-visible";
                         contactForm.reset();
                     } else {
-                        const errorData = await response.json().catch(() => ({}));
-                        throw new Error(errorData.message || `Errore ${response.status}`);
+                        throw new Error(data.message || `Errore ${response.status}`);
                     }
                 } catch (error) {
                     console.error("Errore invio form:", error);
