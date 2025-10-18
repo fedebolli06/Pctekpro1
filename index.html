@@ -238,70 +238,6 @@
             font-weight: 600;
         }
 
-        .portfolio {
-            background: #ffffff;
-        }
-
-        .portfolio-item {
-            background: linear-gradient(145deg, rgba(44, 62, 80, 0.06), rgba(0, 191, 166, 0.08));
-            border-radius: 18px;
-            padding: 2rem;
-        }
-
-        .portfolio-item h3 {
-            margin-top: 0;
-        }
-
-        .portfolio-tags {
-            display: flex;
-            gap: 0.75rem;
-            flex-wrap: wrap;
-            margin-top: 1.5rem;
-        }
-
-        .tag {
-            background: rgba(44, 62, 80, 0.08);
-            color: var(--primary);
-            padding: 0.4rem 1rem;
-            border-radius: 999px;
-            font-size: 0.85rem;
-            font-weight: 500;
-        }
-
-        .testimonials {
-            background: var(--primary);
-            color: var(--text-light);
-            position: relative;
-        }
-
-        .testimonials::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at bottom left, rgba(0, 191, 166, 0.5), transparent 55%);
-            opacity: 0.6;
-        }
-
-        .testimonials .section-header {
-            position: relative;
-            z-index: 1;
-        }
-
-        .testimonial-card {
-            position: relative;
-            z-index: 1;
-            background: rgba(255, 255, 255, 0.08);
-            border-radius: 18px;
-            padding: 2rem;
-            box-shadow: 0 24px 50px rgba(0, 0, 0, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-        }
-
-        .testimonial-card footer {
-            margin-top: 1.5rem;
-            font-weight: 600;
-        }
-
         .cta-section {
             background: linear-gradient(130deg, rgba(0, 191, 166, 0.95), rgba(44, 62, 80, 0.9));
             color: var(--text-light);
@@ -355,6 +291,25 @@
             border: 1px solid var(--border);
             display: grid;
             gap: 1.2rem;
+        }
+
+        .form-status {
+            font-size: 0.9rem;
+            margin-top: -0.5rem;
+            padding: 0.2rem 0;
+            display: none;
+        }
+
+        .form-status.is-visible {
+            display: block;
+        }
+
+        .form-status.success {
+            color: var(--secondary);
+        }
+
+        .form-status.error {
+            color: #c0392b;
         }
 
         label {
@@ -461,8 +416,6 @@
                     <li><a href="#home">Home</a></li>
                     <li><a href="#servizi">Servizi</a></li>
                     <li><a href="#chi-siamo">Chi sono</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#testimonianze">Testimonianze</a></li>
                     <li><a href="#contatti">Contatti</a></li>
                 </ul>
             </nav>
@@ -538,63 +491,6 @@
             </div>
         </section>
 
-        <section class="section portfolio" id="portfolio">
-            <div class="section-header">
-                <h2>Progetti recenti</h2>
-                <p>Una selezione di interventi che hanno permesso ai nostri clienti di aumentare produttivit&agrave;, sicurezza e soddisfazione dei loro utenti.</p>
-            </div>
-            <div class="cards-grid">
-                <article class="card portfolio-item">
-                    <h3>RetailTech CRM</h3>
-                    <p>Piattaforma CRM personalizzata per una catena retail, integrata con sistemi di cassa e strumenti di marketing automation.</p>
-                    <div class="portfolio-tags">
-                        <span class="tag">SaaS</span>
-                        <span class="tag">Integrazioni API</span>
-                        <span class="tag">Analytics</span>
-                    </div>
-                </article>
-                <article class="card portfolio-item">
-                    <h3>Suite Managed Services</h3>
-                    <p>Implementazione di monitoraggio proattivo e help desk 24/7 per un gruppo di studi professionali distribuiti su tutto il territorio nazionale.</p>
-                    <div class="portfolio-tags">
-                        <span class="tag">Help Desk</span>
-                        <span class="tag">SLA 99,9%</span>
-                        <span class="tag">Cloud</span>
-                    </div>
-                </article>
-                <article class="card portfolio-item">
-                    <h3>Cyber Shield</h3>
-                    <p>Programma di sicurezza informatica con audit periodici, formazione per i dipendenti e strumenti di difesa multilivello.</p>
-                    <div class="portfolio-tags">
-                        <span class="tag">Security Ops</span>
-                        <span class="tag">Formazione</span>
-                        <span class="tag">Backup 3-2-1</span>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <section class="section testimonials" id="testimonianze">
-            <div class="section-header">
-                <h2>La voce dei clienti</h2>
-                <p>Le partnership di lungo periodo sono il nostro vero biglietto da visita.</p>
-            </div>
-            <div class="cards-grid">
-                <blockquote class="testimonial-card">
-                    <p>"Con PCtek Pro abbiamo ottimizzato l'intero processo di supporto IT. Oggi i nostri collaboratori hanno tempi di risposta rapidi e tracciati, con un impatto concreto sulla produttivit&agrave;."</p>
-                    <footer>Giulia Ferri - COO, FinNext</footer>
-                </blockquote>
-                <blockquote class="testimonial-card">
-                    <p>"Ci hanno accompagnati nella realizzazione di una piattaforma digitale che ha rivoluzionato il rapporto con i clienti. Competenze elevate e grande disponibilit&agrave;."</p>
-                    <footer>Luca Bianchi - CEO, RetailPro</footer>
-                </blockquote>
-                <blockquote class="testimonial-card">
-                    <p>"Il team ha saputo comprendere le nostre necessit&agrave; e trasformarle in un servizio di cybersecurity che ci fa dormire sonni tranquilli."</p>
-                    <footer>Maria Rossi - IT Manager, StudioR</footer>
-                </blockquote>
-            </div>
-        </section>
-
         <section class="section">
             <div class="cta-section">
                 <h3>Pronti a far crescere la tua infrastruttura digitale?</h3>
@@ -605,45 +501,53 @@
 
         <section class="section contact" id="contatti">
             <div class="section-header">
-                <h2>Contattaci</h2>
-                <p>Ti rispondiamo entro un giorno lavorativo. Siamo disponibili per call da remoto o incontri presso la tua sede.</p>
+                <h2>Contattami</h2>
+                <p>Hai bisogno di assistenza immediata con il tuo PC o la rete di casa? Scrivimi con il modulo o usa i recapiti qui accanto.</p>
             </div>
             <div class="contact-grid">
                 <div class="contact-info">
                     <div>
                         <strong>Telefono</strong>
-                        <span>+39 02 1234 5678</span>
+                        <span>+39 02 1234 5678 (anche WhatsApp)</span>
                     </div>
                     <div>
                         <strong>Email</strong>
                         <span><a href="mailto:info@pctekpro.it">info@pctekpro.it</a></span>
                     </div>
                     <div>
-                        <strong>Sede</strong>
+                        <strong>Sede operativa</strong>
                         <span>Via Innovazione 24, 20100 Milano</span>
                     </div>
                     <div>
-                        <strong>Orari</strong>
+                        <strong>Disponibilit&agrave;</strong>
                         <span>Luned&igrave; - Venerd&igrave; &middot; 9:00 - 18:30</span>
                     </div>
+                    <div>
+                        <strong>Assistenza remota</strong>
+                        <span>TeamViewer / AnyDesk &middot; Codice su richiesta telefonica</span>
+                    </div>
                 </div>
-                <form>
+                <form id="contact-form">
+                    <input type="hidden" name="_subject" value="Nuovo messaggio dal sito pctekpro.it">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
                     <div>
                         <label for="nome">Nome e cognome</label>
-                        <input id="nome" name="nome" type="text" placeholder="Inserisci il tuo nome" required>
-                    </div>
-                    <div>
-                        <label for="azienda">Azienda</label>
-                        <input id="azienda" name="azienda" type="text" placeholder="Nome della tua azienda">
+                        <input id="nome" name="nome" type="text" placeholder="Inserisci il tuo nome" autocomplete="name" required>
                     </div>
                     <div>
                         <label for="email">Email</label>
-                        <input id="email" name="email" type="email" placeholder="esempio@azienda.it" required>
+                        <input id="email" name="email" type="email" placeholder="nome@email.com" autocomplete="email" required>
+                    </div>
+                    <div>
+                        <label for="telefono">Telefono (facoltativo)</label>
+                        <input id="telefono" name="telefono" type="tel" placeholder="es. 333 1234567" autocomplete="tel">
                     </div>
                     <div>
                         <label for="messaggio">Messaggio</label>
-                        <textarea id="messaggio" name="messaggio" placeholder="Descrivi le tue esigenze"></textarea>
+                        <textarea id="messaggio" name="messaggio" placeholder="Raccontami come posso aiutarti" required></textarea>
                     </div>
+                    <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
                     <button class="btn btn-primary" type="submit">Invia messaggio</button>
                 </form>
             </div>
@@ -660,8 +564,6 @@
                 <h4>Link utili</h4>
                 <ul class="footer-links">
                     <li><a href="#servizi">Servizi</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#testimonianze">Testimonianze</a></li>
                     <li><a href="#contatti">Richiedi un preventivo</a></li>
                 </ul>
             </div>
@@ -676,6 +578,41 @@
     </footer>
 
     <script>
+        // Endpoint di invio gestito da FormSubmit (richiede conferma alla prima richiesta)
+        const FORM_ENDPOINT = "https://formsubmit.co/ajax/info@pctekpro.it";
+
+        const contactForm = document.getElementById('contact-form');
+        const formStatus = document.getElementById('form-status');
+
+        if (contactForm) {
+            contactForm.addEventListener('submit', async (event) => {
+                event.preventDefault();
+                formStatus.textContent = "Invio in corso...";
+                formStatus.className = "form-status is-visible";
+
+                const formData = new FormData(contactForm);
+
+                try {
+                    const response = await fetch(FORM_ENDPOINT, {
+                        method: "POST",
+                        headers: { "Accept": "application/json" },
+                        body: formData
+                    });
+
+                    if (response.ok) {
+                        formStatus.textContent = "Messaggio inviato con successo! Ti rispondero' al piu' presto.";
+                        formStatus.className = "form-status success is-visible";
+                        contactForm.reset();
+                    } else {
+                        throw new Error("Risposta non valida");
+                    }
+                } catch (error) {
+                    formStatus.textContent = "Si e' verificato un problema. Puoi contattarmi direttamente via email o telefono.";
+                    formStatus.className = "form-status error is-visible";
+                }
+            });
+        }
+
         // Aggiorna automaticamente l'anno nel footer
         document.getElementById('year').textContent = new Date().getFullYear();
     </script>
