@@ -591,22 +591,28 @@
                 formStatus.className = "form-status is-visible";
 
                 const formData = new FormData(contactForm);
+                const payload = Object.fromEntries(formData.entries());
 
                 try {
                     const response = await fetch(FORM_ENDPOINT, {
                         method: "POST",
-                        headers: { "Accept": "application/json" },
-                        body: formData
+                        headers: {
+                            "Content-Type": "application/json",
+                            "Accept": "application/json"
+                        },
+                        body: JSON.stringify(payload)
                     });
 
                     if (response.ok) {
-                        formStatus.textContent = "Messaggio inviato con successo! Ti rispondero' al piu' presto.";
+                        formStatus.textContent = "Messaggio inviato con successo! Controlla la tua email per confermare la richiesta e completare l'invio.";
                         formStatus.className = "form-status success is-visible";
                         contactForm.reset();
                     } else {
-                        throw new Error("Risposta non valida");
+                        const errorData = await response.json().catch(() => ({}));
+                        throw new Error(errorData.message || `Errore ${response.status}`);
                     }
                 } catch (error) {
+                    console.error("Errore invio form:", error);
                     formStatus.textContent = "Si e' verificato un problema. Puoi contattarmi direttamente via email o telefono.";
                     formStatus.className = "form-status error is-visible";
                 }
