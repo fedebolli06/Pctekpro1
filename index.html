@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="PCtek Pro - Assistenza tecnica per te nella zona di Ancona.">
-    <title>PCtek Pro | Assistenza Tecnica IT</title>
+    <meta name="description" content="PCtek Pro - Assistenza tecnica PC, consulenze, assemblaggio PC, recupero dati e backup e altro ancora per te nella zona di Ancona.">
+    <title>PCtek Pro | Assistenza Tecnica PC Ancona</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/logo-pctekpro.svg" type="image/svg+xml">
     <script>
         // Imposta il tema il prima possibile per evitare flash
         try {
@@ -72,10 +73,16 @@
         }
 
         .logo {
-            font-weight: 700;
-            font-size: 1.5rem;
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
             color: var(--text-dark);
-            letter-spacing: 0.05em;
+        }
+
+        .logo-img {
+            height: 100px;
+            width: auto;
+            display: block;
         }
 
         nav ul {
@@ -435,6 +442,26 @@
             color: #ffffff;
         }
 
+        .footer-logo {
+            height: 100px;
+            width: auto;
+            display: block;
+            margin-bottom: 0.75rem;
+            filter: invert(1) brightness(1.2) contrast(1.05);
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 1px, 1px);
+            white-space: nowrap;
+            border: 0;
+        }
+
         .footer-links {
             list-style: none;
             padding: 0;
@@ -480,6 +507,9 @@
             .cta-section {
                 border-radius: 18px;
             }
+
+            .logo-img { height: 56px; }
+            .footer-logo { height: 56px; }
         }
 
 
@@ -515,6 +545,11 @@
             .footer-content h4 {
                 color: #ffffff;
             }
+
+            /* In auto (segue sistema) rendi il logo chiaro */
+            html[data-theme='auto'] .logo-img {
+                filter: invert(1) brightness(1.2) contrast(1.05);
+            }
         }
 
         /* Override manuale: priorità al data-theme */
@@ -543,6 +578,11 @@
         html[data-theme='dark'] .contact-info div {
             background: var(--surface);
             border-color: var(--border);
+        }
+
+        /* In tema scuro forzato rendi il logo chiaro */
+        html[data-theme='dark'] .logo-img {
+            filter: invert(1) brightness(1.2) contrast(1.05);
         }
         /* Manual override: light theme (forces light even if system is dark) */
         html[data-theme='light'] {
@@ -573,7 +613,9 @@
 <body>
     <header>
         <div class="top-bar">
-            <div class="logo">PCtek Pro</div>
+            <a class="logo" href="#home" aria-label="PCtek Pro - di Bolli Federico">
+                <img class="logo-img" src="assets/logo-pctekpro.svg" alt="PCtek Pro" decoding="async" loading="eager">
+            </a>
             <nav>
                 <ul>
                     <li><a href="#home">Home</a></li>
@@ -656,6 +698,10 @@
                     <h3>🔧 Assemblaggio PC su misura</h3>
                     <p>Per gaming, studio o lavoro, con componenti scelti insieme.</p>
                 </article>
+                <article class="card">
+                    <h3>🎮 Ottimizzazione PC gaming</h3>
+                    <p>installazione driver, impostazioni performance, FPS boost e consigli hardware.</p>
+                </article>
             </div>
         </section>
 
@@ -704,8 +750,8 @@
                         <span><a href="mailto:fedebolli06@gmail.com">fedebolli06@gmail.com</a></span>
                     </div>
                     <div>
-                        <strong>Sede operativa</strong>
-                        <span>Direttamente da te!</span>
+                        <strong>Area di intervento</strong>
+                        <span>Sono disponibile in tutta la zona di Ancona</span>
                     </div>
                     <div>
                         <strong>Disponibilit&agrave;</strong>
@@ -746,7 +792,8 @@
     <footer>
         <div class="footer-content">
             <div>
-                <h4>PCtek Pro</h4>
+                <img class="footer-logo" src="assets/logo-pctekpro.svg" alt="PCtek Pro">
+                <h4 class="sr-only">PCtek Pro</h4>
                 <p>Partner tecnologico. Supportiamo la tua crescita con tecnologia affidabile e passione.</p>
             </div>
             <div>
