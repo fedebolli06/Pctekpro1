@@ -3,21 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="PCtek Pro - Soluzioni informatiche personalizzate per aziende e professionisti.">
-    <title>PCtek Pro | Soluzioni Informatiche Professionali</title>
+    <meta name="description" content="PCtek Pro - Assistenza tecnica per te nella zona di Ancona.">
+    <title>PCtek Pro | Assistenza Tecnica IT</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        // Imposta il tema il prima possibile per evitare flash
+        try {
+            var saved = localStorage.getItem('theme');
+            var initial = (saved === 'dark' || saved === 'light' || saved === 'auto') ? saved : 'auto';
+            document.documentElement.setAttribute('data-theme', initial);
+        } catch (e) {}
+    </script>
     <style>
         :root {
-            --primary: #2c3e50;
+            --primary: #0f172a;
             --secondary: #00bfa6;
-            --accent: #f39c12;
-            --text-dark: #1c1c1c;
+            --accent: #f59e0b;
+            --text-dark: #0f172a;
             --text-light: #ffffff;
-            --bg-light: #f5f7fb;
-            --border: #e0e6ed;
-            --shadow: 0 18px 40px rgba(25, 30, 70, 0.12);
+            --bg-light: #f7f9fc;
+            --surface: #ffffff;
+            --muted: #64748b;
+            --border: #e5e9f2;
+            --radius: 14px;
+            --shadow: 0 18px 40px rgba(16, 24, 40, 0.12);
+            --shadow-sm: 0 2px 10px rgba(16, 24, 40, 0.06);
+            --ring: rgba(0, 191, 166, 0.3);
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         * {
@@ -28,7 +45,9 @@
             margin: 0;
             font-family: 'Poppins', sans-serif;
             color: var(--text-dark);
-            background-color: var(--bg-light);
+            background:
+                radial-gradient(1200px 600px at 100% -50%, rgba(0, 191, 166, 0.08), transparent 60%),
+                linear-gradient(var(--bg-light), var(--bg-light));
             line-height: 1.6;
         }
 
@@ -39,6 +58,7 @@
             background: rgba(255, 255, 255, 0.9);
             z-index: 100;
             border-bottom: 1px solid var(--border);
+            box-shadow: var(--shadow-sm);
         }
 
         .top-bar {
@@ -48,12 +68,13 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            gap: 1rem;
         }
 
         .logo {
             font-weight: 700;
             font-size: 1.5rem;
-            color: var(--primary);
+            color: var(--text-dark);
             letter-spacing: 0.05em;
         }
 
@@ -67,19 +88,35 @@
 
         nav a {
             text-decoration: none;
-            color: var(--primary);
+            color: var(--text-dark);
             font-weight: 500;
             font-size: 0.95rem;
             transition: color 0.2s ease;
+            position: relative;
         }
 
         nav a:hover {
             color: var(--secondary);
         }
 
+        nav a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: width 0.2s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
         .hero {
             position: relative;
-            background: linear-gradient(135deg, rgba(44, 62, 80, 0.95), rgba(0, 191, 166, 0.9));
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(0, 191, 166, 0.9));
             color: var(--text-light);
             padding: 6.5rem 1.5rem 5rem;
             overflow: hidden;
@@ -142,6 +179,11 @@
             color: var(--text-light);
         }
 
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.8);
+        }
+
         .btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
@@ -160,11 +202,11 @@
         .section-header h2 {
             font-size: 2.1rem;
             margin: 0 0 0.75rem;
-            color: var(--primary);
+            color: var(--text-dark);
         }
 
         .section-header p {
-            color: #5a6473;
+            color: var(--muted);
             margin: 0 auto;
             max-width: 620px;
         }
@@ -178,12 +220,13 @@
         }
 
         .card {
-            background: #ffffff;
+            background: var(--surface);
             padding: 2rem;
-            border-radius: 18px;
+            border-radius: var(--radius);
             border: 1px solid var(--border);
-            box-shadow: 0 12px 24px rgba(20, 36, 64, 0.08);
-            transition: transform 0.2s ease;
+            box-shadow: var(--shadow);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            color: var(--text-dark);
         }
 
         .card:hover {
@@ -192,12 +235,12 @@
 
         .card h3 {
             margin: 0 0 0.75rem;
-            color: var(--primary);
+            color: var(--text-dark);
         }
 
         .card p {
             margin: 0;
-            color: #54606f;
+            color: var(--muted);
             font-size: 0.95rem;
         }
 
@@ -212,7 +255,7 @@
 
         .about-section img {
             width: 100%;
-            border-radius: 18px;
+            border-radius: var(--radius);
             box-shadow: var(--shadow);
         }
 
@@ -255,7 +298,7 @@
         }
 
         .contact {
-            background: #ffffff;
+            background: var(--surface);
         }
 
         .contact-grid {
@@ -281,7 +324,7 @@
         .contact-info strong {
             display: block;
             margin-bottom: 0.5rem;
-            color: var(--primary);
+            color: var(--text-dark);
         }
 
         form {
@@ -314,7 +357,7 @@
 
         label {
             font-weight: 500;
-            color: var(--primary);
+            color: var(--text-dark);
         }
 
         input,
@@ -332,7 +375,7 @@
         textarea:focus {
             outline: none;
             border-color: var(--secondary);
-            box-shadow: 0 0 0 4px rgba(0, 191, 166, 0.2);
+            box-shadow: 0 0 0 4px var(--ring);
         }
 
         textarea {
@@ -340,6 +383,39 @@
             resize: vertical;
         }
 
+        /* Toggle tema */
+        .theme-toggle {
+            width: 40px;
+            height: 40px;
+            border-radius: 999px;
+            border: 1px solid var(--border);
+            background: var(--surface);
+            color: var(--text-dark);
+            display: grid;
+            place-items: center;
+            cursor: pointer;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.1s ease, background 0.2s ease, border-color 0.2s ease;
+        }
+
+        .theme-toggle:hover {
+            transform: translateY(-1px);
+        }
+
+        .theme-toggle:focus-visible {
+            outline: none;
+            box-shadow: 0 0 0 4px var(--ring);
+        }
+
+        .theme-toggle .icon {
+            width: 18px;
+            height: 18px;
+            display: none;
+        }
+
+        html[data-theme='light'] .theme-toggle .icon-sun { display: inline; }
+        html[data-theme='dark'] .theme-toggle .icon-moon { display: inline; }
+        html[data-theme='auto'] .theme-toggle .icon-auto { display: inline; }
         footer {
             background: #0f172a;
             color: rgba(255, 255, 255, 0.75);
@@ -405,6 +481,93 @@
                 border-radius: 18px;
             }
         }
+
+
+        /* Dark mode automatico (di sistema) */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --text-dark: #e2e8f0;
+                --bg-light: #0b1020;
+                --surface: #0f172a;
+                --border: rgba(148, 163, 184, 0.15);
+            }
+
+            body {
+                color: var(--text-dark);
+                background:
+                    radial-gradient(1200px 600px at 100% -50%, rgba(0, 191, 166, 0.12), transparent 60%),
+                    linear-gradient(var(--bg-light), var(--bg-light));
+            }
+
+            header {
+                background: rgba(15, 23, 42, 0.7);
+                border-bottom-color: rgba(148, 163, 184, 0.15);
+                backdrop-filter: blur(16px);
+            }
+
+            .card,
+            form,
+            .contact-info div {
+                background: var(--surface);
+                border-color: var(--border);
+            }
+
+            .footer-content h4 {
+                color: #ffffff;
+            }
+        }
+
+        /* Override manuale: priorità al data-theme */
+        html[data-theme='dark'] {
+            --text-dark: #e2e8f0;
+            --bg-light: #0b1020;
+            --surface: #0f172a;
+            --border: rgba(148, 163, 184, 0.15);
+        }
+
+        html[data-theme='dark'] body {
+            color: var(--text-dark);
+            background:
+                radial-gradient(1200px 600px at 100% -50%, rgba(0, 191, 166, 0.12), transparent 60%),
+                linear-gradient(var(--bg-light), var(--bg-light));
+        }
+
+        html[data-theme='dark'] header {
+            background: rgba(15, 23, 42, 0.7);
+            border-bottom-color: rgba(148, 163, 184, 0.15);
+            backdrop-filter: blur(16px);
+        }
+
+        html[data-theme='dark'] .card,
+        html[data-theme='dark'] form,
+        html[data-theme='dark'] .contact-info div {
+            background: var(--surface);
+            border-color: var(--border);
+        }
+        /* Manual override: light theme (forces light even if system is dark) */
+        html[data-theme='light'] {
+            --text-dark: #0f172a;
+            --bg-light: #f7f9fc;
+            --surface: #ffffff;
+            --border: #e5e9f2;
+        }
+        html[data-theme='light'] body {
+            color: var(--text-dark);
+            background:
+                radial-gradient(1200px 600px at 100% -50%, rgba(0, 191, 166, 0.08), transparent 60%),
+                linear-gradient(var(--bg-light), var(--bg-light));
+        }
+        html[data-theme='light'] header {
+            background: rgba(255, 255, 255, 0.9);
+            border-bottom-color: var(--border);
+            backdrop-filter: blur(16px);
+        }
+        html[data-theme='light'] .card,
+        html[data-theme='light'] form,
+        html[data-theme='light'] .contact-info div {
+            background: var(--surface);
+            border-color: var(--border);
+        }
     </style>
 </head>
 <body>
@@ -419,6 +582,20 @@
                     <li><a href="#contatti">Contatti</a></li>
                 </ul>
             </nav>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Passa al tema scuro" title="Passa al tema scuro">
+                <!-- Sole -->
+                <svg class="icon icon-sun" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M12 4a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0V5a1 1 0 0 1 1-1zm0 13a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm7-5a1 1 0 0 1 1 1 1 1 0 1 1-2 0 1 1 0 0 1 1-1zM5 12a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm12.95 6.536a1 1 0 0 1-1.414 0l-.707-.707a1 1 0 0 1 1.414-1.414l.707.707a1 1 0 0 1 0 1.414zM7.171 7.171A1 1 0 1 1 5.757 5.757l.707-.707A1 1 0 1 1 7.878 6.88l-.707.292zm0 9.658.707.707A1 1 0 1 1 6.464 19.95l-.707-.707A1 1 0 0 1 7.17 16.83zM18.243 5.05l-.707.707A1 1 0 1 1 16.122 4.34l.707-.707A1 1 0 1 1 18.243 5.05z"/>
+                </svg>
+                <!-- Luna -->
+                <svg class="icon icon-moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                </svg>
+                <!-- Auto -->
+                <svg class="icon icon-auto" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <text x="7" y="17" font-size="14" font-family="sans-serif">A</text>
+                </svg>
+            </button>
         </div>
     </header>
 
@@ -429,15 +606,15 @@
                     <h1>Soluzioni informatiche su misura per te</h1>
                     <p>PCtek Pro ti aiuta nel risolvere qualsiasi problema informatico dal livello hardware al livello software con un'assistenza tecnica di livello enterprise.</p>
                     <div class="hero-cta">
-                        <a class="btn btn-primary" href="#contatti">Prenota un' assistenza</a>
+                        <a class="btn btn-primary" href="#contatti">Prenota un'assistenza</a>
                         <a class="btn btn-outline" href="#servizi">Scopri i nostri servizi</a>
                     </div>
                 </div>
                 <div class="hero-card card">
                     <h3>Perch&eacute; scegliere noi</h3>
-                    <p>Perché offriamo assistenza tecnica veloce, professionale e su misura. Niente attese infinite o termini complicati: risolviamo i tuoi problemi informatici con passione e trasparenza.</p>
+                    <p>Perch&eacute; offriamo assistenza tecnica veloce, professionale e su misura. Niente attese infinite o termini complicati: risolviamo i tuoi problemi informatici con passione e trasparenza.</p>
                     <ul style="margin-top: 1.5rem; list-style: none; padding: 0; display: grid; gap: 0.75rem;">
-                        <li>&#10003; Professionalità e passione/li>
+                        <li>&#10003; Professionalit&agrave; e passione</li>
                         <li>&#10003; Servizio personalizzato</li>
                         <li>&#10003; Consulenza gratuita</li>
                     </ul>
@@ -507,7 +684,7 @@
             <div class="cta-section">
                 <h3>Un problema al PC? Risolviamolo subito insieme.</h3>
                 <p>Fissa subito un appuntamento: analizzerò personalmente la tua situazione e preparerò  una proposta personalizzata in meno di 24 ore.</p>
-                <a class="btn btn-primary" href="#contatti">Richiedi una assistenza</a>
+                <a class="btn btn-primary" href="#contatti">Richiedi un'assistenza</a>
             </div>
         </section>
 
@@ -590,6 +767,37 @@
     </footer>
 
     <script>
+        // Toggle tema manuale con persistenza (Light / Dark / Auto)
+        (function() {
+            const root = document.documentElement;
+            const toggle = document.getElementById('theme-toggle');
+            const setTheme = (t) => {
+                root.setAttribute('data-theme', t);
+                if (toggle) {
+                    const next = t === 'light' ? 'scuro' : (t === 'dark' ? 'auto' : 'chiaro');
+                    const current = t === 'light' ? 'chiaro' : (t === 'dark' ? 'scuro' : 'automatico');
+                    toggle.setAttribute('aria-label', `Tema ${current} attivo. Passa a ${next}`);
+                    toggle.setAttribute('title', `Passa al tema ${next}`);
+                }
+            };
+
+            try {
+                let saved = localStorage.getItem('theme');
+                if (saved === 'dark' || saved === 'light' || saved === 'auto') {
+                    setTheme(saved);
+                } else {
+                    setTheme(root.getAttribute('data-theme') || 'auto');
+                }
+            } catch (e) { setTheme(root.getAttribute('data-theme') || 'auto'); }
+
+            toggle?.addEventListener('click', () => {
+                const current = root.getAttribute('data-theme') || 'auto';
+                const next = current === 'light' ? 'dark' : (current === 'dark' ? 'auto' : 'light');
+                setTheme(next);
+                try { localStorage.setItem('theme', next); } catch (e) {}
+            });
+        })();
+
         // Endpoint di invio gestito da FormSubmit (richiede conferma alla prima richiesta)
         const FORM_ENDPOINT = "https://formsubmit.co/ajax/fedebolli06@gmail.com";
 
