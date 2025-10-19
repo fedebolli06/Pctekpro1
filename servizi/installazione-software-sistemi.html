@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PCtek Pro | Installazione software e sistemi</title>
+  <meta name="description" content="Installazione sistemi operativi, driver e software: Windows, Linux, antivirus e programmi essenziali configurati a regola d'arte.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="../assets/logo-pctekpro.svg" type="image/svg+xml">
+  <script>try{var s=localStorage.getItem('theme');var i=(s==='dark'||s==='light'||s==='auto')?s:'auto';document.documentElement.setAttribute('data-theme',i);}catch(e){}</script>
+  <style>
+    :root { --primary:#0f172a; --secondary:#00bfa6; --accent:#f59e0b; --text-dark:#0f172a; --text-light:#ffffff; --bg-light:#f7f9fc; --surface:#ffffff; --muted:#64748b; --border:#e5e9f2; --radius:14px; --shadow:0 18px 40px rgba(16,24,40,.12); --shadow-sm:0 2px 10px rgba(16,24,40,.06); --ring:rgba(0,191,166,.3); }
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:'Poppins',sans-serif;color:var(--text-dark);background:linear-gradient(var(--bg-light),var(--bg-light));line-height:1.6}
+    header{position:sticky;top:0;backdrop-filter:blur(16px);background:rgba(255,255,255,.9);z-index:100;border-bottom:1px solid var(--border);box-shadow:var(--shadow-sm)}
+    .top-bar{max-width:1200px;margin:0 auto;padding:1.2rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+    .logo{display:inline-flex;align-items:center;text-decoration:none;color:var(--text-dark)} .logo-img{height:64px;width:auto;display:block}
+    nav ul{list-style:none;margin:0;padding:0;display:flex;gap:1.5rem} nav a{text-decoration:none;color:var(--text-dark);font-weight:500;font-size:.95rem;position:relative}
+    nav a:hover{color:var(--secondary)} nav a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:2px;background:var(--secondary);transition:width .2s ease} nav a:hover::after{width:100%}
+    /* Dropdown Servizi */
+    .nav-item-dropdown { position: relative; }
+    .has-caret::before { content: "▾"; margin-left: .35rem; font-size: .8em; }
+    .dropdown-menu { position:absolute; top:calc(100% + 10px); right:0; background:var(--surface); border:1px solid var(--border); border-radius:12px; box-shadow:var(--shadow-sm); padding:.5rem 0; min-width:260px; display:none; z-index:1000; }
+    .nav-item-dropdown:hover .dropdown-menu, .nav-item-dropdown:focus-within .dropdown-menu { display:block; }
+    .dropdown-menu li { list-style:none; }
+    .dropdown-menu a { display:block; padding:.6rem 1rem; color:var(--text-dark); text-decoration:none; font-size:.95rem; white-space:nowrap; }
+    .dropdown-menu a::after { content:none; }
+    .dropdown-menu a:hover { background:var(--bg-light); color:var(--secondary); }
+    .hero{position:relative;background:linear-gradient(135deg,rgba(15,23,42,.95),rgba(0,191,166,.9));color:var(--text-light);padding:5.5rem 1.5rem 4rem;overflow:hidden}
+    .hero-container{position:relative;max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:1.5rem;align-items:center;z-index:1}
+    .hero h1{margin:0 0 .5rem;font-size:clamp(2.2rem,4vw,3rem)} .hero p{margin:0 0 1.5rem;color:rgba(255,255,255,.9)}
+    .btn{display:inline-block;padding:.85rem 1.6rem;border-radius:999px;font-weight:600;text-decoration:none;transition:transform .2s ease, box-shadow .2s ease}
+    .btn-primary{background:var(--accent);color:var(--text-dark);box-shadow:var(--shadow)} .btn-outline{border:2px solid rgba(255,255,255,.6);color:#fff}
+    .btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(0,0,0,.18)} .section{padding:4rem 1.5rem}
+    .content{max-width:900px;margin:0 auto;display:grid;gap:1rem;color:var(--text-dark)} .content p{color:var(--muted)}
+    footer{background:#0f172a;color:rgba(255,255,255,.75);padding:3rem 1.5rem}
+    .footer-content{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:2.5rem}
+    .footer-logo{height:48px;width:auto;display:block;margin-bottom:.75rem;filter:invert(1) brightness(1.2) contrast(1.05)} .footer-links{list-style:none;padding:0;margin:0;display:grid;gap:.75rem}
+    .footer-links a{color:rgba(255,255,255,.75);text-decoration:none} .footer-links a:hover{color:var(--secondary)} .footer-bottom{max-width:1100px;margin:2rem auto 0;text-align:center;font-size:.85rem;border-top:1px solid rgba(255,255,255,.1);padding-top:1.5rem}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="top-bar">
+      <a class="logo" href="../index.html#home" aria-label="PCtek Pro - di Bolli Federico">
+        <img class="logo-img" src="../assets/logo-pctekpro.svg" alt="PCtek Pro" decoding="async" loading="eager">
+      </a>
+      <nav>
+        <ul>
+          <li><a href="../index.html#home">Home</a></li>
+          <li class="nav-item-dropdown">
+            <a href="../index.html#servizi" class="has-caret" aria-haspopup="true" aria-expanded="false">Servizi</a>
+            <ul class="dropdown-menu" aria-label="Sotto-menu servizi">
+              <li><a href="../index.html#servizi">Tutti i servizi</a></li>
+              <li><a href="consulenza-it.html">Consulenza IT</a></li>
+              <li><a href="assistenza-pc-notebook.html">Assistenza PC e notebook</a></li>
+              <li><a href="assistenza-domicilio.html">Assistenza a domicilio</a></li>
+              <li><a href="recupero-dati-backup.html">Recupero dati e backup</a></li>
+              <li><a href="installazione-software-sistemi.html">Installazione software e sistemi</a></li>
+              <li><a href="configurazione-reti-wifi.html">Configurazione reti e Wi‑Fi</a></li>
+              <li><a href="assemblaggio-pc.html">Assemblaggio PC su misura</a></li>
+              <li><a href="ottimizzazione-pc-gaming.html">Ottimizzazione PC gaming</a></li>
+            </ul>
+          </li>
+          <li><a href="../index.html#chi-siamo">Chi sono</a></li>
+          <li><a href="../index.html#contatti">Contatti</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="hero-container">
+        <div>
+          <h1>Installazione software e sistemi</h1>
+          <p>Installiamo e configuriamo sistemi operativi, driver e i software essenziali per lavorare in sicurezza e senza intoppi.</p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="../index.html#contatti">Prenota installazione</a>
+            <a class="btn btn-outline" href="../index.html#servizi">Torna ai servizi</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="content">
+        <h2>Cosa curiamo</h2>
+        <p>- Installazione Windows/Linux e aggiornamenti</p>
+        <p>- Driver corretti e antivirus</p>
+        <p>- Suite produttivit&agrave; e strumenti di backup</p>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="footer-content">
+      <div>
+        <img class="footer-logo" src="../assets/logo-pctekpro.svg" alt="PCtek Pro">
+        <h4 class="sr-only">PCtek Pro</h4>
+        <p>Partner tecnologico. Supportiamo la tua crescita con tecnologia affidabile e passione.</p>
+      </div>
+      <div>
+        <h4>Link utili</h4>
+        <ul class="footer-links">
+          <li><a href="../index.html#servizi">Servizi</a></li>
+          <li><a href="../index.html#contatti">Richiedi un preventivo</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Social</h4>
+        <ul class="footer-links">
+          <li><a href="#" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="#" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="#" target="_blank" rel="noopener">TikTok</a></li>
+          <li><a href="https://wa.me/393339914498?text=Ciao%2C%20ho%20bisogno%20di%20assistenza%20PC." target="_blank" rel="noopener">WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; <span id="year"></span> PCtek Pro &middot; Tutti i diritti riservati</div>
+  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.querySelectorAll('.nav-item-dropdown > a.has-caret').forEach((trigger) => {
+      trigger.addEventListener('click', (e) => {
+        const item = trigger.parentElement;
+        const isOpen = item.classList.contains('open');
+        if (!isOpen) {
+          e.preventDefault();
+          item.classList.add('open');
+          trigger.setAttribute('aria-expanded', 'true');
+          const onDocClick = (ev) => {
+            if (!item.contains(ev.target)) {
+              item.classList.remove('open');
+              trigger.setAttribute('aria-expanded', 'false');
+              document.removeEventListener('click', onDocClick);
+            }
+          };
+          setTimeout(() => document.addEventListener('click', onDocClick), 0);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
