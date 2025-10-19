@@ -121,6 +121,37 @@
             width: 100%;
         }
 
+        /* Dropdown Servizi */
+        .nav-item-dropdown { position: relative; }
+        .has-caret::before { content: "▾"; margin-left: 0.35rem; font-size: 0.8em; }
+        .dropdown-menu {
+            position: absolute;
+            top: calc(100% + 10px);
+            right: 0;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+            padding: 0.5rem 0;
+            min-width: 260px;
+            display: none;
+            z-index: 1000;
+        }
+        .nav-item-dropdown:hover .dropdown-menu,
+        .nav-item-dropdown:focus-within .dropdown-menu,
+        .nav-item-dropdown.open .dropdown-menu { display: block; }
+        .dropdown-menu li { list-style: none; }
+        .dropdown-menu a {
+            display: block;
+            padding: 0.6rem 1rem;
+            color: var(--text-dark);
+            text-decoration: none;
+            font-size: 0.95rem;
+            white-space: nowrap;
+        }
+        .dropdown-menu a::after { content: none; }
+        .dropdown-menu a:hover { background: var(--bg-light); color: var(--secondary); }
+
         .hero {
             position: relative;
             background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(0, 191, 166, 0.9));
@@ -218,6 +249,16 @@
             max-width: 620px;
         }
 
+        /* Hint testuale per i servizi (senza toccare l'HTML) */
+        #servizi .section-header::after {
+            content: "Suggerimento: clicca su un servizio per aprire la pagina dedicata.";
+            display: block;
+            margin: 0.5rem auto 0;
+            max-width: 620px;
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
         .cards-grid {
             max-width: 1200px;
             margin: 0 auto;
@@ -234,11 +275,17 @@
             box-shadow: var(--shadow);
             transition: transform 0.2s ease, box-shadow 0.2s ease;
             color: var(--text-dark);
+            text-decoration: none;
+            display: block;
+            cursor: pointer;
+            outline: none;
         }
 
         .card:hover {
             transform: translateY(-6px);
         }
+
+        .card:focus-visible { box-shadow: 0 0 0 4px var(--ring), var(--shadow); }
 
         .card h3 {
             margin: 0 0 0.75rem;
@@ -250,6 +297,18 @@
             color: var(--muted);
             font-size: 0.95rem;
         }
+
+        /* Hint e CTA sulle card servizi */
+        .section-hint { margin-top: 0.5rem; font-size: 0.95rem; color: var(--muted); }
+        .cards-grid a.card::after {
+            content: "Scopri di più →";
+            display: inline-block;
+            margin-top: 0.85rem;
+            color: var(--secondary);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+        .cards-grid a.card:hover::after { color: var(--accent); }
 
         .about-section {
             max-width: 1200px;
@@ -619,7 +678,20 @@
             <nav>
                 <ul>
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#servizi">Servizi</a></li>
+                    <li class="nav-item-dropdown">
+                        <a href="#servizi" class="has-caret" aria-haspopup="true" aria-expanded="false">Servizi</a>
+                        <ul class="dropdown-menu" aria-label="Sotto-menu servizi">
+                            <li><a href="#servizi">Tutti i servizi</a></li>
+                            <li><a href="servizi/consulenza-it.html">Consulenza IT</a></li>
+                            <li><a href="servizi/assistenza-pc-notebook.html">Assistenza PC e notebook</a></li>
+                            <li><a href="servizi/assistenza-domicilio.html">Assistenza a domicilio</a></li>
+                            <li><a href="servizi/recupero-dati-backup.html">Recupero dati e backup</a></li>
+                            <li><a href="servizi/installazione-software-sistemi.html">Installazione software e sistemi</a></li>
+                            <li><a href="servizi/configurazione-reti-wifi.html">Configurazione reti e Wi‑Fi</a></li>
+                            <li><a href="servizi/assemblaggio-pc.html">Assemblaggio PC su misura</a></li>
+                            <li><a href="servizi/ottimizzazione-pc-gaming.html">Ottimizzazione PC gaming</a></li>
+                        </ul>
+                    </li>
                     <li><a href="#chi-siamo">Chi sono</a></li>
                     <li><a href="#contatti">Contatti</a></li>
                 </ul>
@@ -670,39 +742,38 @@
                 <p>Ci occupiamo di tutto ciò che riguarda il mondo dell’informatica, offrendo assistenza completa e su misura per ogni esigenza.</p>
             </div>
             <div class="cards-grid">
-                <article class="card">
+                <a class="card" href="servizi/consulenza-it.html">
                     <h3>🧠 Consulenza IT GRATUITA</h3>
                     <p>Consigli per aggiornare, acquistare o migliorare i tuoi dispositivi.</p>
-                </article>
-                <article class="card">
+                </a>
+                <a class="card" href="servizi/assistenza-pc-notebook.html">
                     <h3>💻 Assistenza PC e notebook</h3>
                     <p>Riparazioni, formattazioni, aggiornamenti e ottimizzazione delle prestazioni.</p>
-                </article>
-                <article class="card">
+                </a>
+                <a class="card" href="servizi/assistenza-domicilio.html">
                     <h3>🏠 Assistenza a domicilio</h3>
                     <p>Veniamo direttamente da te per risolvere tutto sul posto o anche da remoto.</p>
-                </article>
-                <article class="card">
+                </a>
+                <a class="card" href="servizi/recupero-dati-backup.html">
                     <h3>📲 Recupero dati e backup</h3>
                     <p>Salvataggio e recupero file da hard disk, chiavette o SSD.</p>
-                </article>
-                <article class="card">
+                </a>
+                <a class="card" href="servizi/installazione-software-sistemi.html">
                     <h3>⚙️ Installazione software e sistemi operativi</h3>
                     <p>Windows, Linux, antivirus, driver e programmi vari.</p>
-                </article>
-                <article class="card">
+                </a>
+                <a class="card" href="servizi/configurazione-reti-wifi.html">
                     <h3>🌐 Configurazione reti e Wi-Fi</h3>
                     <p>Impostazione modem, rete domestica o aziendale stabile e sicura.</p>
-                </article>
-                <article class="card">
+                </a>
+                <a class="card" href="servizi/assemblaggio-pc.html">
                     <h3>🔧 Assemblaggio PC su misura</h3>
                     <p>Per gaming, studio o lavoro, con componenti scelti insieme.</p>
-                </article>
-                <article class="card">
+                </a>
+                <a class="card" href="servizi/ottimizzazione-pc-gaming.html">
                     <h3>🎮 Ottimizzazione PC gaming</h3>
                     <p>installazione driver, impostazioni performance, FPS boost e consigli hardware.</p>
-                </article>
-            </div>
+                </a>            </div>
         </section>
 
         <section class="section" id="chi-siamo">
@@ -899,6 +970,28 @@
 
         // Aggiorna automaticamente l'anno nel footer
         document.getElementById('year').textContent = new Date().getFullYear();
+        
+        // Menu a tendina "Servizi" (mobile-friendly)
+        document.querySelectorAll('.nav-item-dropdown > a.has-caret').forEach((trigger) => {
+            trigger.addEventListener('click', (e) => {
+                const item = trigger.parentElement;
+                const isOpen = item.classList.contains('open');
+                if (!isOpen) {
+                    e.preventDefault();
+                    item.classList.add('open');
+                    trigger.setAttribute('aria-expanded', 'true');
+                    const onDocClick = (ev) => {
+                        if (!item.contains(ev.target)) {
+                            item.classList.remove('open');
+                            trigger.setAttribute('aria-expanded', 'false');
+                            document.removeEventListener('click', onDocClick);
+                        }
+                    };
+                    setTimeout(() => document.addEventListener('click', onDocClick), 0);
+                }
+            });
+        });
     </script>
 </body>
 </html>
+
