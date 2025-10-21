@@ -128,6 +128,50 @@
             width: 100%;
         }
 
+        /* Social nella top-bar */
+        .right-tools {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .social-links {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .social-links a.social {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            display: inline-block;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 20px 20px;
+            border: 1px solid var(--border);
+            background-color: var(--surface);
+            transition: transform 0.15s ease, box-shadow 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+        }
+        .social-links a.social:hover {
+            transform: translateY(-1px);
+            background-color: rgba(0, 191, 166, 0.08);
+            border-color: var(--secondary);
+            box-shadow: var(--shadow-sm);
+        }
+        .social-links a.social:focus-visible {
+            outline: none;
+            box-shadow: 0 0 0 4px var(--ring);
+        }
+        /* Icone (light) */
+        .social-links a.instagram { background-image: url('https://api.iconify.design/tabler/brand-instagram.svg?color=%230f172a'); }
+        .social-links a.facebook  { background-image: url('https://api.iconify.design/tabler/brand-facebook.svg?color=%230f172a'); }
+        .social-links a.tiktok    { background-image: url('https://api.iconify.design/tabler/brand-tiktok.svg?color=%230f172a'); }
+        .social-links a.whatsapp  { background-image: url('https://api.iconify.design/tabler/brand-whatsapp.svg?color=%230f172a'); }
+        /* Icone (dark override) */
+        html[data-theme='dark'] .social-links a.instagram { background-image: url('https://api.iconify.design/tabler/brand-instagram.svg?color=%23e2e8f0'); }
+        html[data-theme='dark'] .social-links a.facebook  { background-image: url('https://api.iconify.design/tabler/brand-facebook.svg?color=%23e2e8f0'); }
+        html[data-theme='dark'] .social-links a.tiktok    { background-image: url('https://api.iconify.design/tabler/brand-tiktok.svg?color=%23e2e8f0'); }
+        html[data-theme='dark'] .social-links a.whatsapp  { background-image: url('https://api.iconify.design/tabler/brand-whatsapp.svg?color=%23e2e8f0'); }
+
         /* Dropdown Servizi */
         .nav-item-dropdown { position: relative; }
         .has-caret::before { content: "â–¾"; margin-left: 0.35rem; font-size: 0.8em; }
@@ -339,6 +383,37 @@
             border-radius: var(--radius);
             box-shadow: var(--shadow);
         }
+
+        /* Immagine attività con effetto highlight */
+        .about-image {
+            position: relative;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            background: linear-gradient(180deg, rgba(255,255,255,0), rgba(0,191,166,0.08));
+        }
+        .about-image::after {
+            content: "";
+            position: absolute;
+            inset: -30%;
+            background:
+                radial-gradient(60% 60% at 30% 20%, rgba(0,191,166,0.22), transparent 60%),
+                radial-gradient(50% 50% at 75% 80%, rgba(245,158,11,0.16), transparent 60%);
+            filter: blur(22px);
+            opacity: 0;
+            transition: opacity 0.45s ease;
+            pointer-events: none;
+        }
+        .about-image img {
+            display: block;
+            width: 100%;
+            height: auto;
+            transition: transform 0.45s ease, filter 0.45s ease;
+        }
+        .about-image:hover img,
+        .about-image:focus-visible img { transform: scale(1.04); }
+        .about-image:hover::after,
+        .about-image:focus-visible::after { opacity: 1; }
 
         .about-section ul {
             margin: 1.5rem 0 0;
@@ -808,7 +883,14 @@
                     <li><a href="#contatti">Contatti</a></li>
                 </ul>
             </nav>
-            <button id="theme-toggle" class="theme-toggle" aria-label="Passa al tema scuro" title="Passa al tema scuro">
+            <div class="right-tools">
+                <div class="social-links" aria-label="PCtek Pro sui social">
+                    <a class="social instagram" href="https://www.instagram.com/pctek_pro?igsh=MzB0MWpsYWR5c2p0&utm_source=qr" target="_blank" rel="noopener" aria-label="Instagram"></a>
+                    <a class="social facebook" href="https://www.facebook.com/share/1AVk7xw67i/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook"></a>
+                    <a class="social tiktok" href="https://www.tiktok.com/@pctekpro?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener" aria-label="TikTok"></a>
+                    <a class="social whatsapp" href="https://wa.me/393339914498?text=Ciao%2C%20ho%20bisogno%20di%20assistenza%20PC." target="_blank" rel="noopener" aria-label="WhatsApp"></a>
+                </div>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Passa al tema scuro" title="Passa al tema scuro">
                 <!-- Sole -->
                 <svg class="icon icon-sun" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                     <path d="M12 4a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0V5a1 1 0 0 1 1-1zm0 13a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm7-5a1 1 0 0 1 1 1 1 1 0 1 1-2 0 1 1 0 0 1 1-1zM5 12a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm12.95 6.536a1 1 0 0 1-1.414 0l-.707-.707a1 1 0 0 1 1.414-1.414l.707.707a1 1 0 0 1 0 1.414zM7.171 7.171A1 1 0 1 1 5.757 5.757l.707-.707A1 1 0 1 1 7.878 6.88l-.707.292zm0 9.658.707.707A1 1 0 1 1 6.464 19.95l-.707-.707A1 1 0 0 1 7.17 16.83zM18.243 5.05l-.707.707A1 1 0 1 1 16.122 4.34l.707-.707A1 1 0 1 1 18.243 5.05z"/>
@@ -822,6 +904,7 @@
                     <text x="7" y="17" font-size="14" font-family="sans-serif">A</text>
                 </svg>
             </button>
+            </div>
         </div>
     </header>
 
@@ -894,8 +977,8 @@
                 <p>Sono Federico Bolli, perito in informatica e telecomunicazioni, un ragazzo giovane ma con molta passione e dedizione per tutto il mondo dell'informtica. Mi piacciono le sfide e questo è ciò che inspira PCtek pro, una piccola rete di servizi che ha l'obiettivo di diventare protagonista</p>
             </div>
             <div class="about-section">
-                <div>
-                    <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1000&q=80" alt="Team PCtek Pro al lavoro">
+                <div class="about-image" tabindex="0" aria-label="PCtek Pro — immagine attività">
+                    <img src="assets/logo-pctekpro.png" alt="PCtek Pro — la tua attività" loading="lazy" decoding="async">
                 </div>
                 <div>
                     <h3>Il mio approccio</h3>
@@ -989,7 +1072,7 @@
             <div>
                 <h4>Social</h4>
                 <ul class="footer-links">
-                    <li><a href="#" target="_blank" rel="noopener">Instagram</a></li>
+                    <li><a href="https://www.instagram.com/pctek_pro?igsh=MzB0MWpsYWR5c2p0&utm_source=qr" target="_blank" rel="noopener">Instagram</a></li>
                     <li><a href="#" target="_blank" rel="noopener">Facebook</a></li>
                     <li><a href="#" target="_blank" rel="noopener">TikTok</a></li>
                     <li><a href="https://wa.me/393339914498?text=Ciao%2C%20ho%20bisogno%20di%20assistenza%20PC." target="_blank" rel="noopener">WhatsApp</a></li>
