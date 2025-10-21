@@ -703,6 +703,12 @@
             html[data-theme='auto'] .logo-img {
                 filter: invert(1) brightness(1.2) contrast(1.05);
             }
+
+            /* In auto + dark system, usa icone social chiare */
+            html[data-theme='auto'] .social-links a.instagram { background-image: url('https://api.iconify.design/tabler/brand-instagram.svg?color=%23e2e8f0'); }
+            html[data-theme='auto'] .social-links a.facebook  { background-image: url('https://api.iconify.design/tabler/brand-facebook.svg?color=%23e2e8f0'); }
+            html[data-theme='auto'] .social-links a.tiktok    { background-image: url('https://api.iconify.design/tabler/brand-tiktok.svg?color=%23e2e8f0'); }
+            html[data-theme='auto'] .social-links a.whatsapp  { background-image: url('https://api.iconify.design/tabler/brand-whatsapp.svg?color=%23e2e8f0'); }
         }
 
         /* Override manuale: prioritÃ  al data-theme */
@@ -760,6 +766,18 @@
         html[data-theme='light'] .contact-info div {
             background: var(--surface);
             border-color: var(--border);
+        }
+
+        /* Ripristina hover delle card anche in temi forzati (specificit maggiore) */
+        html[data-theme='light'] .card:hover,
+        html[data-theme='light'] .card:focus-visible {
+            background: rgba(0, 191, 166, 0.06);
+            border-color: var(--secondary);
+        }
+        html[data-theme='dark'] .card:hover,
+        html[data-theme='dark'] .card:focus-visible {
+            background: rgba(0, 191, 166, 0.10);
+            border-color: var(--secondary);
         }
 
         /* Icone per i servizi (emoji, senza aggiungere immagini esterne) */
@@ -856,6 +874,41 @@
         .hero-card h3::before { content: none !important; display: none !important; }
         .hero-card h3 { display: block !important; }
 
+        /* Hero card: effetto diverso (niente tinta verde, solo sottolineatura gradiente) */
+        .hero-card {
+            position: relative;
+            overflow: hidden;
+            cursor: default;
+        }
+        .hero-card::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--secondary), var(--accent));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.25s ease;
+        }
+        .hero-card:hover::after,
+        .hero-card:focus-visible::after,
+        .hero-card:focus-within::after { transform: scaleX(1); }
+        .hero-card:hover,
+        .hero-card:focus-visible {
+            background: var(--surface) !important; /* annulla tinta */
+            transform: translateY(-2px) scale(1.01);
+            border-color: var(--border); /* niente cambio colore bordo */
+            box-shadow: 0 18px 50px rgba(16, 24, 40, 0.18);
+        }
+
+        /* Mantieni il bordo neutro anche con tema forzato */
+        html[data-theme='light'] .hero-card:hover,
+        html[data-theme='light'] .hero-card:focus-visible { border-color: var(--border) !important; }
+        html[data-theme='dark'] .hero-card:hover,
+        html[data-theme='dark'] .hero-card:focus-visible { border-color: var(--border) !important; }
+
         /* Fix: CTA testo garbled -> testo corretto (unicode escapes) */
         .cards-grid a.card::after { content: "Scopri di più \2192"; }
     </style>
@@ -878,7 +931,7 @@
                             <li><a href="servizi/assistenza-domicilio.html">Assistenza a domicilio</a></li>
                             <li><a href="servizi/recupero-dati-backup.html">Recupero dati e backup</a></li>
                             <li><a href="servizi/installazione-software-sistemi.html">Installazione software e sistemi</a></li>
-                            <li><a href="servizi/configurazione-reti-wifi.html">Configurazione reti e Wiâ€‘Fi</a></li>
+                            <li><a href="servizi/configurazione-reti-wifi.html">Configurazione reti e Wi-Fi</a></li>
                             <li><a href="servizi/assemblaggio-pc.html">Assemblaggio PC su misura</a></li>
                             <li><a href="servizi/ottimizzazione-pc-gaming.html">Ottimizzazione PC gaming</a></li>
                         </ul>
@@ -917,7 +970,7 @@
             <div class="hero-container">
                 <div class="hero-content">
                     <h1>Soluzioni informatiche su misura per te</h1>
-                    <p>PCtek Pro ti aiuta nel risolvere qualsiasi problema informatico dal livello hardware al livello software con un'assistenza tecnica di livello enterprise.</p>
+                    <p>PCtek Pro ti aiuta nel risolvere qualsiasi problema informatico dal livello hardware al livello software con un'assistenza tecnica di livello.</p>
                     <div class="hero-cta">
                         <a class="btn btn-primary" href="#contatti">Prenota un'assistenza</a>
                         <a class="btn btn-outline" href="#servizi">Scopri i nostri servizi</a>
