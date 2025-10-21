@@ -663,6 +663,21 @@
 
             .logo-img { height: 56px; }
             .footer-logo { height: 56px; }
+
+            /* Dropdown mobile: centrato e contenuto nel viewport */
+            .nav-item-dropdown { position: static; }
+            .nav-item-dropdown .dropdown-menu {
+                left: 50%;
+                right: auto;
+                transform: translateX(-50%);
+                min-width: 0;
+                width: min(320px, calc(100vw - 32px));
+                max-width: calc(100vw - 32px);
+            }
+            .nav-item-dropdown .dropdown-menu a {
+                white-space: normal; /* consenti a capo per evitare overflow */
+                line-height: 1.35;
+            }
         }
 
 
