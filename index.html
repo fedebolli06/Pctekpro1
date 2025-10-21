@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="it">
 <head>
     <meta charset="UTF-8">
@@ -123,7 +123,7 @@
 
         /* Dropdown Servizi */
         .nav-item-dropdown { position: relative; }
-        .has-caret::before { content: "▾"; margin-left: 0.35rem; font-size: 0.8em; }
+        .has-caret::before { content: "â–¾"; margin-left: 0.35rem; font-size: 0.8em; }
         .dropdown-menu {
             position: absolute;
             top: calc(100% + 10px);
@@ -140,6 +140,8 @@
         .nav-item-dropdown:hover .dropdown-menu,
         .nav-item-dropdown:focus-within .dropdown-menu,
         .nav-item-dropdown.open .dropdown-menu { display: block; }
+        /* Override caret char */
+        .has-caret::before { content: "\25BE"; }
         .dropdown-menu li { list-style: none; }
         .dropdown-menu a {
             display: block;
@@ -273,7 +275,7 @@
             border-radius: var(--radius);
             border: 1px solid var(--border);
             box-shadow: var(--shadow);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
             color: var(--text-dark);
             text-decoration: none;
             display: block;
@@ -281,11 +283,17 @@
             outline: none;
         }
 
-        .card:hover {
+        .card:hover,
+        .card:focus-visible {
             transform: translateY(-6px);
+            background: rgba(0, 191, 166, 0.06);
+            border-color: var(--secondary);
+            box-shadow: 0 18px 50px rgba(16, 24, 40, 0.18);
         }
 
-        .card:focus-visible { box-shadow: 0 0 0 4px var(--ring), var(--shadow); }
+        .card:focus-visible {
+            box-shadow: 0 0 0 4px var(--ring), 0 18px 50px rgba(16, 24, 40, 0.18);
+        }
 
         .card h3 {
             margin: 0 0 0.75rem;
@@ -301,7 +309,7 @@
         /* Hint e CTA sulle card servizi */
         .section-hint { margin-top: 0.5rem; font-size: 0.95rem; color: var(--muted); }
         .cards-grid a.card::after {
-            content: "Scopri di più →";
+            content: "Scopri di più â†’";
             display: inline-block;
             margin-top: 0.85rem;
             color: var(--secondary);
@@ -611,7 +619,7 @@
             }
         }
 
-        /* Override manuale: priorità al data-theme */
+        /* Override manuale: prioritÃ  al data-theme */
         html[data-theme='dark'] {
             --text-dark: #e2e8f0;
             --bg-light: #0b1020;
@@ -667,6 +675,103 @@
             background: var(--surface);
             border-color: var(--border);
         }
+
+        /* Icone per i servizi (emoji, senza aggiungere immagini esterne) */
+        .cards-grid .card h3 {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .cards-grid .card h3::before {
+            content: '';
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            flex: 0 0 28px;
+            border-radius: 8px;
+            background: rgba(0, 191, 166, 0.10);
+            color: var(--secondary);
+            font-size: 16px;
+        }
+        /* Icone anche nel dropdown Servizi */
+        .dropdown-menu a::before {
+            content: '';
+            display: inline-block;
+            width: 1.1em;
+            margin-right: 0.5rem;
+        }
+        /* Mappature icone per ogni servizio */
+        .cards-grid a[href$="consulenza-it.html"] h3::before,
+        .dropdown-menu a[href$="consulenza-it.html"]::before { content: 'ðŸ’¡'; }
+
+        .cards-grid a[href$="assistenza-pc-notebook.html"] h3::before,
+        .dropdown-menu a[href$="assistenza-pc-notebook.html"]::before { content: 'ðŸ’»'; }
+
+        .cards-grid a[href$="assistenza-domicilio.html"] h3::before,
+        .dropdown-menu a[href$="assistenza-domicilio.html"]::before { content: 'ðŸ '; }
+
+        .cards-grid a[href$="recupero-dati-backup.html"] h3::before,
+        .dropdown-menu a[href$="recupero-dati-backup.html"]::before { content: 'ðŸ’¾'; }
+
+        .cards-grid a[href$="installazione-software-sistemi.html"] h3::before,
+        .dropdown-menu a[href$="installazione-software-sistemi.html"]::before { content: 'âš™ï¸'; }
+
+        .cards-grid a[href$="configurazione-reti-wifi.html"] h3::before,
+        .dropdown-menu a[href$="configurazione-reti-wifi.html"]::before { content: 'ðŸ“¶'; }
+
+        .cards-grid a[href$="assemblaggio-pc.html"] h3::before,
+        .dropdown-menu a[href$="assemblaggio-pc.html"]::before { content: 'ðŸ› ï¸'; }
+
+        .cards-grid a[href$="ottimizzazione-pc-gaming.html"] h3::before,
+        .dropdown-menu a[href$="ottimizzazione-pc-gaming.html"]::before { content: 'ðŸŽ®'; }
+        /* Override: usa immagini esterne (Iconify) al posto delle emoji */
+        .cards-grid .card h3::before {
+            width: 28px;
+            height: 28px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 20px 20px;
+        }
+        .dropdown-menu a::before {
+            width: 1.2em;
+            height: 1.2em;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            vertical-align: -0.2em;
+        }
+        /* Mappature con URL remoti (Iconify) */
+        .cards-grid a[href$="consulenza-it.html"] h3::before,
+        .dropdown-menu a[href$="consulenza-it.html"]::before { content: ""; background-image: url('https://api.iconify.design/tabler/bulb.svg?color=%2300bfa6'); }
+
+        .cards-grid a[href$="assistenza-pc-notebook.html"] h3::before,
+        .dropdown-menu a[href$="assistenza-pc-notebook.html"]::before { content: ""; background-image: url('https://api.iconify.design/tabler/device-laptop.svg?color=%2300bfa6'); }
+
+        .cards-grid a[href$="assistenza-domicilio.html"] h3::before,
+        .dropdown-menu a[href$="assistenza-domicilio.html"]::before { content: ""; background-image: url('https://api.iconify.design/tabler/home-cog.svg?color=%2300bfa6'); }
+
+        .cards-grid a[href$="recupero-dati-backup.html"] h3::before,
+        .dropdown-menu a[href$="recupero-dati-backup.html"]::before { content: ""; background-image: url('https://api.iconify.design/tabler/database.svg?color=%2300bfa6'); }
+
+        .cards-grid a[href$="installazione-software-sistemi.html"] h3::before,
+        .dropdown-menu a[href$="installazione-software-sistemi.html"]::before { content: ""; background-image: url('https://api.iconify.design/tabler/settings.svg?color=%2300bfa6'); }
+
+        .cards-grid a[href$="configurazione-reti-wifi.html"] h3::before,
+        .dropdown-menu a[href$="configurazione-reti-wifi.html"]::before { content: ""; background-image: url('https://api.iconify.design/tabler/wifi.svg?color=%2300bfa6'); }
+
+        .cards-grid a[href$="assemblaggio-pc.html"] h3::before,
+        .dropdown-menu a[href$="assemblaggio-pc.html"]::before { content: ""; background-image: url('https://api.iconify.design/tabler/tools.svg?color=%2300bfa6'); }
+
+        .cards-grid a[href$="ottimizzazione-pc-gaming.html"] h3::before,
+        .dropdown-menu a[href$="ottimizzazione-pc-gaming.html"]::before { content: ""; background-image: url('https://api.iconify.design/tabler/device-gamepad-2.svg?color=%2300bfa6'); }
+        /* Fix: rimuovi spazio icona nella hero card */
+        .hero-card h3::before { content: none !important; display: none !important; }
+        .hero-card h3 { display: block !important; }
+
+        /* Fix: CTA testo garbled -> testo corretto (unicode escapes) */
+        .cards-grid a.card::after { content: "Scopri di più \2192"; }
     </style>
 </head>
 <body>
@@ -687,7 +792,7 @@
                             <li><a href="servizi/assistenza-domicilio.html">Assistenza a domicilio</a></li>
                             <li><a href="servizi/recupero-dati-backup.html">Recupero dati e backup</a></li>
                             <li><a href="servizi/installazione-software-sistemi.html">Installazione software e sistemi</a></li>
-                            <li><a href="servizi/configurazione-reti-wifi.html">Configurazione reti e Wi‑Fi</a></li>
+                            <li><a href="servizi/configurazione-reti-wifi.html">Configurazione reti e Wiâ€‘Fi</a></li>
                             <li><a href="servizi/assemblaggio-pc.html">Assemblaggio PC su misura</a></li>
                             <li><a href="servizi/ottimizzazione-pc-gaming.html">Ottimizzazione PC gaming</a></li>
                         </ul>
@@ -739,39 +844,39 @@
         <section class="section" id="servizi">
             <div class="section-header">
                 <h2>I nostri servizi</h2>
-                <p>Ci occupiamo di tutto ciò che riguarda il mondo dell’informatica, offrendo assistenza completa e su misura per ogni esigenza.</p>
+                <p>Ci occupiamo di tutto ciò che riguarda il mondo dell'informatica, offrendo assistenza completa e su misura per ogni esigenza.</p>
             </div>
             <div class="cards-grid">
                 <a class="card" href="servizi/consulenza-it.html">
-                    <h3>🧠 Consulenza IT GRATUITA</h3>
+                    <h3>Consulenza IT GRATUITA</h3>
                     <p>Consigli per aggiornare, acquistare o migliorare i tuoi dispositivi.</p>
                 </a>
                 <a class="card" href="servizi/assistenza-pc-notebook.html">
-                    <h3>💻 Assistenza PC e notebook</h3>
+                    <h3>Assistenza PC e notebook</h3>
                     <p>Riparazioni, formattazioni, aggiornamenti e ottimizzazione delle prestazioni.</p>
                 </a>
                 <a class="card" href="servizi/assistenza-domicilio.html">
-                    <h3>🏠 Assistenza a domicilio</h3>
+                    <h3>Assistenza a domicilio</h3>
                     <p>Veniamo direttamente da te per risolvere tutto sul posto o anche da remoto.</p>
                 </a>
                 <a class="card" href="servizi/recupero-dati-backup.html">
-                    <h3>📲 Recupero dati e backup</h3>
+                    <h3>Recupero dati e backup</h3>
                     <p>Salvataggio e recupero file da hard disk, chiavette o SSD.</p>
                 </a>
                 <a class="card" href="servizi/installazione-software-sistemi.html">
-                    <h3>⚙️ Installazione software e sistemi operativi</h3>
+                    <h3>Installazione software e sistemi operativi</h3>
                     <p>Windows, Linux, antivirus, driver e programmi vari.</p>
                 </a>
                 <a class="card" href="servizi/configurazione-reti-wifi.html">
-                    <h3>🌐 Configurazione reti e Wi-Fi</h3>
+                    <h3>Configurazione reti e Wi-Fi</h3>
                     <p>Impostazione modem, rete domestica o aziendale stabile e sicura.</p>
                 </a>
                 <a class="card" href="servizi/assemblaggio-pc.html">
-                    <h3>🔧 Assemblaggio PC su misura</h3>
+                    <h3>Assemblaggio PC su misura</h3>
                     <p>Per gaming, studio o lavoro, con componenti scelti insieme.</p>
                 </a>
                 <a class="card" href="servizi/ottimizzazione-pc-gaming.html">
-                    <h3>🎮 Ottimizzazione PC gaming</h3>
+                    <h3>Ottimizzazione PC gaming</h3>
                     <p>installazione driver, impostazioni performance, FPS boost e consigli hardware.</p>
                 </a>            </div>
         </section>
@@ -800,7 +905,7 @@
         <section class="section">
             <div class="cta-section">
                 <h3>Un problema al PC? Risolviamolo subito insieme.</h3>
-                <p>Fissa subito un appuntamento: analizzerò personalmente la tua situazione e preparerò  una proposta personalizzata in meno di 24 ore.</p>
+                <p>Fissa subito un appuntamento: analizzerò personalmente la tua situazione e preparerò una proposta personalizzata in meno di 24 ore.</p>
                 <a class="btn btn-primary" href="#contatti">Richiedi un'assistenza</a>
             </div>
         </section>
@@ -826,7 +931,7 @@
                     </div>
                     <div>
                         <strong>Disponibilit&agrave;</strong>
-                        <span>Luned&igrave; - Venerd&igrave; &middot; 8:00 - 19:00</span>
+                        <span>Luned&igrave; - Sabato &middot; 8:00 - 19:00</span>
                     </div>
                     <div>
                         <strong>Assistenza remota</strong>
