@@ -3,12 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PCtek Pro | Installazione software e sistemi</title>
-  <meta name="description" content="Installazione sistemi operativi, driver e software: Windows, Linux, antivirus e programmi essenziali configurati a regola d'arte.">
+  <title>Installazione Software e Sistemi Ancona | PCtek Pro</title>
+  <meta name="description" content="Installazione e configurazione software e sistemi ad Ancona. Setup pulito, driver corretti e sicurezza garantita.">
+  <link rel="canonical" href="https://pctekpro.it/servizi/installazione-software-sistemi.html">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Installazione software e sistemi",
+    "provider": { "@type": "LocalBusiness", "name": "PCtek Pro", "url": "https://pctekpro.it/" },
+    "areaServed": { "@type": "AdministrativeArea", "name": "Ancona" },
+    "url": "https://pctekpro.it/servizi/installazione-software-sistemi.html"
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="icon" href="../assets/logo-pctekpro.svg" type="image/svg+xml">
+  <!-- Favicon & app icons -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/assets/logo-pctekpro.svg" type="image/svg+xml" sizes="any">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <script>try{var s=localStorage.getItem('theme');var i=(s==='dark'||s==='light'||s==='auto')?s:'auto';document.documentElement.setAttribute('data-theme',i);}catch(e){}</script>
   <style>
     :root { --primary:#0f172a; --secondary:#00bfa6; --accent:#f59e0b; --text-dark:#0f172a; --text-light:#ffffff; --bg-light:#f7f9fc; --surface:#ffffff; --muted:#64748b; --border:#e5e9f2; --radius:14px; --shadow:0 18px 40px rgba(16,24,40,.12); --shadow-sm:0 2px 10px rgba(16,24,40,.06); --ring:rgba(0,191,166,.3); }
@@ -49,6 +64,37 @@
       .hero { padding-top: 7.5rem; }
     }
   </style>
+  <style>
+    /* Social nella top-bar + toggle tema (allineato alla home) */
+    .right-tools { display: flex; align-items: center; gap: 0.75rem; }
+    .social-links { display: flex; align-items: center; gap: 0.5rem; }
+    .social-links a.social {
+      width: 36px; height: 36px; border-radius: 10px; display: inline-block;
+      background-repeat: no-repeat; background-position: center; background-size: 20px 20px;
+      border: 1px solid var(--border); background-color: var(--surface);
+      transition: transform .15s ease, box-shadow .2s ease, background-color .2s ease, border-color .2s ease;
+    }
+    .social-links a.social:hover { transform: translateY(-1px); background-color: rgba(0,191,166,.08); border-color: var(--secondary); box-shadow: var(--shadow-sm); }
+    .social-links a.social:focus-visible { outline: none; box-shadow: 0 0 0 4px var(--ring); }
+    /* Icone (light) */
+    .social-links a.instagram { background-image: url('https://api.iconify.design/tabler/brand-instagram.svg?color=%230f172a'); }
+    .social-links a.facebook  { background-image: url('https://api.iconify.design/tabler/brand-facebook.svg?color=%230f172a'); }
+    .social-links a.tiktok    { background-image: url('https://api.iconify.design/tabler/brand-tiktok.svg?color=%230f172a'); }
+    .social-links a.whatsapp  { background-image: url('https://api.iconify.design/tabler/brand-whatsapp.svg?color=%230f172a'); }
+    /* Icone (dark) */
+    html[data-theme='dark'] .social-links a.instagram { background-image: url('https://api.iconify.design/tabler/brand-instagram.svg?color=%23e2e8f0'); }
+    html[data-theme='dark'] .social-links a.facebook  { background-image: url('https://api.iconify.design/tabler/brand-facebook.svg?color=%23e2e8f0'); }
+    html[data-theme='dark'] .social-links a.tiktok    { background-image: url('https://api.iconify.design/tabler/brand-tiktok.svg?color=%23e2e8f0'); }
+    html[data-theme='dark'] .social-links a.whatsapp  { background-image: url('https://api.iconify.design/tabler/brand-whatsapp.svg?color=%23e2e8f0'); }
+    /* Toggle tema */
+    .theme-toggle { width: 40px; height: 40px; border-radius: 999px; border: 1px solid var(--border); background: var(--surface); color: var(--text-dark); display: grid; place-items: center; cursor: pointer; box-shadow: var(--shadow-sm); transition: transform .1s ease, background .2s ease, border-color .2s ease; }
+    .theme-toggle:hover { transform: translateY(-1px); }
+    .theme-toggle:focus-visible { outline: none; box-shadow: 0 0 0 4px var(--ring); }
+    .theme-toggle .icon { width: 18px; height: 18px; display: none; }
+    html[data-theme='light'] .theme-toggle .icon-sun { display: inline; }
+    html[data-theme='dark'] .theme-toggle .icon-moon { display: inline; }
+    html[data-theme='auto'] .theme-toggle .icon-auto { display: inline; }
+  </style>
 </head>
 <body>
   <header>
@@ -77,6 +123,19 @@
           <li><a href="../index.html#contatti">Contatti</a></li>
         </ul>
       </nav>
+      <div class="right-tools">
+        <div class="social-links" aria-label="PCtek Pro sui social">
+          <a class="social instagram" href="https://www.instagram.com/pctek_pro?igsh=MzB0MWpsYWR5c2p0&utm_source=qr" target="_blank" rel="noopener" aria-label="Instagram"></a>
+          <a class="social facebook" href="https://www.facebook.com/share/1AVk7xw67i/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook"></a>
+          <a class="social tiktok" href="https://www.tiktok.com/@pctekpro?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener" aria-label="TikTok"></a>
+          <a class="social whatsapp" href="https://wa.me/393339914498?text=Ciao%2C%20ho%20bisogno%20di%20assistenza%20PC." target="_blank" rel="noopener" aria-label="WhatsApp"></a>
+        </div>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Passa al tema scuro" title="Passa al tema scuro">
+          <svg class="icon icon-sun" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 4a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0V5a1 1 0 0 1 1-1zm0 13a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm7-5a1 1 0 0 1 1 1 1 1 0 1 1-2 0 1 1 0 0 1 1-1zM5 12a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm12.95 6.536a1 1 0 0 1-1.414 0l-.707-.707a1 1 0 0 1 1.414-1.414l.707.707a1 1 0 0 1 0 1.414zM7.171 7.171A1 1 0 1 1 5.757 5.757l.707-.707A1 1 0 1 1 7.878 6.88l-.707.292zm0 9.658.707.707A1 1 0 1 1 6.464 19.95l-.707-.707A1 1 0 0 1 7.17 16.83zM18.243 5.05l-.707.707A1 1 0 1 1 16.122 4.34l.707-.707A1 1 0 1 1 18.243 5.05z"/></svg>
+          <svg class="icon icon-moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="icon icon-auto" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><text x="7" y="17" font-size="14" font-family="sans-serif">A</text></svg>
+        </button>
+      </div>
     </div>
   </header>
   <main>
@@ -148,6 +207,33 @@
         }
       });
     });
+  </script>
+  <script>
+    // Toggle tema manuale con persistenza (Light / Dark / Auto)
+    (function() {
+      const root = document.documentElement;
+      const toggle = document.getElementById('theme-toggle');
+      const setTheme = (t) => {
+        root.setAttribute('data-theme', t);
+        if (toggle) {
+          const next = t === 'light' ? 'scuro' : (t === 'dark' ? 'auto' : 'chiaro');
+          const current = t === 'light' ? 'chiaro' : (t === 'dark' ? 'scuro' : 'automatico');
+          toggle.setAttribute('aria-label', `Tema ${current} attivo. Passa a ${next}`);
+          toggle.setAttribute('title', `Passa al tema ${next}`);
+        }
+      };
+      try {
+        let saved = localStorage.getItem('theme');
+        if (saved === 'dark' || saved === 'light' || saved === 'auto') { setTheme(saved); }
+        else { setTheme(root.getAttribute('data-theme') || 'auto'); }
+      } catch (e) { setTheme(root.getAttribute('data-theme') || 'auto'); }
+        toggle?.addEventListener('click', () => {
+        const current = root.getAttribute('data-theme') || 'auto';
+        const next = current === 'light' ? 'dark' : (current === 'dark' ? 'auto' : 'light');
+        setTheme(next);
+        try { localStorage.setItem('theme', next); } catch (e) {}
+      });
+    })();
   </script>
 </body>
 </html>
