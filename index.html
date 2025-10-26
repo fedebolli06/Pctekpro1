@@ -10,9 +10,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Favicon & app icons (root-relative for consistency across pages) -->
-    <link rel="icon" href="/favicon.ico" sizes="any">
-    <link rel="icon" href="/assets/logo-pctekpro.svg" type="image/svg+xml" sizes="any">
+    <!-- Favicon: prima un PNG 48x per Google Search -->
     <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+    <!-- Fallback/compatibilità -->
+    <link rel="shortcut icon" href="/favicon.ico">
+    <!-- SVG per browser moderni (non usato da Google Search) -->
+    <link rel="icon" type="image/svg+xml" href="/assets/logo-pctekpro.svg">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="mask-icon" href="/assets/logo-pctekpro.svg" color="#00bfa6">
     <meta name="theme-color" content="#0f172a">
