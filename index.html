@@ -30,6 +30,36 @@
       "areaServed": { "@type": "AdministrativeArea", "name": "Ancona" }
     }
     </script>
+
+    <script>
+        // Scroll reveal animations (Apple-like)
+        (function() {
+            const targets = [
+                ...document.querySelectorAll('#home .hero-visual'),
+                ...document.querySelectorAll('#per-chi .section-header > *'),
+                ...document.querySelectorAll('#per-chi .audience-grid > *'),
+                ...document.querySelectorAll('#servizi .section-header > *'),
+                ...document.querySelectorAll('#servizi .cards-grid > *'),
+                ...document.querySelectorAll('#azienda .section-header > *'),
+                ...document.querySelectorAll('#azienda .cards-grid > *'),
+                ...document.querySelectorAll('#chi-siamo .section-header > *')
+            ];
+            targets.forEach((el) => el.classList.add('reveal'));
+            if (!('IntersectionObserver' in window)) {
+                targets.forEach((el) => el.classList.add('is-visible'));
+                return;
+            }
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        io.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15, rootMargin: '0px 0px -10% 0px' });
+            targets.forEach((el) => io.observe(el));
+        })();
+    </script>
     <script>
         // Imposta il tema il prima possibile per evitare flash
         try {
@@ -53,6 +83,9 @@
             --shadow: 0 18px 40px rgba(16, 24, 40, 0.12);
             --shadow-sm: 0 2px 10px rgba(16, 24, 40, 0.06);
             --ring: rgba(0, 191, 166, 0.3);
+            --band-teal: rgba(0, 191, 166, 0.08);
+            --band-amber: rgba(245, 158, 11, 0.07);
+            --band-cyan: rgba(34, 211, 238, 0.08);
         }
 
         html {
@@ -315,17 +348,7 @@
             margin: 0 auto;
             max-width: 620px;
         }
-
-        /* Hint testuale per i servizi (senza toccare l'HTML) */
-        #servizi .section-header::after {
-            content: "Suggerimento: clicca su un servizio per aprire la pagina dedicata.";
-            display: block;
-            margin: 0.5rem auto 0;
-            max-width: 620px;
-            color: var(--muted);
-            font-size: 0.95rem;
-        }
-
+        
         .cards-grid {
             max-width: 1200px;
             margin: 0 auto;
@@ -831,7 +854,8 @@
             width: 1.1em;
             margin-right: 0.5rem;
         }
-        /* Mappature icone per ogni servizio */
+        /* Mappature icone per ogni servizio (disabilitato) */
+        /*
         .cards-grid a[href$="consulenza-it.html"] h3::before,
         .dropdown-menu a[href$="consulenza-it.html"]::before { content: 'ðŸ’¡'; }
 
@@ -855,6 +879,7 @@
 
         .cards-grid a[href$="ottimizzazione-pc-gaming.html"] h3::before,
         .dropdown-menu a[href$="ottimizzazione-pc-gaming.html"]::before { content: 'ðŸŽ®'; }
+        */
         /* Override: usa immagini esterne (Iconify) al posto delle emoji */
         .cards-grid .card h3::before {
             width: 28px;
@@ -873,28 +898,42 @@
         }
         /* Mappature con URL remoti (Iconify) */
         .cards-grid a[href$="consulenza-it.html"] h3::before,
+        .cards-grid .card.consulenza-it h3::before,
         .dropdown-menu a[href$="consulenza-it.html"]::before { content: ""; background-image: url('https://api.iconify.design/tabler/bulb.svg?color=%2300bfa6'); }
 
         .cards-grid a[href$="assistenza-pc-notebook.html"] h3::before,
+        .cards-grid .card.assistenza-pc-notebook h3::before,
         .dropdown-menu a[href$="assistenza-pc-notebook.html"]::before { content: ""; background-image: url('https://api.iconify.design/tabler/device-laptop.svg?color=%2300bfa6'); }
 
         .cards-grid a[href$="assistenza-domicilio.html"] h3::before,
+        .cards-grid .card.assistenza-domicilio h3::before,
         .dropdown-menu a[href$="assistenza-domicilio.html"]::before { content: ""; background-image: url('https://api.iconify.design/tabler/home-cog.svg?color=%2300bfa6'); }
 
         .cards-grid a[href$="recupero-dati-backup.html"] h3::before,
+        .cards-grid .card.recupero-dati-backup h3::before,
         .dropdown-menu a[href$="recupero-dati-backup.html"]::before { content: ""; background-image: url('https://api.iconify.design/tabler/database.svg?color=%2300bfa6'); }
 
         .cards-grid a[href$="installazione-software-sistemi.html"] h3::before,
+        .cards-grid .card.installazione-software-sistemi h3::before,
         .dropdown-menu a[href$="installazione-software-sistemi.html"]::before { content: ""; background-image: url('https://api.iconify.design/tabler/settings.svg?color=%2300bfa6'); }
 
         .cards-grid a[href$="configurazione-reti-wifi.html"] h3::before,
+        .cards-grid .card.configurazione-reti-wifi h3::before,
         .dropdown-menu a[href$="configurazione-reti-wifi.html"]::before { content: ""; background-image: url('https://api.iconify.design/tabler/wifi.svg?color=%2300bfa6'); }
 
         .cards-grid a[href$="assemblaggio-pc.html"] h3::before,
+        .cards-grid .card.assemblaggio-pc h3::before,
         .dropdown-menu a[href$="assemblaggio-pc.html"]::before { content: ""; background-image: url('https://api.iconify.design/tabler/tools.svg?color=%2300bfa6'); }
 
         .cards-grid a[href$="ottimizzazione-pc-gaming.html"] h3::before,
+        .cards-grid .card.ottimizzazione-pc-gaming h3::before,
         .dropdown-menu a[href$="ottimizzazione-pc-gaming.html"]::before { content: ""; background-image: url('https://api.iconify.design/tabler/device-gamepad-2.svg?color=%2300bfa6'); }
+
+        /* Icone per servizi per aziende (accent color) */
+        .cards-grid .card.azienda-siti-vetrina h3::before { content: ""; background-image: url('https://api.iconify.design/tabler/browser.svg?color=%23f59e0b'); }
+        .cards-grid .card.azienda-ecommerce h3::before { content: ""; background-image: url('https://api.iconify.design/tabler/shopping-bag.svg?color=%23f59e0b'); }
+        .cards-grid .card.azienda-social h3::before { content: ""; background-image: url('https://api.iconify.design/tabler/share-3.svg?color=%23f59e0b'); }
+        .cards-grid .card[class*="azienda-"] h3::before { background: rgba(245, 158, 11, 0.10); }
         /* Fix: rimuovi spazio icona nella hero card */
         .hero-card h3::before { content: none !important; display: none !important; }
         .hero-card h3 { display: block !important; }
@@ -936,6 +975,74 @@
 
         /* Fix: CTA testo garbled -> testo corretto (unicode escapes) */
         .cards-grid a.card::after { content: "Scopri di più \2192"; }
+        /* Hero visual + quote overlay */
+        .hero-visual { position: relative; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+        .hero-visual img { display:block; width:100%; height:auto; object-fit: cover; }
+        .hero-quote { position:absolute; left:12px; right:12px; bottom:12px; padding:0.85rem 1rem; border-radius:12px; color:var(--text-light); background: linear-gradient(135deg, rgba(15,23,42,0.76), rgba(0,191,166,0.22)); border:1px solid rgba(255,255,255,0.22); box-shadow: var(--shadow-sm); backdrop-filter: blur(6px); }
+        .hero-quote .text { display:block; font-style: italic; font-weight:500; line-height:1.35; font-size: clamp(0.95rem, 1.6vw, 1.15rem); }
+        .hero-quote .author { display:block; margin-top:0.25rem; font-size:0.9rem; opacity:0.9; }
+
+        /* Audience chooser */
+        .audience-grid { max-width: 1100px; margin: 0 auto; display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:1.5rem; align-items:stretch; }
+        .audience-card { background: var(--surface); border:1px solid var(--border); border-radius: var(--radius); padding:1.5rem; box-shadow: var(--shadow); display:grid; gap:.65rem; text-decoration:none; color:inherit; }
+        .audience-card h3 { margin:0 0 .25rem; display:flex; align-items:center; gap:.5rem; }
+        .audience-card p { margin:0 0 .75rem; color: var(--muted); }
+        .audience-card .btn { justify-self: start; }
+        .audience-card .audience-icon { display:inline-flex; align-items:center; justify-content:center; width:28px; height:28px; flex:0 0 28px; border-radius:8px; background: rgba(0, 191, 166, 0.10); color: var(--secondary); font-size:16px; }
+        .audience-card.audience-azienda .audience-icon { background: rgba(245, 158, 11, 0.10); color: var(--accent); }
+        .audience-card.audience-azienda .btn.btn-outline { border-color: var(--accent); color: var(--accent); }
+        .audience-card.audience-azienda .btn.btn-outline:hover { background: rgba(245, 158, 11, 0.08); }
+
+        /* Dynamic, friendly color for labels */
+        .audience-card .audience-label { font-weight: 700; }
+        @keyframes textGradientSlide { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+        /* Privato: teal gradient text */
+        .audience-card.audience-privato .audience-label { 
+            background: linear-gradient(90deg, var(--secondary), #08e0ca, var(--secondary));
+            -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent;
+            background-size: 200% 100%; animation: textGradientSlide 6s ease-in-out infinite;
+        }
+        /* Azienda: amber gradient text */
+        .audience-card.audience-azienda .audience-label {
+            background: linear-gradient(90deg, var(--accent), #fbbf24, var(--accent));
+            -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent;
+            background-size: 200% 100%; animation: textGradientSlide 6s ease-in-out infinite;
+        }
+
+        /* Section titles colored to match */
+        #servizi .section-header h2 {
+            background: linear-gradient(90deg, var(--secondary), #08e0ca, var(--secondary));
+            -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent;
+            background-size: 200% 100%; animation: textGradientSlide 8s ease-in-out infinite;
+        }
+        #azienda .section-header h2 {
+            background: linear-gradient(90deg, var(--accent), #fbbf24, var(--accent));
+            -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent;
+            background-size: 200% 100%; animation: textGradientSlide 8s ease-in-out infinite;
+        }
+
+        /* Section bands for dynamism */
+        #servizi { background:
+            linear-gradient(180deg, transparent 0%, var(--band-teal) 16%, transparent 66%),
+            linear-gradient(var(--bg-light), var(--bg-light)); }
+        #azienda { background:
+            linear-gradient(180deg, transparent 0%, var(--band-amber) 16%, transparent 66%),
+            linear-gradient(var(--bg-light), var(--bg-light)); }
+        #chi-siamo { background:
+            linear-gradient(180deg, transparent 0%, var(--band-cyan) 16%, transparent 66%),
+            linear-gradient(var(--bg-light), var(--bg-light)); }
+
+        /* Scroll reveal (JS-enabled only) */
+        .js-reveal .reveal { opacity: 0; transform: translateY(22px); transition: transform 700ms cubic-bezier(0.16,1,0.3,1), opacity 700ms cubic-bezier(0.16,1,0.3,1); will-change: transform, opacity; }
+        .js-reveal .reveal.is-visible { opacity: 1; transform: none; }
+
+        /* Rimuovi CTA "Scopri di più" dalle card */
+        .cards-grid a.card::after,
+        .cards-grid .card::after { content: none !important; display: none !important; }
+        .cards-grid a.card:hover::after { content: none !important; display: none !important; }
+
+        /* Fix CTA text encoding */
+        .cards-grid a.card::after { content: "Scopri di pi\00F9 \2192"; }
     </style>
 </head>
 <body>
@@ -947,20 +1054,8 @@
             <nav>
                 <ul>
                     <li><a href="#home">Home</a></li>
-                    <li class="nav-item-dropdown">
-                        <a href="#servizi" class="has-caret" aria-haspopup="true" aria-expanded="false">Servizi</a>
-                        <ul class="dropdown-menu" aria-label="Sotto-menu servizi">
-                            <li><a href="#servizi">Tutti i servizi</a></li>
-                            <li><a href="servizi/consulenza-it.html">Consulenza IT</a></li>
-                            <li><a href="servizi/assistenza-pc-notebook.html">Assistenza PC e notebook</a></li>
-                            <li><a href="servizi/assistenza-domicilio.html">Assistenza a domicilio</a></li>
-                            <li><a href="servizi/recupero-dati-backup.html">Recupero dati e backup</a></li>
-                            <li><a href="servizi/installazione-software-sistemi.html">Installazione software e sistemi</a></li>
-                            <li><a href="servizi/configurazione-reti-wifi.html">Configurazione reti e Wi-Fi</a></li>
-                            <li><a href="servizi/assemblaggio-pc.html">Assemblaggio PC su misura</a></li>
-                            <li><a href="servizi/ottimizzazione-pc-gaming.html">Ottimizzazione PC gaming</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="#servizi">Servizi per te</a></li>
+                    <li><a href="#azienda">Servizi per aziende</a></li>
                     <li><a href="#chi-siamo">Chi sono</a></li>
                     <li><a href="#contatti">Contatti</a></li>
                 </ul>
@@ -994,63 +1089,100 @@
         <section class="hero" id="home">
             <div class="hero-container">
                 <div class="hero-content">
-                    <h1>Soluzioni informatiche su misura per te</h1>
+                    <h1>Soluzioni informatiche su misura per te o per la tua azienda</h1>
                     <p>PCtek Pro ti aiuta nel risolvere qualsiasi problema informatico dal livello hardware al livello software con un'assistenza tecnica di livello.</p>
                     <div class="hero-cta">
                         <a class="btn btn-primary" href="#contatti">Prenota un'assistenza</a>
-                        <a class="btn btn-outline" href="#servizi">Scopri i nostri servizi</a>
                     </div>
                 </div>
-                <div class="hero-card card">
-                    <h3>Perch&eacute; scegliere noi</h3>
-                    <p>Perch&eacute; offriamo assistenza tecnica veloce, professionale e su misura. Niente attese infinite o termini complicati: risolviamo i tuoi problemi informatici con passione e trasparenza.</p>
-                    <ul style="margin-top: 1.5rem; list-style: none; padding: 0; display: grid; gap: 0.75rem;">
-                        <li>&#10003; Professionalit&agrave; e passione</li>
-                        <li>&#10003; Servizio personalizzato</li>
-                        <li>&#10003; Consulenza gratuita</li>
-                    </ul>
-                </div>
+                <figure class="hero-visual" aria-label="Assistenza informatica su laptop">
+                    <img src="assets/hero.jpg" alt="Assistenza informatica su laptop" decoding="async" loading="eager">
+                    <figcaption class="hero-quote">
+                        <span class="text">&ldquo;La semplicit&agrave; &egrave; il massimo della raffinatezza&rdquo;</span>
+                        <span class="author">&mdash; Steve Jobs</span>
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+        
+        <section class="section audience" id="per-chi">
+            <div class="section-header">
+                <h2>Scopri la sezione fatta per te!</h2>
+                <p>Scegli il tuo profilo e accedi subito alle informazioni più utili</p>
+            </div>
+            <div class="audience-grid">
+                <a class="audience-card reveal audience-privato" href="#servizi">
+                    <h3><span class="audience-icon" aria-hidden="true">&#128100;</span><span class="audience-label">Privato</span></h3>
+                    <p>Assistenza PC e notebook, reti domestiche, backup, ottimizzazioni.</p>
+                    <span class="btn btn-primary">Servizi per te</span>
+                </a>
+                <a class="audience-card reveal audience-azienda" href="#azienda">
+                    <h3><span class="audience-icon" aria-hidden="true">&#127970;</span><span class="audience-label">Azienda</span></h3>
+                    <p>Siti web, e‑commerce, gestione social e consulenza per la tua attivit&agrave;.</p>
+                    <span class="btn btn-outline">Servizi per aziende</span>
+                </a>
             </div>
         </section>
 
         <section class="section" id="servizi">
             <div class="section-header">
-                <h2>I nostri servizi</h2>
+                <h2>I nostri servizi per te</h2>
                 <p>Ci occupiamo di tutto ciò che riguarda il mondo dell'informatica, offrendo assistenza completa e su misura per ogni esigenza.</p>
             </div>
             <div class="cards-grid">
-                <a class="card" href="servizi/consulenza-it.html">
+                <div class="card consulenza-it" tabindex="0">
                     <h3>Consulenza IT GRATUITA</h3>
                     <p>Consigli per aggiornare, acquistare o migliorare i tuoi dispositivi.</p>
-                </a>
-                <a class="card" href="servizi/assistenza-pc-notebook.html">
+                </div>
+                <div class="card assistenza-pc-notebook" tabindex="0">
                     <h3>Assistenza PC e notebook</h3>
                     <p>Riparazioni, formattazioni, aggiornamenti e ottimizzazione delle prestazioni.</p>
-                </a>
-                <a class="card" href="servizi/assistenza-domicilio.html">
+                </div>
+                <div class="card assistenza-domicilio" tabindex="0">
                     <h3>Assistenza a domicilio</h3>
                     <p>Veniamo direttamente da te per risolvere tutto sul posto o anche da remoto.</p>
-                </a>
-                <a class="card" href="servizi/recupero-dati-backup.html">
+                </div>
+                <div class="card recupero-dati-backup" tabindex="0">
                     <h3>Recupero dati e backup</h3>
                     <p>Salvataggio e recupero file da hard disk, chiavette o SSD.</p>
-                </a>
-                <a class="card" href="servizi/installazione-software-sistemi.html">
+                </div>
+                <div class="card installazione-software-sistemi" tabindex="0">
                     <h3>Installazione software e sistemi operativi</h3>
                     <p>Windows, Linux, antivirus, driver e programmi vari.</p>
-                </a>
-                <a class="card" href="servizi/configurazione-reti-wifi.html">
+                </div>
+                <div class="card configurazione-reti-wifi" tabindex="0">
                     <h3>Configurazione reti e Wi-Fi</h3>
                     <p>Impostazione modem, rete domestica o aziendale stabile e sicura.</p>
-                </a>
-                <a class="card" href="servizi/assemblaggio-pc.html">
+                </div>
+                <div class="card assemblaggio-pc" tabindex="0">
                     <h3>Assemblaggio PC su misura</h3>
                     <p>Per gaming, studio o lavoro, con componenti scelti insieme.</p>
-                </a>
-                <a class="card" href="servizi/ottimizzazione-pc-gaming.html">
+                </div>
+                <div class="card ottimizzazione-pc-gaming" tabindex="0">
                     <h3>Ottimizzazione PC gaming</h3>
                     <p>installazione driver, impostazioni performance, FPS boost e consigli hardware.</p>
-                </a>            </div>
+                </div>            </div>
+        </section>
+
+        <section class="section" id="azienda">
+            <div class="section-header">
+                <h2>I nostri servizi per aziende</h2>
+                <p>Soluzioni digitali per far crescere la tua attivit&agrave;: siti vetrina, e‑commerce e presenza social.</p>
+            </div>
+            <div class="cards-grid">
+                <div class="card reveal azienda-siti-vetrina" tabindex="0">
+                    <h3>Creazione siti vetrina</h3>
+                    <p>Siti moderni, veloci e ottimizzati SEO locale, facili da aggiornare.</p>
+                </div>
+                <div class="card reveal azienda-ecommerce" tabindex="0">
+                    <h3>E-commerce modulare</h3>
+                    <p>Catalogo prodotti, pagamenti online, click&collect: cresci nel tempo.</p>
+                </div>
+                <div class="card reveal azienda-social" tabindex="0">
+                    <h3>Gestione social media</h3>
+                    <p>Whatsapp Business, Instagram, Facebook e TikTok: presidia i canali giusti.</p>
+                </div>
+            </div>
         </section>
 
         <section class="section" id="chi-siamo">
@@ -1099,7 +1231,7 @@
                     </div>
                     <div>
                         <strong>Area di intervento</strong>
-                        <span>Sono disponibile in tutta la zona di Ancona</span>
+                        <span>Provincia di Ancona</span>
                     </div>
                     <div>
                         <strong>Disponibilit&agrave;</strong>
@@ -1110,7 +1242,7 @@
                         <span>TeamViewer / AnyDesk &middot; Codice su richiesta telefonica</span>
                     </div>
                 </div>
-                <form id="contact-form">
+                <form id="contact-form" enctype="multipart/form-data">
                     <input type="hidden" name="_subject" value="Nuovo messaggio dal sito pctekpro.it">
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_template" value="table">
@@ -1129,6 +1261,10 @@
                     <div>
                         <label for="messaggio">Messaggio</label>
                         <textarea id="messaggio" name="messaggio" placeholder="Raccontami come posso aiutarti" required></textarea>
+                    </div>
+                    <div>
+                        <label for="allegati">Allega file o immagine (facoltativo)</label>
+                        <input id="allegati" name="allegati" type="file" accept="image/*,.pdf,.zip,.rar,.txt,.log" multiple>
                     </div>
                     <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
                     <button class="btn btn-primary" type="submit">Invia messaggio</button>
@@ -1211,16 +1347,27 @@
                 formStatus.className = "form-status is-visible";
 
                 const formData = new FormData(contactForm);
-                const payload = Object.fromEntries(formData.entries());
+                // Validazione base allegati: limite 10MB per file
+                const files = contactForm.querySelector('#allegati')?.files;
+                if (files && files.length) {
+                    const MAX = 10 * 1024 * 1024; // 10MB
+                    for (let i = 0; i < files.length; i++) {
+                        if (files[i].size > MAX) {
+                            formStatus.textContent = `File troppo grande: ${files[i].name} (max 10MB)`;
+                            formStatus.className = "form-status error is-visible";
+                            return;
+                        }
+                    }
+                }
 
                 try {
                     const response = await fetch(FORM_ENDPOINT, {
                         method: "POST",
                         headers: {
-                            "Content-Type": "application/json",
                             "Accept": "application/json"
                         },
-                        body: JSON.stringify(payload)
+                        // Invia come multipart/form-data per supportare allegati
+                        body: formData
                     });
 
                     const data = await response.json().catch(() => ({}));
@@ -1271,3 +1418,23 @@
     </script>
 </body>
 </html>
+    <script>
+      (function(){
+        const root = document.documentElement;
+        root.classList.add('js-reveal');
+        const targets = [
+          ...document.querySelectorAll('#per-chi .section-header > *'),
+          ...document.querySelectorAll('#per-chi .audience-grid > *'),
+          ...document.querySelectorAll('#servizi .section-header > *'),
+          ...document.querySelectorAll('#servizi .cards-grid > *'),
+          ...document.querySelectorAll('#azienda .section-header > *'),
+          ...document.querySelectorAll('#azienda .cards-grid > *')
+        ];
+        targets.forEach((el) => el.classList.add('reveal'));
+        if (!('IntersectionObserver' in window)) { targets.forEach((el) => el.classList.add('is-visible')); return; }
+        const io = new IntersectionObserver((entries) => { entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } }); }, { threshold: 0.15, rootMargin: '0px 0px -10% 0px' });
+        targets.forEach((el) => io.observe(el));
+        requestAnimationFrame(() => { targets.forEach((el) => { const r = el.getBoundingClientRect(); if (r.top < window.innerHeight * 0.9) el.classList.add('is-visible'); }); });
+      })();
+    </script>
+
