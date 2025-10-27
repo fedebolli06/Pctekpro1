@@ -1419,6 +1419,7 @@
 
         // Endpoint di invio gestito da FormSubmit (richiede conferma alla prima richiesta)
         const FORM_ENDPOINT = "https://formsubmit.co/ajax/pctekpro@gmail.com";
+        const FORM_ACTION = "https://formsubmit.co/pctekpro@gmail.com"; // fallback classico
 
         const contactForm = document.getElementById('contact-form');
         const formStatus = document.getElementById('form-status');
@@ -1435,6 +1436,8 @@
                 event.preventDefault();
                 formStatus.textContent = "Invio in corso...";
                 formStatus.className = "form-status is-visible";
+                const submitBtn = contactForm.querySelector('button[type="submit"]');
+                if (submitBtn) submitBtn.disabled = true;
 
                 const formData = new FormData(contactForm);
                 // Validazione base allegati: limite 10MB per file
@@ -1453,7 +1456,7 @@
                 try {
                     // Timeout di sicurezza per evitare caricamenti infiniti
                     const controller = new AbortController();
-                    const timeoutId = setTimeout(() => controller.abort(), 20000); // 20s
+                    const timeoutId = setTimeout(() => controller.abort(), 35000); // 35s
                     const response = await fetch(FORM_ENDPOINT, {
                         method: "POST",
                         headers: {
@@ -1476,19 +1479,36 @@
                         }
                         formStatus.className = "form-status success is-visible";
                         contactForm.reset();
+                        if (submitBtn) submitBtn.disabled = false;
                     } else {
                         throw new Error(data.message || `Errore ${response.status}`);
                     }
                 } catch (error) {
                     console.error("Errore invio form:", error);
-                    if (error && (error.name === 'AbortError' || String(error).includes('aborted'))) {
+                    const isTimeout = error && (error.name === 'AbortError' || String(error).includes('aborted'));
+                    const isLocal = window.location.protocol === 'file:';
+                    const canFallback = !isLocal && navigator.onLine;
+
+                    if (canFallback) {
+                        formStatus.textContent = "Connessione instabile. Procedo con invio alternativo...";
+                        formStatus.className = "form-status is-visible";
+                        // Fallback: invio classico con POST verso FormSubmit (navigazione)
+                        contactForm.setAttribute('action', FORM_ACTION);
+                        contactForm.setAttribute('method', 'POST');
+                        contactForm.setAttribute('enctype', 'multipart/form-data');
+                        contactForm.submit();
+                        return; // verrà effettuata la navigazione
+                    } else if (isTimeout) {
                         formStatus.textContent = "La richiesta ha impiegato troppo tempo. Verifica la connessione e riprova.";
-                    } else if (window.location.protocol === 'file:') {
+                        formStatus.className = "form-status error is-visible";
+                    } else if (isLocal) {
                         formStatus.textContent = "Il modulo non può essere inviato da un file locale. Apri la pagina via server (HTTP/HTTPS).";
+                        formStatus.className = "form-status error is-visible";
                     } else {
                         formStatus.textContent = "Si e' verificato un problema. Puoi contattarmi direttamente via email o telefono.";
+                        formStatus.className = "form-status error is-visible";
                     }
-                    formStatus.className = "form-status error is-visible";
+                    if (submitBtn) submitBtn.disabled = false;
                 }
             });
         }
