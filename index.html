@@ -1178,7 +1178,7 @@
                 </a>
                 <a class="audience-card reveal audience-azienda" href="#azienda">
                     <h3><span class="audience-icon" aria-hidden="true">&#127970;</span><span class="audience-label">Azienda</span></h3>
-                    <p>Siti web, e‑commerce, gestione social e consulenza per la tua attivit&agrave;.</p>
+                    <p>Siti web, e-commerce, gestione social e consulenza per la tua attivit&agrave;.</p>
                     <span class="btn btn-outline">Servizi per aziende</span>
                 </a>
             </div>
@@ -1239,7 +1239,7 @@
         <section class="section" id="azienda">
             <div class="section-header">
                 <h2>I nostri servizi per aziende</h2>
-                <p>Soluzioni digitali per far crescere la tua attivit&agrave;: siti vetrina, e‑commerce e presenza social.</p>
+                <p>Soluzioni digitali per far crescere la tua attivit&agrave;: siti vetrina, e-commerce e presenza social.</p>
             </div>
             <div class="cards-grid">
                 <div class="card reveal azienda-siti-vetrina" tabindex="0">
@@ -1347,10 +1347,7 @@
                         <label for="messaggio">Messaggio</label>
                         <textarea id="messaggio" name="messaggio" placeholder="Raccontami come posso aiutarti" required></textarea>
                     </div>
-                    <div>
-                        <label for="allegati">Allega file o immagine (facoltativo)</label>
-                        <input id="allegati" name="allegati" type="file" accept="image/*,.pdf,.zip,.rar,.txt,.log" multiple>
-                    </div>
+                    
                     <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
                     <button class="btn btn-primary" type="submit">Invia messaggio</button>
                 </form>
@@ -1419,13 +1416,13 @@
             });
         })();
 
-        // Invio modulo gestito da FormSubmit tramite submit classico (navigazione)
+        // Invio modulo tramite FormSubmit (submit classico con redirect)
 
         const contactForm = document.getElementById('contact-form');
         const formStatus = document.getElementById('form-status');
 
         if (contactForm) {
-            // Se la pagina è aperta come file locale, FormSubmit non funziona
+            // Se la pagina è aperta come file locale, l'invio non funziona
             if (window.location.protocol === 'file:') {
                 formStatus.textContent = "Per inviare il modulo, apri il sito tramite un server locale (es. Live Server) o pubblica su HTTP/HTTPS.";
                 formStatus.className = "form-status error is-visible";
@@ -1439,20 +1436,7 @@
                 const submitBtn = contactForm.querySelector('button[type="submit"]');
                 if (submitBtn) submitBtn.disabled = true;
 
-                // Validazione base allegati: limite 10MB per file
-                const files = contactForm.querySelector('#allegati')?.files;
-                if (files && files.length) {
-                    const MAX = 10 * 1024 * 1024; // 10MB
-                    for (let i = 0; i < files.length; i++) {
-                        if (files[i].size > MAX) {
-                            event.preventDefault();
-                            formStatus.textContent = `File troppo grande: ${files[i].name} (max 10MB)`;
-                            formStatus.className = "form-status error is-visible";
-                            if (submitBtn) submitBtn.disabled = false;
-                            return;
-                        }
-                    }
-                }
+                
 
                 // Imposta redirect di ritorno alla stessa pagina con query di conferma
                 const nextField = document.getElementById('form-next');
@@ -1562,4 +1546,7 @@
         requestAnimationFrame(() => { targets.forEach((el) => { const r = el.getBoundingClientRect(); if (r.top < window.innerHeight * 0.9) el.classList.add('is-visible'); }); });
       })();
     </script>
+
+
+
 
