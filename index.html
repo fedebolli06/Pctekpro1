@@ -1424,6 +1424,13 @@
         const formStatus = document.getElementById('form-status');
 
         if (contactForm) {
+            // Se la pagina è aperta come file locale, FormSubmit non funziona
+            if (window.location.protocol === 'file:') {
+                formStatus.textContent = "Per inviare il modulo, apri il sito tramite un server locale (es. Live Server) o pubblica su HTTP/HTTPS.";
+                formStatus.className = "form-status error is-visible";
+                const submitBtn = contactForm.querySelector('button[type="submit"]');
+                if (submitBtn) submitBtn.disabled = true;
+            }
             contactForm.addEventListener('submit', async (event) => {
                 event.preventDefault();
                 formStatus.textContent = "Invio in corso...";
@@ -1444,14 +1451,19 @@
                 }
 
                 try {
+                    // Timeout di sicurezza per evitare caricamenti infiniti
+                    const controller = new AbortController();
+                    const timeoutId = setTimeout(() => controller.abort(), 20000); // 20s
                     const response = await fetch(FORM_ENDPOINT, {
                         method: "POST",
                         headers: {
                             "Accept": "application/json"
                         },
                         // Invia come multipart/form-data per supportare allegati
-                        body: formData
+                        body: formData,
+                        signal: controller.signal
                     });
+                    clearTimeout(timeoutId);
 
                     const data = await response.json().catch(() => ({}));
                     console.log("FormSubmit response:", data);
@@ -1469,7 +1481,13 @@
                     }
                 } catch (error) {
                     console.error("Errore invio form:", error);
-                    formStatus.textContent = "Si e' verificato un problema. Puoi contattarmi direttamente via email o telefono.";
+                    if (error && (error.name === 'AbortError' || String(error).includes('aborted'))) {
+                        formStatus.textContent = "La richiesta ha impiegato troppo tempo. Verifica la connessione e riprova.";
+                    } else if (window.location.protocol === 'file:') {
+                        formStatus.textContent = "Il modulo non può essere inviato da un file locale. Apri la pagina via server (HTTP/HTTPS).";
+                    } else {
+                        formStatus.textContent = "Si e' verificato un problema. Puoi contattarmi direttamente via email o telefono.";
+                    }
                     formStatus.className = "form-status error is-visible";
                 }
             });
