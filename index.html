@@ -1325,10 +1325,12 @@
                         <span>TeamViewer / AnyDesk &middot; Codice su richiesta telefonica</span>
                     </div>
                 </div>
-                <form id="contact-form" enctype="multipart/form-data">
+                <form id="contact-form" action="https://formsubmit.co/pctekpro@gmail.com" method="POST" enctype="multipart/form-data">
                     <input type="hidden" name="_subject" value="Nuovo messaggio dal sito pctekpro.it">
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_next" id="form-next" value="">
+                    <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
                     <div>
                         <label for="nome">Nome e cognome</label>
                         <input id="nome" name="nome" type="text" placeholder="Inserisci il tuo nome" autocomplete="name" required>
@@ -1417,9 +1419,7 @@
             });
         })();
 
-        // Endpoint di invio gestito da FormSubmit (richiede conferma alla prima richiesta)
-        const FORM_ENDPOINT = "https://formsubmit.co/ajax/pctekpro@gmail.com";
-        const FORM_ACTION = "https://formsubmit.co/pctekpro@gmail.com"; // fallback classico
+        // Invio modulo gestito da FormSubmit tramite submit classico (navigazione)
 
         const contactForm = document.getElementById('contact-form');
         const formStatus = document.getElementById('form-status');
@@ -1432,86 +1432,53 @@
                 const submitBtn = contactForm.querySelector('button[type="submit"]');
                 if (submitBtn) submitBtn.disabled = true;
             }
-            contactForm.addEventListener('submit', async (event) => {
-                event.preventDefault();
+            contactForm.addEventListener('submit', (event) => {
+                // Messaggio stato e disabilita pulsante per evitare doppi invii
                 formStatus.textContent = "Invio in corso...";
                 formStatus.className = "form-status is-visible";
                 const submitBtn = contactForm.querySelector('button[type="submit"]');
                 if (submitBtn) submitBtn.disabled = true;
 
-                const formData = new FormData(contactForm);
                 // Validazione base allegati: limite 10MB per file
                 const files = contactForm.querySelector('#allegati')?.files;
                 if (files && files.length) {
                     const MAX = 10 * 1024 * 1024; // 10MB
                     for (let i = 0; i < files.length; i++) {
                         if (files[i].size > MAX) {
+                            event.preventDefault();
                             formStatus.textContent = `File troppo grande: ${files[i].name} (max 10MB)`;
                             formStatus.className = "form-status error is-visible";
+                            if (submitBtn) submitBtn.disabled = false;
                             return;
                         }
                     }
                 }
 
-                try {
-                    // Timeout di sicurezza per evitare caricamenti infiniti
-                    const controller = new AbortController();
-                    const timeoutId = setTimeout(() => controller.abort(), 35000); // 35s
-                    const response = await fetch(FORM_ENDPOINT, {
-                        method: "POST",
-                        headers: {
-                            "Accept": "application/json"
-                        },
-                        // Invia come multipart/form-data per supportare allegati
-                        body: formData,
-                        signal: controller.signal
-                    });
-                    clearTimeout(timeoutId);
-
-                    const data = await response.json().catch(() => ({}));
-                    console.log("FormSubmit response:", data);
-
-                    if (response.ok) {
-                        if (data && typeof data.message === "string" && data.message.toLowerCase().includes("confirm")) {
-                            formStatus.textContent = "Messaggio ricevuto! Apri l'email di verifica di FormSubmit per autorizzare gli invii verso la tua casella.";
-                        } else {
-                            formStatus.textContent = "Messaggio inviato con successo! Ti rispondero' al piu' presto.";
-                        }
-                        formStatus.className = "form-status success is-visible";
-                        contactForm.reset();
-                        if (submitBtn) submitBtn.disabled = false;
-                    } else {
-                        throw new Error(data.message || `Errore ${response.status}`);
-                    }
-                } catch (error) {
-                    console.error("Errore invio form:", error);
-                    const isTimeout = error && (error.name === 'AbortError' || String(error).includes('aborted'));
-                    const isLocal = window.location.protocol === 'file:';
-                    const canFallback = !isLocal && navigator.onLine;
-
-                    if (canFallback) {
-                        formStatus.textContent = "Connessione instabile. Procedo con invio alternativo...";
-                        formStatus.className = "form-status is-visible";
-                        // Fallback: invio classico con POST verso FormSubmit (navigazione)
-                        contactForm.setAttribute('action', FORM_ACTION);
-                        contactForm.setAttribute('method', 'POST');
-                        contactForm.setAttribute('enctype', 'multipart/form-data');
-                        contactForm.submit();
-                        return; // verrà effettuata la navigazione
-                    } else if (isTimeout) {
-                        formStatus.textContent = "La richiesta ha impiegato troppo tempo. Verifica la connessione e riprova.";
-                        formStatus.className = "form-status error is-visible";
-                    } else if (isLocal) {
-                        formStatus.textContent = "Il modulo non può essere inviato da un file locale. Apri la pagina via server (HTTP/HTTPS).";
-                        formStatus.className = "form-status error is-visible";
-                    } else {
-                        formStatus.textContent = "Si e' verificato un problema. Puoi contattarmi direttamente via email o telefono.";
-                        formStatus.className = "form-status error is-visible";
-                    }
-                    if (submitBtn) submitBtn.disabled = false;
+                // Imposta redirect di ritorno alla stessa pagina con query di conferma
+                const nextField = document.getElementById('form-next');
+                if (nextField) {
+                    try {
+                        const url = new URL(window.location.href);
+                        url.searchParams.set('sent', '1');
+                        url.hash = 'contatti';
+                        nextField.value = url.toString();
+                    } catch (e) {}
                 }
+                // Nessun preventDefault: lasciare che il browser invii il form
             });
         }
+
+        // Mostra conferma se si torna dal redirect con ?sent=1
+        try {
+            const url = new URL(window.location.href);
+            if (url.searchParams.get('sent') === '1' && formStatus) {
+                formStatus.textContent = "Messaggio inviato con successo! Ti risponderò al più presto.";
+                formStatus.className = "form-status success is-visible";
+                // Pulisci la query per non ripetere il messaggio al refresh
+                url.searchParams.delete('sent');
+                history.replaceState(null, '', url.pathname + url.hash);
+            }
+        } catch (e) {}
 
         // Aggiorna automaticamente l'anno nel footer
         document.getElementById('year').textContent = new Date().getFullYear();
