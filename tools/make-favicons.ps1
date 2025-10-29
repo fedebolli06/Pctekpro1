@@ -43,5 +43,6 @@ function Save-ResizedPng {
 }
 
 Save-ResizedPng -InputPath $Source -OutputPath 'favicon-48x48.png' -Width 48 -Height 48
+Save-ResizedPng -InputPath $Source -OutputPath 'favicon-96x96.png' -Width 96 -Height 96
+Save-ResizedPng -InputPath $Source -OutputPath 'favicon-192x192.png' -Width 192 -Height 192
 Save-ResizedPng -InputPath $Source -OutputPath 'apple-touch-icon.png' -Width 180 -Height 180
-

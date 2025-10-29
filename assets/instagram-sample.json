@@ -1,0 +1,41 @@
+{
+  "data": [
+    {
+      "id": "sample1",
+      "media_type": "IMAGE",
+      "media_url": "assets/hero.jpg",
+      "thumbnail_url": "",
+      "permalink": "https://www.instagram.com/p/ABCDEF12345/",
+      "caption": "Assistenza informatica su misura per te.",
+      "timestamp": "2025-01-01T10:00:00+00:00"
+    },
+    {
+      "id": "sample2",
+      "media_type": "IMAGE",
+      "media_url": "assets/logo-pctekpro.png",
+      "thumbnail_url": "",
+      "permalink": "https://www.instagram.com/p/GHIJKL67890/",
+      "caption": "PCtek Pro: il tuo partner tecnologico.",
+      "timestamp": "2025-01-02T09:30:00+00:00"
+    },
+    {
+      "id": "sample3",
+      "media_type": "IMAGE",
+      "media_url": "assets/hero.jpg",
+      "thumbnail_url": "",
+      "permalink": "https://www.instagram.com/p/MNOPQR24680/",
+      "caption": "Consigli utili per ottimizzare il tuo PC.",
+      "timestamp": "2025-01-03T08:20:00+00:00"
+    },
+    {
+      "id": "sample4",
+      "media_type": "IMAGE",
+      "media_url": "assets/logo-pctekpro.png",
+      "thumbnail_url": "",
+      "permalink": "https://www.instagram.com/p/STUVWX13579/",
+      "caption": "Interventi rapidi anche da remoto.",
+      "timestamp": "2025-01-04T12:10:00+00:00"
+    }
+  ]
+}
+
