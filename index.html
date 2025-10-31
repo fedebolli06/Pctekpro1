@@ -47,23 +47,57 @@
     </script>
 
     <script>
-        // Scroll reveal animations (Apple-like)
-        (function() {
-            const targets = [
-                ...document.querySelectorAll('#home .hero-visual'),
-                ...document.querySelectorAll('#per-chi .section-header > *'),
-                ...document.querySelectorAll('#per-chi .audience-grid > *'),
-                ...document.querySelectorAll('#servizi .section-header > *'),
-                ...document.querySelectorAll('#servizi .cards-grid > *'),
-                ...document.querySelectorAll('#azienda .section-header > *'),
-                ...document.querySelectorAll('#azienda .cards-grid > *'),
-                ...document.querySelectorAll('#chi-siamo .section-header > *')
+        // Scroll reveal animations (potenziate) + piccoli effetti dinamici
+        window.addEventListener('DOMContentLoaded', function() {
+            // Abilita gli stili reveal solo con JS
+            document.documentElement.classList.add('js-reveal');
+
+            // Gruppi di elementi da rivelare con ritardo a cascata
+            const groups = [
+                Array.from(document.querySelectorAll('#home .hero-content > *')),
+                Array.from(document.querySelectorAll('#home .hero-visual')),
+                Array.from(document.querySelectorAll('#per-chi .section-header > *')),
+                Array.from(document.querySelectorAll('#per-chi .audience-grid > *')),
+                Array.from(document.querySelectorAll('#servizi .section-header > *')),
+                Array.from(document.querySelectorAll('#servizi .cards-grid > *')),
+                Array.from(document.querySelectorAll('#azienda .section-header > *')),
+                Array.from(document.querySelectorAll('#azienda .cards-grid > *')),
+                Array.from(document.querySelectorAll('#chi-siamo .section-header > *')),
+                Array.from(document.querySelectorAll('#contatti .section-header > *')),
+                Array.from(document.querySelectorAll('#contatti .contact-grid > *')),
+                Array.from(document.querySelectorAll('.cta-section > *')),
+                Array.from(document.querySelectorAll('footer .footer-content > *'))
             ];
-            targets.forEach((el) => el.classList.add('reveal'));
+
+            // Costruisci lista target e applica direzioni + stagger
+            const targets = [];
+            groups.forEach((els) => {
+                els.forEach((el, i) => {
+                    if (!el) return;
+                    el.classList.add('reveal');
+                    // Stagger naturale
+                    el.style.transitionDelay = (i * 90) + 'ms';
+                    // Alterna direzione nelle griglie
+                    const inAudience = el.closest('.audience-grid');
+                    const inCards = el.closest('.cards-grid');
+                    const inContact = el.closest('.contact-grid');
+                    const inCTA = el.closest('.cta-section');
+                    if (inAudience || inCards || inContact) {
+                        (i % 2 === 0 ? el.classList.add('reveal-left') : el.classList.add('reveal-right'));
+                    } else if (inCTA) {
+                        el.classList.add('reveal-zoom');
+                    } else if (el.matches('#home .hero-visual')) {
+                        el.classList.add('reveal-right');
+                    }
+                    targets.push(el);
+                });
+            });
+
             if (!('IntersectionObserver' in window)) {
                 targets.forEach((el) => el.classList.add('is-visible'));
                 return;
             }
+
             const io = new IntersectionObserver((entries) => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
@@ -73,7 +107,26 @@
                 });
             }, { threshold: 0.15, rootMargin: '0px 0px -10% 0px' });
             targets.forEach((el) => io.observe(el));
-        })();
+
+            // Piccolo parallax del contenuto hero (desktop) rispettando ridotto movimento
+            const heroContent = document.querySelector('#home .hero-content');
+            const mqReduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+            const mqSmall = window.matchMedia('(max-width: 720px)');
+            let ticking = false;
+            function onScroll() {
+                if (!heroContent || mqReduce.matches || mqSmall.matches) return;
+                if (!ticking) {
+                    window.requestAnimationFrame(() => {
+                        const y = window.scrollY || document.documentElement.scrollTop || 0;
+                        const p = Math.max(0, Math.min(1, y / 600));
+                        heroContent.style.transform = 'translateY(' + (p * 18) + 'px)';
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            }
+            window.addEventListener('scroll', onScroll, { passive: true });
+        });
     </script>
     <script>
         // Imposta il tema il prima possibile per evitare flash
@@ -82,6 +135,37 @@
             var initial = (saved === 'dark' || saved === 'light' || saved === 'auto') ? saved : 'auto';
             document.documentElement.setAttribute('data-theme', initial);
         } catch (e) {}
+    </script>
+    <script>
+        // Header integrato con l'hero: overlay in cima e stato compatto dopo scroll
+        window.addEventListener('DOMContentLoaded', function(){
+            const header = document.querySelector('header');
+            const hero = document.getElementById('home');
+            if (!header || !hero) return;
+            function setHeaderState(){
+                const r = hero.getBoundingClientRect();
+                const overlap = r.bottom > 72; // finché il bottom dell'hero è sotto la header
+                header.classList.toggle('is-hero', overlap);
+                header.classList.toggle('is-scrolled', !overlap);
+            }
+            setHeaderState();
+            window.addEventListener('scroll', setHeaderState, { passive: true });
+            window.addEventListener('resize', setHeaderState);
+
+            // Scroll spy semplice per evidenziare la sezione corrente nella nav
+            const links = Array.from(document.querySelectorAll('header nav a[href^="#"]'));
+            const pairs = links.map(a => ({ a, s: document.getElementById(a.getAttribute('href').slice(1)) })).filter(p => p.s);
+            if (pairs.length) {
+                const spy = new IntersectionObserver((entries) => {
+                    entries.forEach((e) => {
+                        if (e.isIntersecting) {
+                            pairs.forEach(p => p.a.classList.toggle('is-active', p.s === e.target));
+                        }
+                    });
+                }, { threshold: 0.55 });
+                pairs.forEach(p => spy.observe(p.s));
+            }
+        });
     </script>
     <style>
         :root {
@@ -124,11 +208,24 @@
         header {
             position: sticky;
             top: 0;
+            z-index: 1100;
             backdrop-filter: blur(16px);
             background: rgba(255, 255, 255, 0.9);
-            z-index: 100;
             border-bottom: 1px solid var(--border);
             box-shadow: var(--shadow-sm);
+            transition: background 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+        }
+        /* Header in overlay sopra l'hero: più integrato e dinamico */
+        header.is-hero {
+            background: linear-gradient(to bottom, rgba(15, 23, 42, 0.40), rgba(15, 23, 42, 0.06));
+            border-bottom: 0;
+            box-shadow: none;
+        }
+        header.is-hero::after {
+            content: "";
+            position: absolute; left: 0; right: 0; bottom: 0; height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
+            pointer-events: none;
         }
 
         .top-bar {
@@ -148,11 +245,9 @@
             color: var(--text-dark);
         }
 
-        .logo-img {
-            height: 100px;
-            width: auto;
-            display: block;
-        }
+        .logo-img { height: 100px; width: auto; display: block; transition: height 200ms ease; }
+        header.is-hero .logo-img { height: 96px; }
+        header.is-scrolled .logo-img { height: 76px; }
 
         nav ul {
             list-style: none;
@@ -167,7 +262,7 @@
             color: var(--text-dark);
             font-weight: 500;
             font-size: 0.95rem;
-            transition: color 0.2s ease;
+            transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 120ms ease;
             position: relative;
         }
 
@@ -189,6 +284,22 @@
         nav a:hover::after {
             width: 100%;
         }
+        nav a.is-active::after { width: 100%; }
+
+        /* Stile pill traslucido in overlay sull'hero */
+        header.is-hero nav a {
+            color: rgba(255,255,255,0.95);
+            padding: 0.4rem 0.7rem;
+            border-radius: 10px;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.18);
+        }
+        header.is-hero nav a:hover { background: rgba(255,255,255,0.10); border-color: rgba(255,255,255,0.28); transform: translateY(-1px); }
+        header.is-hero nav a.is-active { background: rgba(255,255,255,0.18); border-color: rgba(255,255,255,0.38); }
+        header.is-hero nav a::after { content: none; display: none; }
+        header.is-hero .top-bar { padding-top: 1rem; padding-bottom: 1rem; }
+        header.is-scrolled { background: rgba(255,255,255,0.88); border-bottom: 1px solid var(--border); box-shadow: var(--shadow-sm); }
+        header.is-scrolled .top-bar { padding-top: 0.65rem; padding-bottom: 0.65rem; }
 
         /* Social nella top-bar */
         .right-tools {
@@ -219,6 +330,12 @@
             border-color: var(--secondary);
             box-shadow: var(--shadow-sm);
         }
+        /* Social in header overlay: icone chiare */
+        header.is-hero .social-links a.social { background-color: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.24); }
+        header.is-hero .social-links a.instagram { background-image: url('https://api.iconify.design/tabler/brand-instagram.svg?color=%23ffffff'); }
+        header.is-hero .social-links a.facebook  { background-image: url('https://api.iconify.design/tabler/brand-facebook.svg?color=%23ffffff'); }
+        header.is-hero .social-links a.tiktok    { background-image: url('https://api.iconify.design/tabler/brand-tiktok.svg?color=%23ffffff'); }
+        header.is-hero .social-links a.whatsapp  { background-image: url('https://api.iconify.design/tabler/brand-whatsapp.svg?color=%23ffffff'); }
         .social-links a.social:focus-visible {
             outline: none;
             box-shadow: 0 0 0 4px var(--ring);
@@ -327,6 +444,7 @@
             z-index: 2; /* above overlays and bg */
         }
 
+        .hero-content { will-change: transform; }
         .hero-content h1 {
             font-size: clamp(2.6rem, 5vw, 3.6rem);
             margin: 0 0 1rem;
@@ -806,6 +924,10 @@
                 white-space: normal; /* consenti a capo per evitare overflow */
                 line-height: 1.35;
             }
+
+            /* Mobile: nascondi immagini dell'hero che risultano poco leggibili */
+            .hero-bg { display: none !important; }
+            .hero-visual { display: none !important; }
         }
 
 
@@ -1129,6 +1251,18 @@
         /* Scroll reveal (JS-enabled only) */
         .js-reveal .reveal { opacity: 0; transform: translateY(22px); transition: transform 700ms cubic-bezier(0.16,1,0.3,1), opacity 700ms cubic-bezier(0.16,1,0.3,1); will-change: transform, opacity; }
         .js-reveal .reveal.is-visible { opacity: 1; transform: none; }
+        /* Varianti direzionali */
+        .js-reveal .reveal-left { transform: translateX(-24px); }
+        .js-reveal .reveal-right { transform: translateX(24px); }
+        .js-reveal .reveal-zoom { transform: scale(0.96); }
+        .js-reveal .reveal-fade { transform: none; }
+        @media (prefers-reduced-motion: reduce) {
+            .js-reveal .reveal,
+            .js-reveal .reveal-left,
+            .js-reveal .reveal-right,
+            .js-reveal .reveal-zoom,
+            .js-reveal .reveal-fade { transition: none !important; transform: none !important; opacity: 1 !important; }
+        }
         .cards-grid a.card::after,
         .cards-grid .card::after { content: none !important; display: none !important; }
         
