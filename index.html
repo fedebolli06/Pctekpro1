@@ -63,6 +63,8 @@
                 Array.from(document.querySelectorAll('#azienda .section-header > *')),
                 Array.from(document.querySelectorAll('#azienda .cards-grid > *')),
                 Array.from(document.querySelectorAll('#chi-siamo .section-header > *')),
+                Array.from(document.querySelectorAll('#interventi .section-header > *')),
+                Array.from(document.querySelectorAll('#interventi .gallery-grid > *')),
                 Array.from(document.querySelectorAll('#contatti .section-header > *')),
                 Array.from(document.querySelectorAll('#contatti .contact-grid > *')),
                 Array.from(document.querySelectorAll('.cta-section > *')),
@@ -359,7 +361,7 @@
         html[data-theme='light'] header.is-hero .social-links a.social { background-color: var(--surface); border-color: var(--border); }
         html[data-theme='light'] header.is-hero .social-links a.instagram { background-image: url('https://api.iconify.design/tabler/brand-instagram.svg?color=%230f172a'); }
         html[data-theme='light'] header.is-hero .social-links a.facebook  { background-image: url('https://api.iconify.design/tabler/brand-facebook.svg?color=%230f172a'); }
-        html[data-theme='light'] header.is-hero .social-links a.tiktok    { background-image: url('https://api.iconify.design/tabler/brand-tiktok.svg?color=%230f172a'); }
+        
         html[data-theme='light'] header.is-hero .social-links a.whatsapp  { background-image: url('https://api.iconify.design/tabler/brand-whatsapp.svg?color=%230f172a'); }
         html[data-theme='light'] header.is-hero .nav-indicator { background: linear-gradient(90deg, var(--secondary), #34d399); box-shadow: 0 4px 18px rgba(0, 191, 166, 0.35); }
 
@@ -396,7 +398,7 @@
         header.is-hero .social-links a.social { background-color: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.24); }
         header.is-hero .social-links a.instagram { background-image: url('https://api.iconify.design/tabler/brand-instagram.svg?color=%23ffffff'); }
         header.is-hero .social-links a.facebook  { background-image: url('https://api.iconify.design/tabler/brand-facebook.svg?color=%23ffffff'); }
-        header.is-hero .social-links a.tiktok    { background-image: url('https://api.iconify.design/tabler/brand-tiktok.svg?color=%23ffffff'); }
+        
         header.is-hero .social-links a.whatsapp  { background-image: url('https://api.iconify.design/tabler/brand-whatsapp.svg?color=%23ffffff'); }
         /* Toggle hamburger */
         .nav-toggle { display: none; appearance: none; border: 1px solid var(--border); background: var(--surface); color: var(--text-dark); width: 44px; height: 44px; border-radius: 12px; align-items: center; justify-content: center; cursor: pointer; transition: transform 120ms ease, box-shadow 200ms ease, background 200ms ease, border-color 200ms ease; }
@@ -415,12 +417,12 @@
         /* Icone (light) */
         .social-links a.instagram { background-image: url('https://api.iconify.design/tabler/brand-instagram.svg?color=%230f172a'); }
         .social-links a.facebook  { background-image: url('https://api.iconify.design/tabler/brand-facebook.svg?color=%230f172a'); }
-        .social-links a.tiktok    { background-image: url('https://api.iconify.design/tabler/brand-tiktok.svg?color=%230f172a'); }
+        
         .social-links a.whatsapp  { background-image: url('https://api.iconify.design/tabler/brand-whatsapp.svg?color=%230f172a'); }
         /* Icone (dark override) */
         html[data-theme='dark'] .social-links a.instagram { background-image: url('https://api.iconify.design/tabler/brand-instagram.svg?color=%23e2e8f0'); }
         html[data-theme='dark'] .social-links a.facebook  { background-image: url('https://api.iconify.design/tabler/brand-facebook.svg?color=%23e2e8f0'); }
-        html[data-theme='dark'] .social-links a.tiktok    { background-image: url('https://api.iconify.design/tabler/brand-tiktok.svg?color=%23e2e8f0'); }
+        
         html[data-theme='dark'] .social-links a.whatsapp  { background-image: url('https://api.iconify.design/tabler/brand-whatsapp.svg?color=%23e2e8f0'); }
 
         /* Dropdown Servizi */
@@ -979,7 +981,6 @@
             header.is-hero .social-links a.social { background-color: var(--surface); border-color: var(--border); }
             header.is-hero .social-links a.instagram { background-image: url('https://api.iconify.design/tabler/brand-instagram.svg?color=%230f172a'); }
             header.is-hero .social-links a.facebook  { background-image: url('https://api.iconify.design/tabler/brand-facebook.svg?color=%230f172a'); }
-            header.is-hero .social-links a.tiktok    { background-image: url('https://api.iconify.design/tabler/brand-tiktok.svg?color=%230f172a'); }
             header.is-hero .social-links a.whatsapp  { background-image: url('https://api.iconify.design/tabler/brand-whatsapp.svg?color=%230f172a'); }
 
             /* Mobile: nascondi immagini dell'hero che risultano poco leggibili */
@@ -1034,7 +1035,6 @@
             /* In auto + dark system, usa icone social chiare */
             html[data-theme='auto'] .social-links a.instagram { background-image: url('https://api.iconify.design/tabler/brand-instagram.svg?color=%23e2e8f0'); }
             html[data-theme='auto'] .social-links a.facebook  { background-image: url('https://api.iconify.design/tabler/brand-facebook.svg?color=%23e2e8f0'); }
-            html[data-theme='auto'] .social-links a.tiktok    { background-image: url('https://api.iconify.design/tabler/brand-tiktok.svg?color=%23e2e8f0'); }
             html[data-theme='auto'] .social-links a.whatsapp  { background-image: url('https://api.iconify.design/tabler/brand-whatsapp.svg?color=%23e2e8f0'); }
         }
 
@@ -1067,7 +1067,6 @@
             html[data-theme='auto'] header.is-hero .social-links a.social { background-color: var(--surface); border-color: var(--border); }
             html[data-theme='auto'] header.is-hero .social-links a.instagram { background-image: url('https://api.iconify.design/tabler/brand-instagram.svg?color=%230f172a'); }
             html[data-theme='auto'] header.is-hero .social-links a.facebook  { background-image: url('https://api.iconify.design/tabler/brand-facebook.svg?color=%230f172a'); }
-            html[data-theme='auto'] header.is-hero .social-links a.tiktok    { background-image: url('https://api.iconify.design/tabler/brand-tiktok.svg?color=%230f172a'); }
             html[data-theme='auto'] header.is-hero .social-links a.whatsapp  { background-image: url('https://api.iconify.design/tabler/brand-whatsapp.svg?color=%230f172a'); }
             html[data-theme='auto'] header.is-hero .nav-indicator { background: linear-gradient(90deg, var(--secondary), #34d399); box-shadow: 0 4px 18px rgba(0, 191, 166, 0.35); }
             /* In auto + chiaro, fuori dall'hero usa header pieno e link scuri */
@@ -1377,6 +1376,59 @@
         html[data-theme='dark'] .fab-top .fab-icon { filter: invert(1) brightness(1.1); }
         @media (prefers-color-scheme: dark) { html[data-theme='auto'] .fab-top .fab-icon { filter: invert(1) brightness(1.1); } }
         
+        /* ==========================
+           Galleria Interventi
+           ========================== */
+        .gallery.section { padding-top: 4rem; }
+        .gallery .section-header { text-align: center; max-width: 860px; margin: 0 auto 2rem; }
+        .gallery .section-header p { color: var(--muted); }
+
+        .gallery-grid { 
+            max-width: 1200px; margin: 0 auto; 
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 14px; 
+        }
+        .gallery-item { 
+            position: relative; overflow: hidden; 
+            border-radius: 14px; 
+            background: var(--surface); 
+            border: 1px solid var(--border);
+            aspect-ratio: 4/3;
+            cursor: zoom-in;
+        }
+        .gallery-item img { 
+            width: 100%; height: 100%; object-fit: cover; display: block; 
+            transition: transform .3s ease;
+        }
+        .gallery-item:hover img { transform: scale(1.04); }
+        .gallery-item:focus-within img { transform: scale(1.03); }
+        .gallery-item .caption { 
+            position: absolute; left: 0; right: 0; bottom: 0; 
+            padding: 10px 12px; font-size: .95rem; color: #fff; 
+            background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.55) 70%);
+        }
+        .gallery-empty { text-align: center; color: var(--muted); margin: 1rem 0 0; }
+
+        /* Lightbox */
+        .lightbox { 
+            position: fixed; inset: 0; background: rgba(0,0,0,.85); 
+            display: none; place-items: center; z-index: 1000; 
+            padding: 24px; backdrop-filter: blur(2px);
+        }
+        .lightbox.is-open { display: grid; }
+        .lightbox img { max-width: 92vw; max-height: 82vh; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,.6); }
+        .lightbox .lb-close, .lightbox .lb-prev, .lightbox .lb-next {
+            position: absolute; width: 44px; height: 44px; border-radius: 999px; 
+            display: grid; place-items: center; background: rgba(255,255,255,.15); color: #fff; 
+            border: 1px solid rgba(255,255,255,.3); backdrop-filter: blur(6px);
+        }
+        .lightbox .lb-close { top: 18px; right: 18px; }
+        .lightbox .lb-prev { left: 18px; top: 50%; transform: translateY(-50%); }
+        .lightbox .lb-next { right: 18px; top: 50%; transform: translateY(-50%); }
+        .lightbox button:hover { background: rgba(255,255,255,.25); }
+        .lightbox button img { filter: drop-shadow(0 1px 2px rgba(0,0,0,.4)); }
+
     </style>
 </head>
 <body>
@@ -1398,6 +1450,7 @@
                     <li><a href="#servizi">Servizi per te</a></li>
                     <li><a href="#azienda">Servizi per aziende</a></li>
                     <li><a href="#chi-siamo">Chi sono</a></li>
+                    <li><a href="#interventi">Interventi</a></li>
                     <li><a href="#contatti">Contatti</a></li>
                 </ul>
                 <span class="nav-indicator" id="nav-indicator" aria-hidden="true"></span>
@@ -1406,7 +1459,7 @@
                 <div class="social-links" aria-label="PCtek Pro sui social">
                     <a class="social instagram" href="https://www.instagram.com/pctek_pro?igsh=MzB0MWpsYWR5c2p0&utm_source=qr" target="_blank" rel="noopener" aria-label="Instagram"></a>
                     <a class="social facebook" href="https://www.facebook.com/share/1AVk7xw67i/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook"></a>
-                    <a class="social tiktok" href="https://www.tiktok.com/@pctekpro?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener" aria-label="TikTok"></a>
+                    
                     <a class="social whatsapp" href="https://wa.me/393339914498?text=Ciao%2C%20ho%20bisogno%20di%20assistenza%20PC." target="_blank" rel="noopener" aria-label="WhatsApp"></a>
                 </div>
                 
@@ -1528,7 +1581,7 @@
                 </div>
                 <div class="card reveal azienda-social" tabindex="0">
                     <h3>Gestione social media</h3>
-                    <p>Whatsapp Business, Instagram, Facebook e TikTok: presidia i canali giusti.</p>
+                    <p>Whatsapp Business, Instagram e Facebook: presidia i canali giusti.</p>
                 </div>
             </div>
             <div class="section-cta">
@@ -1563,6 +1616,17 @@
                     </ul>
                 </div>
             </div>
+        </section>
+
+        <section class="section gallery" id="interventi">
+            <div class="section-header">
+                <h2>Gallery</h2>
+                <p>Una selezione di lavori reali: pulizia, upgrade, riparazioni e assemblaggi.</p>
+            </div>
+            <div class="gallery-grid" id="gallery-grid" aria-live="polite">
+                <!-- Popolata dinamicamente -->
+            </div>
+            <p class="gallery-empty" id="gallery-empty" hidden>Nessuna foto disponibile al momento.</p>
         </section>
 
         <section class="section">
@@ -1649,7 +1713,7 @@
                 <ul class="footer-links">
                     <li><a href="https://www.instagram.com/pctek_pro?igsh=MzB0MWpsYWR5c2p0&utm_source=qr" target="_blank" rel="noopener">Instagram</a></li>
                     <li><a href="#" target="_blank" rel="noopener">Facebook</a></li>
-                    <li><a href="#" target="_blank" rel="noopener">TikTok</a></li>
+                    
                     <li><a href="https://wa.me/393339914498?text=Ciao%2C%20ho%20bisogno%20di%20assistenza%20PC." target="_blank" rel="noopener">WhatsApp</a></li>
                 </ul>
             </div>
@@ -1767,6 +1831,126 @@
             });
         });
     })();
+    </script>
+    <script>
+    // Galleria Interventi dinamica + Lightbox
+    window.addEventListener('DOMContentLoaded', function(){
+        const grid = document.getElementById('gallery-grid');
+        if (!grid) return;
+        const emptyMsg = document.getElementById('gallery-empty');
+        const manifestUrl = 'assets/interventi.json';
+
+        function toArray(v){ return Array.isArray(v) ? v : []; }
+
+        // Anteprima locale (apertura come file://): prova a leggere il JSON, poi fallback a esempi
+        if (window.location.protocol === 'file:') {
+            const fallback = [
+                { src: 'assets/hero1.png', thumb: 'assets/hero1.png', title: 'Esempio: pulizia completa' },
+                { src: 'assets/hero2.png', thumb: 'assets/hero2.png', title: 'Esempio: upgrade SSD NVMe' },
+                { src: 'assets/hero3.png', thumb: 'assets/hero3.png', title: 'Esempio: sostituzione batteria' },
+                { src: 'assets/hero4.png', thumb: 'assets/hero4.png', title: 'Esempio: assemblaggio PC' },
+                { src: 'assets/hero5.png', thumb: 'assets/hero5.png', title: 'Esempio: installazione Windows 11' },
+                { src: 'assets/hero.jpg',  thumb: 'assets/hero.jpg',  title: 'Esempio: recupero dati' }
+            ];
+            fetch(manifestUrl).then(r => r.ok ? r.json() : Promise.reject())
+                .then(data => { const items = toArray(data); build(items.length ? items : fallback); })
+                .catch(() => build(fallback));
+            return;
+        }
+
+        fetch(manifestUrl, { cache: 'no-cache' })
+            .then(r => r.ok ? r.json() : [])
+            .then(data => {
+                const items = toArray(data);
+                if (!items.length) { if (emptyMsg) emptyMsg.hidden = false; return; }
+                build(items);
+            })
+            .catch(() => { if (emptyMsg) emptyMsg.hidden = false; });
+
+        // Lightbox elements
+        const lb = document.createElement('div');
+        lb.className = 'lightbox';
+        lb.setAttribute('role','dialog');
+        lb.setAttribute('aria-modal','true');
+        lb.setAttribute('aria-label','Galleria immagini');
+        lb.innerHTML = `
+            <button class="lb-close" aria-label="Chiudi">
+                <img src="https://api.iconify.design/tabler/x.svg?color=white" alt="" width="24" height="24"/>
+            </button>
+            <button class="lb-prev" aria-label="Precedente">
+                <img src="https://api.iconify.design/tabler/chevron-left.svg?color=white" alt="" width="28" height="28"/>
+            </button>
+            <img class="lb-img" alt=""/>
+            <button class="lb-next" aria-label="Successiva">
+                <img src="https://api.iconify.design/tabler/chevron-right.svg?color=white" alt="" width="28" height="28"/>
+            </button>`;
+        document.body.appendChild(lb);
+        const lbImg = lb.querySelector('.lb-img');
+        const btnClose = lb.querySelector('.lb-close');
+        const btnPrev = lb.querySelector('.lb-prev');
+        const btnNext = lb.querySelector('.lb-next');
+        let current = -1;
+        let list = [];
+
+        function open(i){
+            if (!list.length) return;
+            current = (i + list.length) % list.length;
+            const it = list[current] || {};
+            lbImg.src = it.src || it.thumb || '';
+            lbImg.alt = it.alt || it.title || 'Foto intervento';
+            lb.classList.add('is-open');
+            document.body.style.overflow = 'hidden';
+            try { btnClose.focus({ preventScroll: true }); } catch(e) {}
+        }
+        function close(){ lb.classList.remove('is-open'); document.body.style.overflow = ''; }
+        function prev(){ open(current - 1); }
+        function next(){ open(current + 1); }
+        btnClose.addEventListener('click', close);
+        btnPrev.addEventListener('click', prev);
+        btnNext.addEventListener('click', next);
+        lb.addEventListener('click', (e) => { if (e.target === lb) close(); });
+        document.addEventListener('keydown', (e) => {
+            if (!lb.classList.contains('is-open')) return;
+            if (e.key === 'Escape') close();
+            else if (e.key === 'ArrowLeft') prev();
+            else if (e.key === 'ArrowRight') next();
+        });
+
+        function build(items){
+            list = items;
+            items.forEach((it, idx) => {
+                const fig = document.createElement('figure');
+                fig.className = 'gallery-item';
+                fig.tabIndex = 0;
+
+                const img = document.createElement('img');
+                img.loading = 'lazy';
+                img.decoding = 'async';
+                img.src = it.thumb || it.src;
+                img.alt = it.alt || it.title || 'Intervento';
+
+                const cap = document.createElement('figcaption');
+                cap.className = 'caption';
+                cap.textContent = it.title || '';
+
+                fig.appendChild(img);
+                fig.appendChild(cap);
+
+                fig.addEventListener('click', () => open(idx));
+                fig.addEventListener('keydown', (ev) => {
+                    if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); open(idx); }
+                });
+
+                // Reveal animation compatibility
+                fig.classList.add('reveal');
+                (idx % 2 === 0 ? fig.classList.add('reveal-left') : fig.classList.add('reveal-right'));
+                fig.style.transitionDelay = (idx * 90) + 'ms';
+                setTimeout(() => fig.classList.add('is-visible'), 60);
+
+                grid.appendChild(fig);
+            });
+        }
+    });
     </script>
     <!-- Floating quick actions: WhatsApp + Back to top -->
     <div class="floating-actions" aria-label="Azioni rapide">
