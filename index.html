@@ -1383,31 +1383,37 @@
         .gallery .section-header { text-align: center; max-width: 860px; margin: 0 auto 2rem; }
         .gallery .section-header p { color: var(--muted); }
 
-        .gallery-grid { 
-            max-width: 1200px; margin: 0 auto; 
-            display: grid; 
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            gap: 14px; 
+        .gallery-grid {
+            max-width: 1400px; margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 18px;
         }
-        .gallery-item { 
-            position: relative; overflow: hidden; 
-            border-radius: 14px; 
-            background: var(--surface); 
-            border: 1px solid var(--border);
-            aspect-ratio: 4/3;
+        .gallery-item {
+            position: relative; overflow: hidden;
+            border-radius: 16px;
+            background: var(--surface);
+            box-shadow: var(--shadow);
+            aspect-ratio: 3/2;
             cursor: zoom-in;
+            transition: transform .18s ease, box-shadow .25s ease;
+            will-change: transform;
         }
-        .gallery-item img { 
-            width: 100%; height: 100%; object-fit: cover; display: block; 
-            transition: transform .3s ease;
+        .gallery-item:hover { transform: translateY(-2px); box-shadow: 0 18px 44px rgba(16,24,40,0.16); }
+        .gallery-item img {
+            width: 100%; height: 100%; object-fit: cover; display: block;
+            transition: transform .35s ease;
         }
-        .gallery-item:hover img { transform: scale(1.04); }
+        .gallery-item:hover img { transform: scale(1.06); }
         .gallery-item:focus-within img { transform: scale(1.03); }
-        .gallery-item .caption { 
-            position: absolute; left: 0; right: 0; bottom: 0; 
-            padding: 10px 12px; font-size: .95rem; color: #fff; 
+        .gallery-item .caption {
+            position: absolute; left: 0; right: 0; bottom: 0;
+            padding: 12px 14px; font-size: 1rem; color: #fff;
             background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.55) 70%);
+            backdrop-filter: blur(2px);
+            opacity: 0; transition: opacity .18s ease;
         }
+        .gallery-item:hover .caption, .gallery-item:focus-within .caption { opacity: 1; }
         .gallery-empty { text-align: center; color: var(--muted); margin: 1rem 0 0; }
 
         /* Lightbox */
@@ -1450,7 +1456,7 @@
                     <li><a href="#servizi">Servizi per te</a></li>
                     <li><a href="#azienda">Servizi per aziende</a></li>
                     <li><a href="#chi-siamo">Chi sono</a></li>
-                    <li><a href="#interventi">Interventi</a></li>
+                    <li><a href="#interventi">Gallery</a></li>
                     <li><a href="#contatti">Contatti</a></li>
                 </ul>
                 <span class="nav-indicator" id="nav-indicator" aria-hidden="true"></span>
@@ -1845,12 +1851,8 @@
         // Anteprima locale (apertura come file://): prova a leggere il JSON, poi fallback a esempi
         if (window.location.protocol === 'file:') {
             const fallback = [
-                { src: 'assets/hero1.png', thumb: 'assets/hero1.png', title: 'Esempio: pulizia completa' },
-                { src: 'assets/hero2.png', thumb: 'assets/hero2.png', title: 'Esempio: upgrade SSD NVMe' },
-                { src: 'assets/hero3.png', thumb: 'assets/hero3.png', title: 'Esempio: sostituzione batteria' },
-                { src: 'assets/hero4.png', thumb: 'assets/hero4.png', title: 'Esempio: assemblaggio PC' },
-                { src: 'assets/hero5.png', thumb: 'assets/hero5.png', title: 'Esempio: installazione Windows 11' },
-                { src: 'assets/hero.jpg',  thumb: 'assets/hero.jpg',  title: 'Esempio: recupero dati' }
+                { src: 'assets/interventi/Screenshot 2025-11-07 162451.png', thumb: 'assets/interventi/Screenshot 2025-11-07 162451.png', title: 'Intervento – foto 1' },
+                { src: 'assets/interventi/Screenshot 2025-11-07 162532.png', thumb: 'assets/interventi/Screenshot 2025-11-07 162532.png', title: 'Intervento – foto 2' }
             ];
             fetch(manifestUrl).then(r => r.ok ? r.json() : Promise.reject())
                 .then(data => { const items = toArray(data); build(items.length ? items : fallback); })

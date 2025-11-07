@@ -10,41 +10,5 @@
     "thumb": "assets/interventi/Screenshot 2025-11-07 162532.png",
     "title": "Intervento – foto 2",
     "alt": "Foto intervento PC 2"
-  },
-  {
-    "src": "assets/hero1.png",
-    "thumb": "assets/hero1.png",
-    "title": "Pulizia completa e pasta termica (desktop)",
-    "alt": "Pulizia interna di un PC desktop con cambio pasta termica"
-  },
-  {
-    "src": "assets/hero2.png",
-    "thumb": "assets/hero2.png",
-    "title": "Upgrade SSD NVMe (notebook)",
-    "alt": "Installazione SSD NVMe su notebook"
-  },
-  {
-    "src": "assets/hero3.png",
-    "thumb": "assets/hero3.png",
-    "title": "Sostituzione batteria (laptop)",
-    "alt": "Sostituzione batteria su laptop"
-  },
-  {
-    "src": "assets/hero4.png",
-    "thumb": "assets/hero4.png",
-    "title": "Assemblaggio PC gaming",
-    "alt": "Assemblaggio di un PC gaming in laboratorio"
-  },
-  {
-    "src": "assets/hero5.png",
-    "thumb": "assets/hero5.png",
-    "title": "Installazione Windows 11 + ottimizzazione",
-    "alt": "Installazione e configurazione di Windows 11"
-  },
-  {
-    "src": "assets/hero.jpg",
-    "thumb": "assets/hero.jpg",
-    "title": "Recupero dati da HDD",
-    "alt": "Recupero dati da un hard disk guasto"
   }
 ]
