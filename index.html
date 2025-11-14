@@ -1851,8 +1851,10 @@
         // Anteprima locale (apertura come file://): prova a leggere il JSON, poi fallback a esempi
         if (window.location.protocol === 'file:') {
             const fallback = [
-                { src: 'assets/interventi/Screenshot 2025-11-07 162451.png', thumb: 'assets/interventi/Screenshot 2025-11-07 162451.png', title: 'Intervento – foto 1' },
-                { src: 'assets/interventi/Screenshot 2025-11-07 162532.png', thumb: 'assets/interventi/Screenshot 2025-11-07 162532.png', title: 'Intervento – foto 2' }
+                { src: 'assets/interventi/pcfede.png', thumb: 'assets/interventi/pcfede.png', title: 'PC Fede' },
+                { src: 'assets/interventi/pcmara.png', thumb: 'assets/interventi/pcmara.png', title: 'PC Mara' },
+                { src: 'assets/interventi/pcgioele.jpg', thumb: 'assets/interventi/pcgioele.jpg', title: 'PC Gioele' },
+                { src: 'assets/interventi/pcdavi.jpg', thumb: 'assets/interventi/pcdavi.jpg', title: 'PC Davi' }
             ];
             fetch(manifestUrl).then(r => r.ok ? r.json() : Promise.reject())
                 .then(data => { const items = toArray(data); build(items.length ? items : fallback); })

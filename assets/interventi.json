@@ -1,14 +1,26 @@
 [
   {
-    "src": "assets/interventi/Screenshot 2025-11-07 162451.png",
-    "thumb": "assets/interventi/Screenshot 2025-11-07 162451.png",
-    "title": "PC Gaming",
-    "alt": "Foto intervento PC 1"
+    "src": "assets/interventi/pcfede.png",
+    "thumb": "assets/interventi/pcfede.png",
+    "title": "PC Fede",
+    "alt": "Foto intervento tecnico sul PC di Fede"
   },
   {
-    "src": "assets/interventi/Screenshot 2025-11-07 162532.png",
-    "thumb": "assets/interventi/Screenshot 2025-11-07 162532.png",
-    "title": "PC Office",
-    "alt": "Foto intervento PC 2"
+    "src": "assets/interventi/pcmara.png",
+    "thumb": "assets/interventi/pcmara.png",
+    "title": "PC Mara",
+    "alt": "Foto intervento tecnico sul PC di Mara"
+  },
+  {
+    "src": "assets/interventi/pcgioele.jpg",
+    "thumb": "assets/interventi/pcgioele.jpg",
+    "title": "PC Gioele",
+    "alt": "Foto intervento tecnico sul PC di Gioele"
+  },
+  {
+    "src": "assets/interventi/pcdavi.jpg",
+    "thumb": "assets/interventi/pcdavi.jpg",
+    "title": "PC Davi",
+    "alt": "Foto intervento tecnico sul PC di Davi"
   }
 ]
