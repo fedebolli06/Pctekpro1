@@ -2,25 +2,25 @@
   {
     "src": "assets/interventi/pcfede.png",
     "thumb": "assets/interventi/pcfede.png",
-    "title": "PC Fede",
+    "title": "CPU: Ryzen 7 5700X3D\nGPU: RTX 3060 Ti\nRAM: 32GB DDR4\nSSD: 1TB NVMe\nPSU: 750W Silent Storm Sharkoon\nCase: Cooler Master TD500 Mesh V2\nLiquid Cooling: Masterliquid PL240",
     "alt": "Foto intervento tecnico sul PC di Fede"
   },
   {
     "src": "assets/interventi/pcmara.png",
     "thumb": "assets/interventi/pcmara.png",
-    "title": "PC Mara",
+    "title": "Buon computer da ufficio",
     "alt": "Foto intervento tecnico sul PC di Mara"
   },
   {
     "src": "assets/interventi/pcgioele.jpg",
     "thumb": "assets/interventi/pcgioele.jpg",
-    "title": "PC Gioele",
+    "title": "CPU: Ryzen 7 7700X\nGPU: RTX 4070 Super OC Edition\nRAM: 32GB Corsair DDR4\nMemoria: Samsung 970 EVO Plus NVMe\nScheda Madre: Gigabyte B650 Gaming X AX V2\nPSU: Corsair RM850E\nLiquid Cooling: Corsair iCUE Link H115i RGB\nCase: iCUE 4000X RGB",
     "alt": "Foto intervento tecnico sul PC di Gioele"
   },
   {
     "src": "assets/interventi/pcdavi.jpg",
     "thumb": "assets/interventi/pcdavi.jpg",
-    "title": "PC Davi",
+    "title": "CPU: Ryzen 5 5600X\nGPU: MSI RTX 3060 Ventus\nRAM: 16GB Corsair Vengeance RGB Pro 3200MHz\nScheda Madre: MSI MPG B550\nSSD: WD Black SN750 SE 1TB + WD Blue 1TB\nPSU: Cooler Master 750W Gold\nCase: Thermaltake H200 TG Snow\nVentole: 3x Be Quiet!\nAudio: SoundBlasterX AE-5 Plus",
     "alt": "Foto intervento tecnico sul PC di Davi"
   }
 ]
