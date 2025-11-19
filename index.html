@@ -1388,7 +1388,7 @@
             margin: 0 auto;
             display: grid;
             grid-template-columns: minmax(0, 1fr);
-            gap: 24px;
+            gap: 26px;
         }
         .gallery-item {
             display: flex;
@@ -1409,7 +1409,7 @@
         .gallery-media {
             position: relative;
             overflow: hidden;
-            aspect-ratio: 4 / 3;
+            aspect-ratio: 5 / 4;
         }
         .gallery-media img {
             width: 100%;
@@ -1429,11 +1429,11 @@
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            padding: 6px 12px;
+            padding: 5px 11px;
             border-radius: 999px;
             background: rgba(15, 23, 42, 0.72);
             color: #fff;
-            font-size: 0.78rem;
+            font-size: 0.72rem;
             letter-spacing: 0.02em;
             text-transform: uppercase;
             transition: opacity .2s ease, transform .2s ease;
@@ -1449,10 +1449,10 @@
             opacity: 1;
         }
         .gallery-item .caption {
-            padding: 14px 16px 18px;
-            font-size: 0.92rem;
+            padding: 10px 14px 14px;
+            font-size: 0.85rem;
             color: var(--text-dark);
-            line-height: 1.45;
+            line-height: 1.35;
             background: rgba(255, 255, 255, 0.96);
             border-top: 1px solid rgba(15, 23, 42, 0.08);
             white-space: pre-line;
@@ -1470,11 +1470,11 @@
             }
         }
         .gallery-empty { text-align: center; color: var(--muted); margin: 1.5rem 0 0; }
-        @media (min-width: 640px) {
+        @media (min-width: 680px) {
             .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
         }
-        @media (min-width: 1024px) {
-            .gallery-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+        @media (min-width: 1200px) {
+            .gallery-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
         }
         @media (max-width: 640px) {
             .gallery-item { border-radius: 18px; }
@@ -1488,12 +1488,37 @@
         }
         .lightbox.is-open { display: grid; }
         .lightbox img { max-width: 92vw; max-height: 82vh; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,.6); }
-        .lightbox .lb-close, .lightbox .lb-prev, .lightbox .lb-next {
-            position: absolute; width: 44px; height: 44px; border-radius: 999px; 
-            display: grid; place-items: center; background: rgba(255,255,255,.15); color: #fff; 
-            border: 1px solid rgba(255,255,255,.3); backdrop-filter: blur(6px);
+        .lightbox .lb-close,
+        .lightbox .lb-prev,
+        .lightbox .lb-next {
+            position: absolute;
+            width: 44px;
+            height: 44px;
+            border-radius: 999px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255,255,255,.15);
+            color: #fff;
+            border: 1px solid rgba(255,255,255,.3);
+            backdrop-filter: blur(6px);
         }
-        .lightbox .lb-close { top: 18px; right: 18px; }
+        .lightbox .lb-close {
+            top: 18px;
+            right: 18px;
+            width: auto;
+            height: 46px;
+            padding: 0 18px;
+            gap: 10px;
+            text-transform: uppercase;
+            font-size: 0.82rem;
+            letter-spacing: 0.12em;
+            font-weight: 600;
+        }
+        .lightbox .lb-close .lb-close-icon {
+            font-size: 1.4rem;
+            line-height: 1;
+        }
         .lightbox .lb-prev { left: 18px; top: 50%; transform: translateY(-50%); }
         .lightbox .lb-next { right: 18px; top: 50%; transform: translateY(-50%); }
         .lightbox button:hover { background: rgba(255,255,255,.25); }
@@ -1958,8 +1983,9 @@
         lb.setAttribute('aria-modal','true');
         lb.setAttribute('aria-label','Galleria immagini');
         lb.innerHTML = `
-            <button class="lb-close" aria-label="Chiudi">
-                <img src="https://api.iconify.design/tabler/x.svg?color=white" alt="" width="24" height="24"/>
+            <button class="lb-close" type="button" aria-label="Chiudi">
+                <span class="lb-close-text">Chiudi</span>
+                <span class="lb-close-icon" aria-hidden="true">&times;</span>
             </button>
             <button class="lb-prev" aria-label="Precedente">
                 <img src="https://api.iconify.design/tabler/chevron-left.svg?color=white" alt="" width="28" height="28"/>
