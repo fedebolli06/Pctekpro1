@@ -1384,37 +1384,75 @@
         .gallery .section-header p { color: var(--muted); }
 
         .gallery-grid {
-            max-width: 1400px; margin: 0 auto;
+            max-width: 1320px;
+            margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 18px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 28px;
         }
         .gallery-item {
-            position: relative; overflow: hidden;
-            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            border-radius: 24px;
+            overflow: hidden;
             background: var(--surface);
-            box-shadow: var(--shadow);
-            aspect-ratio: 3/2;
+            border: 1px solid rgba(15, 23, 42, 0.08);
+            box-shadow: 0 24px 65px rgba(15, 23, 42, 0.12);
             cursor: zoom-in;
-            transition: transform .18s ease, box-shadow .25s ease;
-            will-change: transform;
+            transition: transform .22s ease, box-shadow .32s ease;
         }
-        .gallery-item:hover { transform: translateY(-2px); box-shadow: 0 18px 44px rgba(16,24,40,0.16); }
-        .gallery-item img {
-            width: 100%; height: 100%; object-fit: cover; display: block;
-            transition: transform .35s ease;
+        .gallery-item:hover,
+        .gallery-item:focus-within {
+            transform: translateY(-6px);
+            box-shadow: 0 32px 90px rgba(15, 23, 42, 0.2);
         }
-        .gallery-item:hover img { transform: scale(1.06); }
-        .gallery-item:focus-within img { transform: scale(1.03); }
+        .gallery-media {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 4 / 3;
+        }
+        .gallery-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform .45s ease;
+        }
+        .gallery-item:hover .gallery-media img,
+        .gallery-item:focus-within .gallery-media img {
+            transform: scale(1.06);
+        }
         .gallery-item .caption {
-            position: absolute; left: 0; right: 0; bottom: 0;
-            padding: 12px 14px; font-size: 1rem; color: #fff;
-            background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.55) 70%);
-            backdrop-filter: blur(2px);
-            opacity: 0; transition: opacity .18s ease;
+            padding: 20px 22px;
+            font-size: 1rem;
+            color: var(--text-dark);
+            line-height: 1.5;
+            background: rgba(255, 255, 255, 0.96);
+            border-top: 1px solid rgba(15, 23, 42, 0.08);
+            white-space: pre-line;
         }
-        .gallery-item:hover .caption, .gallery-item:focus-within .caption { opacity: 1; }
-        .gallery-empty { text-align: center; color: var(--muted); margin: 1rem 0 0; }
+        html[data-theme='dark'] .gallery-item .caption {
+            background: rgba(15, 23, 42, 0.88);
+            color: #f8fafc;
+            border-top-color: rgba(248, 250, 252, 0.08);
+        }
+        @media (prefers-color-scheme: dark) {
+            html[data-theme='auto'] .gallery-item .caption {
+                background: rgba(15, 23, 42, 0.88);
+                color: #f8fafc;
+                border-top-color: rgba(248, 250, 252, 0.08);
+            }
+        }
+        .gallery-empty { text-align: center; color: var(--muted); margin: 1.5rem 0 0; }
+        @media (max-width: 640px) {
+            .gallery-grid {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 20px;
+            }
+            .gallery-item {
+                border-radius: 18px;
+            }
+        }
 
         /* Lightbox */
         .lightbox { 
@@ -1606,7 +1644,7 @@
         <section class="section" id="chi-siamo">
             <div class="section-header">
                 <h2>Chi sono</h2>
-                <p>Sono Federico Bolli, perito in informatica e telecomunicazioni, un ragazzo giovane ma con molta passione e dedizione per tutto il mondo dell'informtica. Mi piacciono le sfide e questo è ciò che inspira PCtek pro, una piccola rete di servizi che ha l'obiettivo di diventare protagonista</p>
+                <p>Sono Federico Bolli, perito in informatica e telecomunicazioni, un ragazzo giovane ma con molta passione e dedizione per tutto il mondo dell'informatica. Mi piacciono le sfide e questo è ciò che inspira PCtek pro, una piccola rete di servizi che ha l'obiettivo di diventare protagonista</p>
             </div>
             <div class="about-section">
                 <div class="about-image" tabindex="0" aria-label="PCtek Pro — immagine attività">
@@ -1938,10 +1976,15 @@
 
         function build(items){
             list = items;
+            grid.innerHTML = '';
+            if (emptyMsg) emptyMsg.hidden = true;
             items.forEach((it, idx) => {
                 const fig = document.createElement('figure');
                 fig.className = 'gallery-item';
                 fig.tabIndex = 0;
+
+                const media = document.createElement('div');
+                media.className = 'gallery-media';
 
                 const img = document.createElement('img');
                 img.loading = 'lazy';
@@ -1949,11 +1992,14 @@
                 img.src = it.thumb || it.src;
                 img.alt = it.alt || it.title || 'Intervento';
 
+                media.appendChild(img);
+
                 const cap = document.createElement('figcaption');
                 cap.className = 'caption';
-                cap.textContent = it.title || '';
+                const desc = (it.title || '').trim();
+                cap.textContent = desc || 'Intervento PCtek Pro';
 
-                fig.appendChild(img);
+                fig.appendChild(media);
                 fig.appendChild(cap);
 
                 fig.addEventListener('click', () => open(idx));
