@@ -1387,8 +1387,8 @@
             max-width: 1320px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 28px;
+            grid-template-columns: minmax(0, 1fr);
+            gap: 24px;
         }
         .gallery-item {
             display: flex;
@@ -1422,11 +1422,37 @@
         .gallery-item:focus-within .gallery-media img {
             transform: scale(1.06);
         }
+        .zoom-hint {
+            position: absolute;
+            left: 16px;
+            top: 16px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            border-radius: 999px;
+            background: rgba(15, 23, 42, 0.72);
+            color: #fff;
+            font-size: 0.78rem;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            transition: opacity .2s ease, transform .2s ease;
+            box-shadow: 0 8px 26px rgba(15, 23, 42, 0.35);
+        }
+        .zoom-hint::before {
+            content: '↗';
+            font-size: 0.9rem;
+        }
+        .gallery-item:hover .zoom-hint,
+        .gallery-item:focus-within .zoom-hint {
+            transform: translateY(-2px);
+            opacity: 1;
+        }
         .gallery-item .caption {
-            padding: 20px 22px;
-            font-size: 1rem;
+            padding: 14px 16px 18px;
+            font-size: 0.92rem;
             color: var(--text-dark);
-            line-height: 1.5;
+            line-height: 1.45;
             background: rgba(255, 255, 255, 0.96);
             border-top: 1px solid rgba(15, 23, 42, 0.08);
             white-space: pre-line;
@@ -1444,14 +1470,14 @@
             }
         }
         .gallery-empty { text-align: center; color: var(--muted); margin: 1.5rem 0 0; }
+        @media (min-width: 640px) {
+            .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        }
+        @media (min-width: 1024px) {
+            .gallery-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+        }
         @media (max-width: 640px) {
-            .gallery-grid {
-                grid-template-columns: minmax(0, 1fr);
-                gap: 20px;
-            }
-            .gallery-item {
-                border-radius: 18px;
-            }
+            .gallery-item { border-radius: 18px; }
         }
 
         /* Lightbox */
@@ -1993,6 +2019,10 @@
                 img.alt = it.alt || it.title || 'Intervento';
 
                 media.appendChild(img);
+                const hint = document.createElement('span');
+                hint.className = 'zoom-hint';
+                hint.textContent = 'Apri';
+                media.appendChild(hint);
 
                 const cap = document.createElement('figcaption');
                 cap.className = 'caption';
