@@ -1,381 +1,2109 @@
-<!doctype html>
-<html lang="it" data-theme="light">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>HairBolli Parrucchieria | Bolli Alessandra Monte San Vito</title>
-    <meta name="description" content="HairBolli e la tua parrucchieria di fiducia: taglio, colore, piega e trattamenti. Prenota online o chiamaci per un appuntamento!" />
-    <link rel="icon" type="image/svg+xml" href="assets/favicon-light.svg" media="(prefers-color-scheme: light)" />
-    <link rel="icon" type="image/svg+xml" href="assets/favicon-dark.svg" media="(prefers-color-scheme: dark)" />
-    <link rel="icon" type="image/png" href="assets/favicon.png" sizes="any" />
-    <link rel="apple-touch-icon" href="assets/logo-scuro.svg" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@400;600;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet" />
-    <link rel="preload" as="image" href="assets/hero1.jpg" />
-
-    <meta property="og:title" content="HairBolli Parrucchieria" />
-    <meta property="og:description" content="Taglio, colore, piega e trattamenti. Prenota ora." />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=1200&auto=format&fit=crop" />
-    <meta name="theme-color" content="#f2c7f2" />
-
-    <link rel="stylesheet" href="assets/styles.css" />
-  </head>
-  <body>
-    <div class="topbar" aria-label="Contatti rapidi">
-      <div class="container topbar-inner">
-        <ul class="contact-inline">
-          <li><a class="chip chip-mail" href="mailto:hairalex@libero.it" aria-label="Scrivi a hairalex@libero.it"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M4 5h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2zm0 2v.01L12 12l8-4.99V7H4zm0 3.236V17h16V10.236l-7.386 4.614a2 2 0 0 1-2.228 0L4 10.236z"/></svg><span>hairalex@libero.it</span></a></li>
-          <li><a class="chip chip-map" href="https://maps.app.goo.gl/Dh97kVH5FcqD4vpLA" target="_blank" rel="noopener" aria-label="Apri indirizzo su Google Maps"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2a7 7 0 0 1 7 7c0 5.25-7 13-7 13S5 14.25 5 9a7 7 0 0 1 7-7zm0 4a3 3 0 1 0 .001 6.001A3 3 0 0 0 12 6z"/></svg><span>Viale Martiri della Resistenza, 2, 60037 Monte San Vito AN</span></a></li>
-        </ul>
-        <ul class="social-inline">
-          <li><a class="chip chip-wa" href="https://wa.me/393383448944?text=Ciao%20HairBolli!%20Vorrei%20prenotare%20un%20appuntamento." target="_blank" rel="noopener" aria-label="Apri chat WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12.051 2C6.507 2 2 6.507 2 12.051c0 1.805.472 3.568 1.366 5.118L2 22l4.926-1.311a10.02 10.02 0 0 0 5.125 1.413h.004C17.594 22 22 17.492 22 11.949 22 6.4 17.598 2 12.051 2zm5.416 14.563c-.227.64-1.29 1.173-1.825 1.233-.463.052-1.032.074-1.667-.103-.384-.11-.877-.284-1.51-.557-2.658-1.147-4.395-3.839-4.527-4.018-.132-.18-1.08-1.44-1.08-2.746 0-1.305.683-1.947.925-2.207.242-.26.528-.325.704-.325h.506c.162 0 .38-.06.595.455.227.54.77 1.87.838 2.006.066.135.11.295.02.475-.088.18-.132.295-.26.455-.132.16-.274.356-.39.478-.13.13-.264.27-.113.53.15.26.668 1.1 1.436 1.78.987.88 1.82 1.157 2.08 1.286.26.13.413.11.57-.066.158-.17.655-.763.83-1.026.173-.263.347-.22.58-.13.242.09 1.532.72 1.793.85.263.13.438.196.503.306.066.11.066.642-.16 1.281z"/></svg><span>+39 338 344 8944</span></a></li>
-          <li class="only-mobile"><a class="chip chip-phone" href="tel:+39071740129" aria-label="Chiama il salone"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M6.6 10.8a15.9 15.9 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1.02-.24 11.2 11.2 0 0 0 3.52.56 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.85 21 3 13.15 3 4a1 1 0 0 1 1-1h3.48a1 1 0 0 1 1 1c0 1.23.2 2.41.56 3.52a1 1 0 0 1-.25 1.02L6.6 10.8z"/></svg><span>+39 071 740 129</span></a></li>
-          <li>
-            <a class="chip chip-ig" href="https://www.instagram.com/alessandra_bolli_hair?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener" aria-label="Instagram">
-              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11zm0 2a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm6-1.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5z"/></svg>
-              <span>Instagram</span>
-            </a>
-          </li>
-          <li>
-            <a class="chip chip-fb" href="https://www.facebook.com/parrucchieriaAlessandraBolli?locale=it_IT" target="_blank" rel="noopener" aria-label="Facebook">
-              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M13 3h4a1 1 0 0 1 1 1v3h-3a2 2 0 0 0-2 2v3h4l-1 4h-3v8h-4v-8H6v-4h3V9a5 5 0 0 1 5-5z"/></svg>
-              <span>Facebook</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <a class="skip-link" href="#contenuto">Salta al contenuto</a>
-
-    <header class="site-header" id="top">
-      <div class="container nav">
-        <a class="brand" href="#top" aria-label="Home HairBolli">
-          <img class="brand-logo logo-light" src="assets/logo-chiaro.svg" alt="HairBolli" />
-        </a>
-
-        <button class="nav-toggle" aria-expanded="false" aria-controls="menu" aria-label="Apri menu">
-          <span class="nav-toggle-bar"></span>
-          <span class="nav-toggle-bar"></span>
-          <span class="nav-toggle-bar"></span>
-        </button>
-
-        <nav class="menu" id="menu" aria-label="Menu principale">
-          <div class="dropdown">
-            <button class="dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">Servizi</button>
-            <div class="dropdown-menu" role="menu">
-              <a href="servizi/piega-styling.html" role="menuitem">Piega &amp; styling</a>
-              <a href="servizi/taglio-donna.html" role="menuitem">Taglio</a>
-              <a href="servizi/colore.html" role="menuitem">Colore &amp; tonalizzante</a>
-              <a href="servizi/schiariture.html" role="menuitem">Schiariture</a>
-              <a href="servizi/lisciante-stiratura.html" role="menuitem">Lisciante &amp; stiratura</a>
-              <a href="servizi/trattamenti-sposa.html" role="menuitem">Trattamenti &amp; sposa</a>
-            </div>
-          </div>
-          <a href="#alessandra">Su di me</a>
-          <a href="#recensioni">Recensioni</a>
-          <a href="#galleria">Galleria</a>
-          <a href="#info">Contatti</a>
-          <a class="btn btn-ghost small nav-mobile" href="https://wa.me/393383448944?text=Ciao%20HairBolli!%20Vorrei%20prenotare%20un%20appuntamento." target="_blank" rel="noopener">WhatsApp</a>
-          <a class="btn btn-cta small" href="prenota.html">Prenota</a>
-        </nav>
-      </div>
-    </header>
-
-    <main id="contenuto">
-      <section class="hero">
-        <div class="hero-bg">
-          <div class="hero-slider" data-interval="4500" aria-label="Scorri immagini hero come sfondo">
-            <img class="slide is-active" src="assets/hero1.jpg" alt="Salone HairBolli - immagine 1" fetchpriority="high" />
-            <img class="slide" src="assets/hero2.jpg" alt="Salone HairBolli - immagine 2" loading="lazy" />
-            <img class="slide" src="assets/hero3.jpg" alt="Salone HairBolli - immagine 3" loading="lazy" />
-            <img class="slide" src="assets/hero4.jpg" alt="Salone HairBolli - immagine 4" loading="lazy" />
-            <img class="slide" src="assets/hero5.jpg" alt="Salone HairBolli - immagine 5" loading="lazy" />
-          </div>
-        </div>
-        <div class="container hero-inner">
-          <div class="hero-copy">
-            <h1>IL TUO STILE LA NOSTRA PASSIONE</h1>
-            <div class="cta">
-              <a class="btn btn-cta" href="prenota.html" aria-label="Prendi appuntamento online">Prendi appuntamento</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="info" class="section business-card" aria-label="Biglietto da visita">
-        <div class="container">
-          <div class="biz-layout">
-            <article class="biz-story">
-              <p class="biz-eyebrow">Stile ed esperienza</p>
-              <h3>Parrucchieria e Hairstylist a Monte San Vito</h3>
-              <p>
-                Nel cuore di Monte San Vito, Parrucchieria Hair di Alessandra Bolli e il punto di riferimento per chi desidera un servizio di alta qualita.
-                Alessandra, titolare e anima del salone, accoglie ogni ospite in un ambiente raccolto e curato dove eleganza,
-                appartenenza e storia si incontrano da tantissimi anni.
-              </p>
-              <p>
-                I tagli e i colori nascono da esperienze personalizzate: dalle tendenze moda ai classici intramontabili, l'obiettivo
-                e valorizzare la tua bellezza naturale con manualita d'elite e prodotti selezionati.
-              </p>
-              <blockquote>"Professionista dell'hairstyling di alto livello, Alessandra ti guida in un percorso di bellezza su misura."</blockquote>
-              <p>
-                Prenota la tua esperienza esclusiva: un unico punto di riferimento per piega, colore, trattamenti rigeneranti e cura dell'immagine.
-              </p>
-            </article>
-            <div class="biz-details">
-              <img class="biz-logo" src="assets/logo-chiaro.svg" alt="Logo HairBolli" loading="lazy" decoding="async" />
-              <p class="tagline">Biglietto da visita &middot; Contatti</p>
-              <ul class="biz-info">
-                <li>
-                  <a href="https://wa.me/393383448944?text=Ciao%20HairBolli!%20Vorrei%20prenotare%20un%20appuntamento." target="_blank" rel="noopener" aria-label="Apri chat WhatsApp">
-                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12.051 2C6.507 2 2 6.507 2 12.051c0 1.805.472 3.568 1.366 5.118L2 22l4.926-1.311a10.02 10.02 0 0 0 5.125 1.413h.004C17.594 22 22 17.492 22 11.949 22 6.4 17.598 2 12.051 2zm5.416 14.563c-.227.64-1.29 1.173-1.825 1.233-.463.052-1.032.074-1.667-.103-.384-.11-.877-.284-1.51-.557-2.658-1.147-4.395-3.839-4.527-4.018-.132-.18-1.08-1.44-1.08-2.746 0-1.305.683-1.947.925-2.207.242-.26.528-.325.704-.325h.506c.162 0 .38-.06.595.455.227.54.77 1.87.838 2.006.066.135.11.295.02.475-.088.18-.132.295-.26.455-.132.16-.274.356-.39.478-.13.13-.264.27-.113.53.15.26.668 1.1 1.436 1.78.987.88 1.82 1.157 2.08 1.286.26.13.413.11.57-.066.158-.17.655-.763.83-1.026.173-.263.347-.22.58-.13.242.09 1.532.72 1.793.85.263.13.438.196.503.306.066.11.066.642-.16 1.281z"/></svg>
-                    <span><strong>WhatsApp</strong> &middot; +39 338 344 8944</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="tel:+39071740129" aria-label="Chiama il salone HairBolli">
-                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M6.6 10.8a15.9 15.9 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1.02-.24 11.2 11.2 0 0 0 3.52.56 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.85 21 3 13.15 3 4a1 1 0 0 1 1-1h3.48a1 1 0 0 1 1 1c0 1.23.2 2.41.56 3.52a1 1 0 0 1-.25 1.02L6.6 10.8z"/></svg>
-                    <span><strong>Telefono</strong> &middot; +39 071 740 129</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="mailto:hairalex@libero.it" aria-label="Scrivi a hairalex@libero.it">
-                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M4 5h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2zm0 2v.01L12 12l8-4.99V7H4zm0 3.236V17h16V10.236l-7.386 4.614a2 2 0 0 1-2.228 0L4 10.236z"/></svg>
-                    <span><strong>Email</strong> &middot; hairalex@libero.it</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://maps.app.goo.gl/Dh97kVH5FcqD4vpLA" target="_blank" rel="noopener" aria-label="Apri indirizzo su Google Maps">
-                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2a7 7 0 0 1 7 7c0 5.25-7 13-7 13S5 14.25 5 9a7 7 0 0 1 7-7zm0 4a3 3 0 1 0 .001 6.001A3 3 0 0 0 12 6z"/></svg>
-                    <span><strong>Salone</strong> &middot; Viale Martiri della Resistenza, 2, 60037 Monte San Vito AN</span>
-                  </a>
-                </li>
-                <li>
-                  <div class="hours" aria-label="Orari del salone">
-                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2a10 10 0 1 1 0 20 10 10 0 0 1 0-20zm1 5h-2v6l5 3 1-1.732-4-2.268V7z"/></svg>
-                    <span>Mar&ndash;Sab 09:00&ndash;19:00 &middot; Lun chiuso</span>
-                  </div>
-                </li>
-              </ul>
-              <div class="biz-actions">
-                <a class="btn btn-cta" href="prenota.html">Prenota online</a>
-                <a class="btn btn-primary" href="https://wa.me/393383448944?text=Ciao%20HairBolli!%20Vorrei%20prenotare%20un%20appuntamento." target="_blank" rel="noopener">Scrivici su WhatsApp</a>
-                <a class="btn btn-ghost" href="https://maps.app.goo.gl/Dh97kVH5FcqD4vpLA" target="_blank" rel="noopener">Apri mappa</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section id="servizi" class="section">
-        <div class="container">
-          <header class="section-header">
-            <h2>I nostri servizi</h2>
-            <p>Soluzioni per ogni esigenza, con prodotti selezionati e tecniche aggiornate.</p>
-          </header>
-          <div class="grid cards services-cards">
-            <a class="card service-card" href="servizi/piega-styling.html" aria-label="Vai a Piega e Styling">
-              <div class="icon icon-sprite icon-dry" aria-hidden="true"></div>
-              <h3>Piega & Styling</h3>
-              <p>Piega su misura e styling per ogni occasione, con prodotti lucidanti e protettivi.</p>
-              <div class="actions"><span class="pill-link">Scopri di piu</span></div>
-            </a>
-            <a class="card service-card" href="servizi/taglio-donna.html" aria-label="Vai ai tagli">
-              <div class="icon icon-sprite icon-cut" aria-hidden="true"></div>
-              <h3>Taglio</h3>
-              <p>Tagli pensati per donna, uomo, ragazzi e bimbi, calibrati su viso e stile di vita.</p>
-              <div class="actions"><span class="pill-link">Scopri di piu</span></div>
-            </a>
-            <a class="card service-card" href="servizi/colore.html" aria-label="Vai a Colore e Tonalizzante">
-              <div class="icon icon-sprite icon-color" aria-hidden="true"></div>
-              <h3>Colore & Tonalizzante</h3>
-              <p>Colori su misura, riflessi morbidi, bagni di luce e opzioni senza ammoniaca.</p>
-              <div class="actions"><span class="pill-link">Scopri di piu</span></div>
-            </a>
-            <a class="card service-card" href="servizi/schiariture.html" aria-label="Vai alle schiariture">
-              <div class="icon icon-sprite icon-schiariture" aria-hidden="true"></div>
-              <h3>Schiariture</h3>
-              <p>Balayage, meches e shatush personalizzati per luce e profondita naturali.</p>
-              <div class="actions"><span class="pill-link">Scopri di piu</span></div>
-            </a>
-            <a class="card service-card" href="servizi/lisciante-stiratura.html" aria-label="Vai ai servizi liscianti">
-              <div class="icon icon-sprite icon-liscio" aria-hidden="true"></div>
-              <h3>Lisciante & Stiratura</h3>
-              <p>Stiratura tradizionale e anticrespo K-Hemp per chi ama il liscio setoso.</p>
-              <div class="actions"><span class="pill-link">Scopri di piu</span></div>
-            </a>
-            <a class="card service-card" href="servizi/trattamenti-sposa.html" aria-label="Vai a trattamenti e sposa">
-              <div class="icon icon-sprite icon-trattamenti" aria-hidden="true"></div>
-              <h3>Trattamenti & Sposa</h3>
-              <p>Ricostruzione, lamination, cure cute specifiche e pacchetto sposa dedicato.</p>
-              <div class="actions"><span class="pill-link">Scopri di piu</span></div>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <section id="alessandra" class="section">
-        <div class="container two-col">
-          <div class="bio-photos">
-            <img class="bio-photo bio-photo-main" src="assets/fotolei.jpg" alt="Bolli Alessandra nel salone HairBolli" loading="lazy" />
-          </div>
-          <div class="bio-copy">
-            <header class="section-header left">
-              <h2>Bolli Alessandra</h2>
-              <p class="muted">Titolare e Hairstylist</p>
-            </header>
-            <p>Ciao, sono Alessandra Bolli e dal 1997 porto avanti il salone di famiglia "Hair", nato nel 1968 grazie a mia madre Luana dopo il mio diploma alla Scuola Regionale di Ancona.</p>
-            <p>Negli anni ho seguito corsi su colore, taglio e tecniche aggiornate per restare al passo con le novita. Scelgo marchi ispirati alla natura e prodotti di qualita, cosi da lavorare nel rispetto del capello.</p>
-            <p>La passione nasce in casa: sono cresciuta tra bigodini e lavatesta, con mio padre parrucchiere ad Ancona, Roma e Senigallia e poi Maestro d'Arte alla Scuola di Ancona; mia madre ha portato avanti il salone, e oggi continuo io.</p>
-            <p>Quasi 60 anni di presenza significano accoglienza, cortesia e ascolto. L'ambiente e informale ma curato, sempre aperto a idee e ispirazioni nuove.</p>
-            <p>Ogni look e pensato su misura: se ti va, parliamone insieme e troviamo lo stile che senti tuo.</p>
-            <a class="btn btn-primary" href="prenota.html">Prenota con Alessandra</a>
-          </div>
-        </div>
-      </section>
-      <section id="recensioni" class="section alt">
-        <div class="container">
-          <header class="section-header">
-            <h2>Cosa dicono di noi</h2>
-            <p>Pronto per collegare le recensioni Google; intanto mostriamo alcuni esempi reali dei clienti.</p>
-          </header>
-          <div class="reviews-board">
-            <div class="reviews-meta">
-              <div class="rating-badge" aria-live="polite">
-                <div class="score" data-reviews-score>5.0</div>
-                <div class="source">Valutazione Google</div>
-                <div class="count" data-reviews-count>In attesa di collegamento live</div>
-              </div>
-              <div class="reviews-actions">
-                <a class="btn btn-primary" href="https://maps.app.goo.gl/Dh97kVH5FcqD4vpLA" target="_blank" rel="noopener">Scrivi una recensione</a>
-                <button type="button" class="btn btn-ghost" data-reviews-refresh>Ricarica</button>
-              </div>
-              <p class="muted" data-reviews-status aria-live="polite">Il widget e gia pronto: quando il server sara online mostreremo qui le recensioni aggiornate.</p>
-            </div>
-            <div class="grid cards reviews" id="reviews-list" data-reviews-endpoint="/api/reviews/google?limit=6" data-reviews-google-url="https://maps.app.goo.gl/Dh97kVH5FcqD4vpLA"></div>
-          </div>
-        </div>
-      </section>
-            <section id="galleria" class="section gallery-full" aria-label="Galleria lavori">
-        <div class="gallery-grid">
-          <a class="gallery-item" href="assets/gallery/g1.jpg" target="_blank" rel="noopener">
-            <img src="assets/gallery/g1.jpg" alt="Galleria HairBolli 1" />
-          </a>
-          <a class="gallery-item" href="assets/gallery/g2.jpg" target="_blank" rel="noopener">
-            <img src="assets/gallery/g2.jpg" alt="Galleria HairBolli 2" />
-          </a>
-          <a class="gallery-item" href="assets/gallery/g3.jpg" target="_blank" rel="noopener">
-            <img src="assets/gallery/g3.jpg" alt="Galleria HairBolli 3" />
-          </a>
-          <a class="gallery-item" href="assets/gallery/g4.jpg" target="_blank" rel="noopener">
-            <img src="assets/gallery/g4.jpg" alt="Galleria HairBolli 4" />
-          </a>
-          <a class="gallery-item" href="assets/gallery/g5.jpg" target="_blank" rel="noopener">
-            <img src="assets/gallery/g5.jpg" alt="Galleria HairBolli 5" />
-          </a>
-          <a class="gallery-item" href="assets/gallery/g6.jpg" target="_blank" rel="noopener">
-            <img src="assets/gallery/g6.jpg" alt="Galleria HairBolli 6" />
-          </a>
-          <a class="gallery-item" href="assets/gallery/g7.jpg" target="_blank" rel="noopener">
-            <img src="assets/gallery/g7.jpg" alt="Galleria HairBolli 7" />
-          </a>
-          <a class="gallery-item" href="assets/gallery/g8.jpg" target="_blank" rel="noopener">
-            <img src="assets/gallery/g8.jpg" alt="Galleria HairBolli 8" />
-          </a>
-        </div>
-      </section>
-
-      <div class="lightbox" id="gallery-lightbox" aria-modal="true" role="dialog" aria-label="Immagine ingrandita">
-        <div class="lightbox-inner">
-          <button class="lightbox-close" type="button" aria-label="Chiudi">x</button>
-          <img src="" alt="" loading="lazy" />
-        </div>
-      </div>
-
-      <section id="mappa" class="section map">
-        <div class="container">
-          <header class="section-header">
-            <h2>Dove siamo</h2>
-          </header>
-          <div class="map-embed">
-            <iframe title="Mappa sede" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Viale%20Martiri%20della%20Resistenza%202%2060037%20Monte%20San%20Vito%20AN&output=embed"></iframe>
-          </div>
-        </div>
-      </section>
-    </main>
-
-      <section class="section brands">
-        <div class="container">
-          <header class="section-header">
-            <h2>Marchi partner</h2>
-            <p class="muted">Prodotti e strumenti che utilizziamo in salone.</p>
-          </header>
-          <div class="brands-strip" aria-label="Marchi utilizzati">
-            <div class="brands-row-static">
-              <figure class="brand-tile"><img src="assets/marchi/691091_482a499bf92c4fc7a79696cfbf13c884~mv2.png" alt="LVDT - Le Vie della Terra" loading="lazy" /></figure>
-              <figure class="brand-tile"><img src="assets/marchi/download.png" alt="Triskell Botanical Treatment" loading="lazy" /></figure>
-              <figure class="brand-tile"><img src="assets/marchi/Parlux-logo.jpg" alt="Parlux" loading="lazy" /></figure>
-              <figure class="brand-tile"><img src="assets/marchi/Panasonic_logo_(Blue).svg.png" alt="Panasonic" loading="lazy" /></figure>
-              <figure class="brand-tile"><img src="assets/marchi/kiepe-professional-black-1.png" alt="Kiepe" loading="lazy" /></figure>
-              <figure class="brand-tile"><img src="assets/marchi/hhsimonsen_fe_black.png" alt="HH Simonsen" loading="lazy" /></figure>
-              <figure class="brand-tile"><img src="assets/marchi/She-logo.jpg" alt="She" loading="lazy" /></figure>
-              <figure class="brand-tile"><img src="assets/marchi/Siebel_Systems_logo.svg.png" alt="Siebel" loading="lazy" /></figure>
-              <figure class="brand-tile"><img src="assets/marchi/logo-Termix-italia.png" alt="Termix" loading="lazy" /></figure>
-              <figure class="brand-tile"><img src="assets/marchi/images.png" alt="Osmo" loading="lazy" /></figure>
-            </div>
-          </div>
-        </div>
-      </section>
-
-
-    <footer class="site-footer">
-      <div class="container footer-inner">
-        <div>
-          <a class="brand" href="#top" aria-label="Home HairBolli">
-            <img class="brand-logo logo-light" src="assets/logo-chiaro.svg" alt="HairBolli" />
-          </a>
-          <p class="muted">Parrucchieria a Monte San Vito.</p>
-        </div>
-        <nav class="footer-nav" aria-label="Link utili">
-          <a href="#servizi">Servizi</a>
-          <a href="#galleria">Galleria</a>
-          <a href="#info">Contatti</a>
-        </nav>
-      </div>
-    </footer>
-    <div class="footer-bar">
-      &copy; 2024 HairBolli | Bolli Alessandra | P.IVA 01488060425 | Tutti i diritti riservati |
-      <a href="privacy.html" aria-label="Informativa Privacy HairBolli">Informativa Privacy</a> |
-      <a href="cookie-policy.html" aria-label="Cookie Policy HairBolli">Cookie Policy</a> |
-      Sviluppo: <a href="https://pctekpro.it/" target="_blank" rel="noopener" aria-label="Sviluppo sito da pctekpro.it">PCTEK PRO | Bolli Federico</a>
-    </div>
-
-    <button id="backToTop" class="back-to-top" aria-label="Torna su">&#8593;</button>
-    <a href="https://wa.me/393383448944?text=Ciao%20HairBolli!" class="floating-cta" aria-label="Chatta su WhatsApp">WhatsApp</a>
+﻿<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PCtek Pro - Assistenza tecnica PC, consulenze, assemblaggio PC, recupero dati e backup e altro ancora per te nella zona di Ancona.">
+    <link rel="canonical" href="https://pctekpro.it/">
+    <title>PCtek Pro | Bolli Federico</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Favicon & app icons (root-relative for consistency across pages) -->
+    <!-- Favicon: prima un PNG 48x per Google Search -->
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+    <!-- Fallback/compatibilità -->
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <!-- SVG per browser moderni (non usato da Google Search) -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="mask-icon" href="/assets/logo-pctekpro.svg" color="#00bfa6">
+    <meta name="theme-color" content="#0f172a">
+    <meta name="application-name" content="PCtek Pro">
+    <meta name="apple-mobile-web-app-title" content="PCtek Pro">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ComputerRepairService",
+      "name": "PCtek Pro",
+      "url": "https://pctekpro.it/",
+      "logo": "https://pctekpro.it/assets/logo-pctekpro.svg",
+      "image": "https://pctekpro.it/assets/logo-pctekpro.png",
+      "telephone": "+39 333 991 4498",
+      "areaServed": { "@type": "AdministrativeArea", "name": "Ancona" }
+    }
+    </script>
 
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "HairSalon",
-      "name": "HairBolli",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Viale Martiri della Resistenza 2",
-        "addressLocality": "Monte San Vito",
-        "addressRegion": "AN",
-        "postalCode": "60037",
-        "addressCountry": "IT"
-      },
-      "telephone": "+39 338 344 8944",
-      "image": [
-        "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1200&auto=format&fit=crop"
-      ],
-      "openingHours": ["Tu-Sa 09:00-19:00"],
-      "priceRange": "$$"
+      "@type": "WebSite",
+      "name": "PCtek Pro",
+      "alternateName": "PCtekPro",
+      "url": "https://pctekpro.it/"
     }
     </script>
-    <script src="assets/script.js" defer></script>
-  </body>
-  </html>
+
+    <script>
+        // Scroll reveal animations (potenziate) + piccoli effetti dinamici
+        window.addEventListener('DOMContentLoaded', function() {
+            // Abilita gli stili reveal solo con JS
+            document.documentElement.classList.add('js-reveal');
+
+            // Gruppi di elementi da rivelare con ritardo a cascata
+            const groups = [
+                Array.from(document.querySelectorAll('#home .hero-content > *')),
+                Array.from(document.querySelectorAll('#home .hero-visual')),
+                Array.from(document.querySelectorAll('#per-chi .section-header > *')),
+                Array.from(document.querySelectorAll('#per-chi .audience-grid > *')),
+                Array.from(document.querySelectorAll('#servizi .section-header > *')),
+                Array.from(document.querySelectorAll('#servizi .cards-grid > *')),
+                Array.from(document.querySelectorAll('#azienda .section-header > *')),
+                Array.from(document.querySelectorAll('#azienda .cards-grid > *')),
+                Array.from(document.querySelectorAll('#chi-siamo .section-header > *')),
+                Array.from(document.querySelectorAll('#interventi .section-header > *')),
+                Array.from(document.querySelectorAll('#interventi .gallery-grid > *')),
+                Array.from(document.querySelectorAll('#contatti .section-header > *')),
+                Array.from(document.querySelectorAll('#contatti .contact-grid > *')),
+                Array.from(document.querySelectorAll('.cta-section > *')),
+                Array.from(document.querySelectorAll('footer .footer-content > *'))
+            ];
+
+            // Costruisci lista target e applica direzioni + stagger
+            const targets = [];
+            groups.forEach((els) => {
+                els.forEach((el, i) => {
+                    if (!el) return;
+                    el.classList.add('reveal');
+                    // Stagger naturale
+                    el.style.transitionDelay = (i * 90) + 'ms';
+                    // Alterna direzione nelle griglie
+                    const inAudience = el.closest('.audience-grid');
+                    const inCards = el.closest('.cards-grid');
+                    const inContact = el.closest('.contact-grid');
+                    const inCTA = el.closest('.cta-section');
+                    if (inAudience || inCards || inContact) {
+                        (i % 2 === 0 ? el.classList.add('reveal-left') : el.classList.add('reveal-right'));
+                    } else if (inCTA) {
+                        el.classList.add('reveal-zoom');
+                    } else if (el.matches('#home .hero-visual')) {
+                        el.classList.add('reveal-right');
+                    }
+                    targets.push(el);
+                });
+            });
+
+            if (!('IntersectionObserver' in window)) {
+                targets.forEach((el) => el.classList.add('is-visible'));
+                return;
+            }
+
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        io.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15, rootMargin: '0px 0px -10% 0px' });
+            targets.forEach((el) => io.observe(el));
+
+            // Piccolo parallax del contenuto hero (desktop) rispettando ridotto movimento
+            const heroContent = document.querySelector('#home .hero-content');
+            const mqReduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+            const mqSmall = window.matchMedia('(max-width: 720px)');
+            let ticking = false;
+            function onScroll() {
+                if (!heroContent || mqReduce.matches || mqSmall.matches) return;
+                if (!ticking) {
+                    window.requestAnimationFrame(() => {
+                        const y = window.scrollY || document.documentElement.scrollTop || 0;
+                        const p = Math.max(0, Math.min(1, y / 600));
+                        heroContent.style.transform = 'translateY(' + (p * 18) + 'px)';
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            }
+            window.addEventListener('scroll', onScroll, { passive: true });
+        });
+    </script>
+    <script>
+        // Imposta il tema automatico (segue le impostazioni del dispositivo)
+        try {
+            document.documentElement.setAttribute('data-theme', 'auto');
+            localStorage && localStorage.removeItem('theme');
+        } catch (e) {}
+    </script>
+    <script>
+        // Header integrato con l'hero: overlay in cima e stato compatto dopo scroll
+        window.addEventListener('DOMContentLoaded', function(){
+            const header = document.querySelector('header');
+            const hero = document.getElementById('home');
+            if (!header || !hero) return;
+            function setHeaderState(){
+                const r = hero.getBoundingClientRect();
+                const h = Math.max(56, header.getBoundingClientRect().height || 0);
+                const overlap = r.bottom > h; // usa altezza reale header per evitare testo chiaro su sfondo bianco
+                header.classList.toggle('is-hero', overlap);
+                header.classList.toggle('is-scrolled', !overlap);
+                try { moveIndicator(); } catch(e){}
+            }
+            setHeaderState();
+            window.addEventListener('scroll', setHeaderState, { passive: true });
+            window.addEventListener('resize', setHeaderState);
+
+            // Scroll spy semplice per evidenziare la sezione corrente nella nav
+            const links = Array.from(document.querySelectorAll('header nav a[href^="#"]'));
+            const pairs = links.map(a => ({ a, s: document.getElementById(a.getAttribute('href').slice(1)) })).filter(p => p.s);
+            if (pairs.length) {
+                const spy = new IntersectionObserver((entries) => {
+                    entries.forEach((e) => {
+                        if (e.isIntersecting) {
+                            pairs.forEach(p => p.a.classList.toggle('is-active', p.s === e.target));
+                            moveIndicator();
+                        }
+                    });
+                }, { threshold: 0.55 });
+                pairs.forEach(p => spy.observe(p.s));
+            }
+
+            // Indicatore animato sotto i link
+            const nav = document.getElementById('site-nav');
+            const indicator = document.getElementById('nav-indicator');
+            function moveIndicator(target) {
+                if (!nav || !indicator) return;
+                const containerRect = nav.getBoundingClientRect();
+                let link = target || document.querySelector('header nav a.is-active') || document.querySelector('header nav a');
+                if (!link) return;
+                const rect = link.getBoundingClientRect();
+                const left = rect.left - containerRect.left;
+                indicator.style.left = left + 'px';
+                indicator.style.width = rect.width + 'px';
+                indicator.style.opacity = 1;
+            }
+            // Aggiorna su load/resize
+            window.addEventListener('load', () => moveIndicator(), { once: true });
+            window.addEventListener('resize', () => moveIndicator());
+            // Hover sposta, mouseleave ripristina
+            header.addEventListener('mouseover', (e) => {
+                const a = e.target.closest('nav a');
+                if (a) moveIndicator(a);
+            });
+            header.addEventListener('mouseleave', () => moveIndicator());
+
+            // Toggle hamburger per mobile
+            const toggle = document.getElementById('nav-toggle');
+            if (toggle && nav) {
+                const close = () => { toggle.setAttribute('aria-expanded','false'); toggle.setAttribute('aria-label','Apri menu'); nav.classList.remove('is-open'); };
+                const open = () => { toggle.setAttribute('aria-expanded','true'); toggle.setAttribute('aria-label','Chiudi menu'); nav.classList.add('is-open'); };
+                toggle.addEventListener('click', () => {
+                    const expanded = toggle.getAttribute('aria-expanded') === 'true';
+                    if (expanded) close(); else open();
+                });
+                // Chiudi al click su un link
+                nav.addEventListener('click', (e) => {
+                    if (e.target.closest('a')) close();
+                });
+                // Chiudi su resize a layout desktop
+                window.addEventListener('resize', () => {
+                    if (window.matchMedia('(min-width: 721px)').matches) close();
+                });
+            }
+        });
+    </script>
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #00bfa6;
+            --accent: #f59e0b;
+            --text-dark: #0f172a;
+            --text-light: #ffffff;
+            --bg-light: #f7f9fc;
+            --surface: #ffffff;
+            --muted: #64748b;
+            --border: #e5e9f2;
+            --radius: 14px;
+            --shadow: 0 18px 40px rgba(16, 24, 40, 0.12);
+            --shadow-sm: 0 2px 10px rgba(16, 24, 40, 0.06);
+            --ring: rgba(0, 191, 166, 0.3);
+            --band-teal: rgba(0, 191, 166, 0.08);
+            --band-amber: rgba(245, 158, 11, 0.07);
+            --band-cyan: rgba(34, 211, 238, 0.08);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+            background:
+                radial-gradient(1200px 600px at 100% -50%, rgba(0, 191, 166, 0.08), transparent 60%),
+                linear-gradient(var(--bg-light), var(--bg-light));
+            line-height: 1.6;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1100;
+            backdrop-filter: blur(22px) saturate(1.2);
+            background: rgba(255, 255, 255, 0.82);
+            border-bottom: 1px solid var(--border);
+            box-shadow: var(--shadow-sm);
+            transition: background 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+        }
+        /* Header in overlay sopra l'hero: più integrato e dinamico */
+        header.is-hero {
+            background: linear-gradient(to bottom, rgba(15, 23, 42, 0.28), rgba(15, 23, 42, 0.04));
+            border-bottom: 0;
+            box-shadow: none;
+        }
+        header.is-hero::after {
+            content: "";
+            position: absolute; left: 0; right: 0; bottom: 0; height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
+            pointer-events: none;
+        }
+
+        .top-bar {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.2rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--text-dark);
+        }
+
+        .logo-img { height: 100px; width: auto; display: block; transition: height 200ms ease; }
+        header.is-hero .logo-img { height: 96px; }
+        header.is-scrolled .logo-img { height: 76px; }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 120ms ease;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--secondary);
+        }
+
+        nav a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: width 0.2s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+        nav a.is-active::after { width: 100%; }
+
+        /* Indicatore animato sotto il link attivo */
+        nav { position: relative; }
+        .nav-indicator { position: absolute; left: 0; bottom: -6px; height: 2px; width: 0; border-radius: 999px; background: linear-gradient(90deg, var(--secondary), #34d399); box-shadow: 0 4px 18px rgba(0, 191, 166, 0.35); transition: left 220ms cubic-bezier(0.16,1,0.3,1), width 220ms cubic-bezier(0.16,1,0.3,1), opacity 160ms ease; opacity: 0.9; }
+        header.is-hero .nav-indicator { background: linear-gradient(90deg, #ffffff, rgba(255,255,255,0.7)); box-shadow: 0 4px 18px rgba(255,255,255,0.4); }
+
+        /* Stile pill traslucido in overlay sull'hero */
+        header.is-hero nav a {
+            color: rgba(255,255,255,0.95);
+            padding: 0.5rem 0.8rem;
+            border-radius: 12px;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.22);
+        }
+        header.is-hero nav a:hover { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.30); transform: translateY(-1px); }
+        header.is-hero nav a.is-active { background: rgba(255,255,255,0.22); border-color: rgba(255,255,255,0.40); }
+        header.is-hero nav a::after { content: none; display: none; }
+        header.is-hero .top-bar { padding-top: 1rem; padding-bottom: 1rem; }
+        header.is-scrolled { background: var(--surface); border-bottom: 1px solid var(--border); box-shadow: var(--shadow-sm); }
+        header.is-scrolled .top-bar { padding-top: 0.65rem; padding-bottom: 0.65rem; }
+        header.is-scrolled nav a { color: var(--text-dark); background: transparent; border-color: transparent; padding: 0; border-radius: 0; }
+
+        /* Tema chiaro: assicurare contrasto in overlay anche sopra sfondi chiari */
+        html[data-theme='light'] header.is-hero nav a { color: var(--text-dark); background: var(--surface); border: 1px solid var(--border); }
+        html[data-theme='light'] header.is-hero nav a:hover { background: rgba(255,255,255,0.92); }
+        html[data-theme='light'] header.is-hero .nav-toggle { background: var(--surface); color: var(--text-dark); border-color: var(--border); }
+        html[data-theme='light'] header.is-hero .social-links a.social { background-color: var(--surface); border-color: var(--border); }
+        html[data-theme='light'] header.is-hero .social-links a.instagram { background-image: url('https://api.iconify.design/tabler/brand-instagram.svg?color=%230f172a'); }
+        html[data-theme='light'] header.is-hero .social-links a.facebook  { background-image: url('https://api.iconify.design/tabler/brand-facebook.svg?color=%230f172a'); }
+        
+        html[data-theme='light'] header.is-hero .social-links a.whatsapp  { background-image: url('https://api.iconify.design/tabler/brand-whatsapp.svg?color=%230f172a'); }
+        html[data-theme='light'] header.is-hero .nav-indicator { background: linear-gradient(90deg, var(--secondary), #34d399); box-shadow: 0 4px 18px rgba(0, 191, 166, 0.35); }
+
+        /* Social nella top-bar */
+        .right-tools {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .social-links {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .social-links a.social {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            display: inline-block;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 20px 20px;
+            border: 1px solid var(--border);
+            background-color: var(--surface);
+            transition: transform 0.15s ease, box-shadow 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+        }
+        .social-links a.social:hover {
+            transform: translateY(-1px);
+            background-color: rgba(0, 191, 166, 0.08);
+            border-color: var(--secondary);
+            box-shadow: var(--shadow-sm);
+        }
+        /* Social in header overlay: icone chiare */
+        header.is-hero .social-links a.social { background-color: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.24); }
+        header.is-hero .social-links a.instagram { background-image: url('https://api.iconify.design/tabler/brand-instagram.svg?color=%23ffffff'); }
+        header.is-hero .social-links a.facebook  { background-image: url('https://api.iconify.design/tabler/brand-facebook.svg?color=%23ffffff'); }
+        
+        header.is-hero .social-links a.whatsapp  { background-image: url('https://api.iconify.design/tabler/brand-whatsapp.svg?color=%23ffffff'); }
+        /* Toggle hamburger */
+        .nav-toggle { display: none; appearance: none; border: 1px solid var(--border); background: var(--surface); color: var(--text-dark); width: 44px; height: 44px; border-radius: 12px; align-items: center; justify-content: center; cursor: pointer; transition: transform 120ms ease, box-shadow 200ms ease, background 200ms ease, border-color 200ms ease; }
+        .nav-toggle:hover { transform: translateY(-1px); box-shadow: var(--shadow-sm); }
+        .nav-toggle:focus-visible { outline: none; box-shadow: 0 0 0 4px var(--ring); }
+        header.is-hero .nav-toggle { background: rgba(255,255,255,0.08); color: #fff; border-color: rgba(255,255,255,0.24); }
+        .nav-toggle-icon { display: block; }
+        .nav-toggle-icon .line { transition: transform 200ms ease, opacity 160ms ease; }
+        .nav-toggle[aria-expanded="true"] .line1 { transform-origin: 12px 7px; transform: rotate(45deg) translate(3px, 3px); }
+        .nav-toggle[aria-expanded="true"] .line2 { opacity: 0; }
+        .nav-toggle[aria-expanded="true"] .line3 { transform-origin: 12px 17px; transform: rotate(-45deg) translate(3px, -3px); }
+        .social-links a.social:focus-visible {
+            outline: none;
+            box-shadow: 0 0 0 4px var(--ring);
+        }
+        /* Icone (light) */
+        .social-links a.instagram { background-image: url('https://api.iconify.design/tabler/brand-instagram.svg?color=%230f172a'); }
+        .social-links a.facebook  { background-image: url('https://api.iconify.design/tabler/brand-facebook.svg?color=%230f172a'); }
+        
+        .social-links a.whatsapp  { background-image: url('https://api.iconify.design/tabler/brand-whatsapp.svg?color=%230f172a'); }
+        /* Icone (dark override) */
+        html[data-theme='dark'] .social-links a.instagram { background-image: url('https://api.iconify.design/tabler/brand-instagram.svg?color=%23e2e8f0'); }
+        html[data-theme='dark'] .social-links a.facebook  { background-image: url('https://api.iconify.design/tabler/brand-facebook.svg?color=%23e2e8f0'); }
+        
+        html[data-theme='dark'] .social-links a.whatsapp  { background-image: url('https://api.iconify.design/tabler/brand-whatsapp.svg?color=%23e2e8f0'); }
+
+        /* Dropdown Servizi */
+        .nav-item-dropdown { position: relative; }
+        .dropdown-menu {
+            position: absolute;
+            top: calc(100% + 10px);
+            right: 0;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+            padding: 0.5rem 0;
+            min-width: 260px;
+            display: none;
+            z-index: 1000;
+        }
+        .nav-item-dropdown:hover .dropdown-menu,
+        .nav-item-dropdown:focus-within .dropdown-menu,
+        .nav-item-dropdown.open .dropdown-menu { display: block; }
+        /* Override caret char */
+        .has-caret::before { content: "\25BE"; }
+        .dropdown-menu li { list-style: none; }
+        .dropdown-menu a {
+            display: block;
+            padding: 0.6rem 1rem;
+            color: var(--text-dark);
+            text-decoration: none;
+            font-size: 0.95rem;
+            white-space: nowrap;
+        }
+        .dropdown-menu a::after { content: none; }
+        .dropdown-menu a:hover { background: var(--bg-light); color: var(--secondary); }
+
+        .hero {
+            position: relative;
+            color: var(--text-light);
+            padding: 6.5rem 1.5rem 5rem;
+            overflow: hidden;
+        }
+
+        /* Background crossfade slideshow inside hero */
+        .hero-bg { position: absolute; inset: 0; overflow: hidden; z-index: 0; pointer-events: none; }
+        .hero-bg-fade {
+            position: absolute; inset: 0;
+            background-size: cover; background-position: center;
+            filter: saturate(0.9) brightness(0.75);
+            opacity: 0; will-change: opacity;
+            animation: heroFade 50s ease-in-out infinite;
+        }
+        .hero-bg-fade:nth-child(1) { animation-delay: 0s; }
+        .hero-bg-fade:nth-child(2) { animation-delay: 10s; }
+        .hero-bg-fade:nth-child(3) { animation-delay: 20s; }
+        .hero-bg-fade:nth-child(4) { animation-delay: 30s; }
+        .hero-bg-fade:nth-child(5) { animation-delay: 40s; }
+        @keyframes heroFade {
+            0% { opacity: 0; }
+            2% { opacity: 1; }
+            20% { opacity: 1; }
+            22% { opacity: 0; }
+            100% { opacity: 0; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .hero-bg-fade { animation: none; }
+            .hero-bg-fade:nth-child(1) { opacity: 1; }
+        }
+
+        /* Overlays to keep text readable and add highlight */
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.7), rgba(0, 191, 166, 0.35));
+            z-index: 1;
+        }
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at top right, rgba(243, 156, 18, 0.35), transparent 45%);
+            mix-blend-mode: screen;
+            z-index: 1;
+        }
+
+        .hero-container {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            align-items: center;
+            z-index: 2; /* above overlays and bg */
+        }
+
+        .hero-content { will-change: transform; }
+        .hero-content h1 {
+            font-size: clamp(2.6rem, 5vw, 3.6rem);
+            margin: 0 0 1rem;
+            line-height: 1.1;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .hero-cta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        /* CTA compatta sotto le griglie servizi */
+        .section-cta {
+            max-width: 1200px;
+            margin: 1rem auto 0;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        /* Pannello espandibile con azioni rapide */
+        .cta-expander {
+            display: none;
+            max-width: 1200px;
+            margin: 0.75rem auto 0;
+            padding: 0.85rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            background: var(--surface);
+            box-shadow: var(--shadow-sm);
+        }
+        .cta-expander.is-open { display: block; }
+        .cta-actions {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        .btn-soft {
+            border: 1px solid var(--border);
+            color: var(--text-dark);
+            background: var(--surface);
+        }
+        .btn-soft:hover {
+            background: rgba(0, 191, 166, 0.08);
+            border-color: var(--secondary);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            border-radius: 999px;
+            font-weight: 600;
+            font-size: 1.05rem;
+            text-decoration: none;
+            border: 0;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--text-dark);
+            box-shadow: 0 12px 28px rgba(245, 158, 11, 0.35);
+        }
+
+        .btn-outline {
+            border: 2px solid rgba(255, 255, 255, 0.6);
+            color: var(--text-light);
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.8);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+        }
+        .btn-primary:hover { box-shadow: 0 16px 36px rgba(245, 158, 11, 0.45); }
+
+        .section {
+            padding: 5rem 1.5rem;
+        }
+
+        .section-header {
+            max-width: 1200px;
+            margin: 0 auto 3rem;
+            text-align: center;
+        }
+
+        .section-header h2 {
+            font-size: 2.1rem;
+            margin: 0 0 0.75rem;
+            color: var(--text-dark);
+        }
+
+        .section-header p {
+            color: var(--muted);
+            margin: 0 auto;
+            max-width: 620px;
+        }
+        
+        .cards-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: var(--surface);
+            padding: 2rem;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+            color: var(--text-dark);
+            text-decoration: none;
+            display: block;
+            cursor: pointer;
+            outline: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: "";
+            position: absolute;
+            left: 0; right: 0; top: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--secondary), var(--accent));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.25s ease;
+        }
+        .hero-card::before { display: none !important; }
+
+        .card:hover,
+        .card:focus-visible {
+            transform: translateY(-6px);
+            background: rgba(0, 191, 166, 0.06);
+            border-color: var(--secondary);
+            box-shadow: 0 18px 50px rgba(16, 24, 40, 0.18);
+        }
+
+        .card:hover::before,
+        .card:focus-visible::before { transform: scaleX(1); }
+
+        .card:focus-visible {
+            box-shadow: 0 0 0 4px var(--ring), 0 18px 50px rgba(16, 24, 40, 0.18);
+        }
+
+        .card h3 {
+            margin: 0 0 0.75rem;
+            color: var(--text-dark);
+        }
+
+        .card p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        /* Hint e CTA sulle card servizi */
+        .section-hint { margin-top: 0.5rem; font-size: 0.95rem; color: var(--muted); }
+        .about-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .about-section img {
+            width: 100%;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        /* Immagine attività con effetto highlight */
+        .about-image {
+            position: relative;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            background: linear-gradient(180deg, rgba(255,255,255,0), rgba(0,191,166,0.08));
+        }
+        .about-image::after {
+            content: "";
+            position: absolute;
+            inset: -30%;
+            background:
+                radial-gradient(60% 60% at 30% 20%, rgba(0,191,166,0.22), transparent 60%),
+                radial-gradient(50% 50% at 75% 80%, rgba(245,158,11,0.16), transparent 60%);
+            filter: blur(22px);
+            opacity: 0;
+            transition: opacity 0.45s ease;
+            pointer-events: none;
+        }
+        .about-image img {
+            display: block;
+            width: 100%;
+            height: auto;
+            transition: transform 0.45s ease, filter 0.45s ease;
+        }
+        .about-image:hover img,
+        .about-image:focus-visible img { transform: scale(1.04); }
+        .about-image:hover::after,
+        .about-image:focus-visible::after { opacity: 1; }
+
+        .about-section ul {
+            margin: 1.5rem 0 0;
+            padding: 0;
+            list-style: none;
+            display: grid;
+            gap: 1rem;
+        }
+
+        .about-section li {
+            position: relative;
+            padding-left: 1.8rem;
+        }
+
+        .about-section li::before {
+            content: "\2713";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--secondary);
+            font-weight: 600;
+        }
+
+        .cta-section {
+            background: linear-gradient(130deg, rgba(0, 191, 166, 0.95), rgba(44, 62, 80, 0.9));
+            color: var(--text-light);
+            text-align: center;
+            padding: 4rem 1.5rem;
+            border-radius: 24px;
+            box-shadow: var(--shadow);
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .cta-section h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact {
+            background: var(--surface);
+        }
+
+        .contact-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .contact-info {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .contact-info div {
+            padding: 1.5rem;
+            border-radius: 18px;
+            border: 1px solid var(--border);
+            background: var(--bg-light);
+        }
+
+        .contact-info strong {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        form {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 18px;
+            border: 1px solid var(--border);
+            display: grid;
+            gap: 1.2rem;
+        }
+
+        .form-status {
+            font-size: 0.9rem;
+            margin-top: -0.5rem;
+            padding: 0.2rem 0;
+            display: none;
+        }
+
+        .form-status.is-visible {
+            display: block;
+        }
+
+        .form-status.success {
+            color: var(--secondary);
+        }
+
+        .form-status.error {
+            color: #c0392b;
+        }
+
+        label {
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 0.85rem 1rem;
+            border-radius: 12px;
+            border: 1px solid rgba(44, 62, 80, 0.2);
+            font-size: 0.95rem;
+            font-family: inherit;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 4px var(--ring);
+        }
+
+        textarea {
+            min-height: 140px;
+            resize: vertical;
+        }
+
+        /* (rimosso toggle tema: il sito segue automaticamente il tema del dispositivo) */
+        footer {
+            background: #0f172a;
+            color: rgba(255, 255, 255, 0.75);
+            padding: 3rem 1.5rem;
+        }
+
+        .footer-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .footer-content h4 {
+            margin-top: 0;
+            color: #ffffff;
+        }
+
+        .footer-logo {
+            height: 100px;
+            width: auto;
+            display: block;
+            margin-bottom: 0.75rem;
+            filter: invert(1) brightness(1.2) contrast(1.05);
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 1px, 1px);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: 0.75rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.75);
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+
+        .footer-bottom {
+            max-width: 1100px;
+            margin: 2rem auto 0;
+            text-align: center;
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1.5rem;
+        }
+
+        @media (max-width: 720px) {
+            nav ul {
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .top-bar {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .hero {
+                padding-top: 7.5rem;
+            }
+
+            .cta-section {
+                border-radius: 18px;
+            }
+
+            .logo-img { height: 56px; }
+            .footer-logo { height: 56px; }
+
+            /* Dropdown mobile: centrato e contenuto nel viewport */
+            .nav-item-dropdown { position: static; }
+            .nav-item-dropdown .dropdown-menu {
+                left: 50%;
+                right: auto;
+                transform: translateX(-50%);
+                min-width: 0;
+                width: min(320px, calc(100vw - 32px));
+                max-width: calc(100vw - 32px);
+            }
+            .nav-item-dropdown .dropdown-menu a {
+                white-space: normal; /* consenti a capo per evitare overflow */
+                line-height: 1.35;
+            }
+
+            /* Mobile nav: hamburger + pannello */
+            .nav-toggle { display: inline-flex; }
+            header nav { display: none; width: 100%; }
+            header nav.is-open { display: block; }
+            header nav ul { flex-direction: column; align-items: stretch; gap: 0.5rem; }
+            header.is-hero nav a,
+            header nav a { color: var(--text-dark); background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 0.85rem 1rem; }
+            .nav-indicator { display: none; }
+
+            /* Tema chiaro su mobile: evita testo bianco su fondo chiaro */
+            header.is-hero .nav-toggle { background: var(--surface); color: var(--text-dark); border-color: var(--border); }
+            header.is-hero .social-links a.social { background-color: var(--surface); border-color: var(--border); }
+            header.is-hero .social-links a.instagram { background-image: url('https://api.iconify.design/tabler/brand-instagram.svg?color=%230f172a'); }
+            header.is-hero .social-links a.facebook  { background-image: url('https://api.iconify.design/tabler/brand-facebook.svg?color=%230f172a'); }
+            header.is-hero .social-links a.whatsapp  { background-image: url('https://api.iconify.design/tabler/brand-whatsapp.svg?color=%230f172a'); }
+
+            /* Mobile: nascondi immagini dell'hero che risultano poco leggibili */
+            .hero-bg { display: none !important; }
+            .hero-visual { display: none !important; }
+        }
+
+
+        /* Dark mode automatico (di sistema) */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --text-dark: #e2e8f0;
+                --bg-light: #0b1020;
+                --surface: #0f172a;
+                --border: rgba(148, 163, 184, 0.15);
+            }
+
+            body {
+                color: var(--text-dark);
+                background:
+                    radial-gradient(1200px 600px at 100% -50%, rgba(0, 191, 166, 0.12), transparent 60%),
+                    linear-gradient(var(--bg-light), var(--bg-light));
+            }
+
+            header {
+                background: rgba(15, 23, 42, 0.7);
+                border-bottom-color: rgba(148, 163, 184, 0.15);
+                backdrop-filter: blur(22px) saturate(1.2);
+            }
+            header.is-hero {
+                background: linear-gradient(to bottom, rgba(15, 23, 42, 0.28), rgba(15, 23, 42, 0.04));
+                border-bottom-color: transparent;
+                box-shadow: none;
+            }
+
+            .card,
+            form,
+            .contact-info div {
+                background: var(--surface);
+                border-color: var(--border);
+            }
+
+            .footer-content h4 {
+                color: #ffffff;
+            }
+
+            /* In auto (segue sistema) rendi il logo chiaro */
+            html[data-theme='auto'] .logo-img {
+                filter: invert(1) brightness(1.2) contrast(1.05);
+            }
+
+            /* In auto + dark system, usa icone social chiare */
+            html[data-theme='auto'] .social-links a.instagram { background-image: url('https://api.iconify.design/tabler/brand-instagram.svg?color=%23e2e8f0'); }
+            html[data-theme='auto'] .social-links a.facebook  { background-image: url('https://api.iconify.design/tabler/brand-facebook.svg?color=%23e2e8f0'); }
+            html[data-theme='auto'] .social-links a.whatsapp  { background-image: url('https://api.iconify.design/tabler/brand-whatsapp.svg?color=%23e2e8f0'); }
+        }
+
+        /* Override manuale: prioritÃ  al data-theme */
+        html[data-theme='dark'] {
+            --text-dark: #e2e8f0;
+            --bg-light: #0b1020;
+            --surface: #0f172a;
+            --border: rgba(148, 163, 184, 0.15);
+        }
+
+        html[data-theme='dark'] body {
+            color: var(--text-dark);
+            background:
+                radial-gradient(1200px 600px at 100% -50%, rgba(0, 191, 166, 0.12), transparent 60%),
+                linear-gradient(var(--bg-light), var(--bg-light));
+        }
+
+        html[data-theme='dark'] header {
+            background: rgba(15, 23, 42, 0.7);
+            border-bottom-color: rgba(148, 163, 184, 0.15);
+            backdrop-filter: blur(22px) saturate(1.2);
+        }
+
+        /* Light mode automatico (di sistema) quando data-theme=auto */
+        @media (prefers-color-scheme: light) {
+            html[data-theme='auto'] header.is-hero nav a { color: var(--text-dark); background: var(--surface); border: 1px solid var(--border); }
+            html[data-theme='auto'] header.is-hero nav a:hover { background: rgba(255,255,255,0.92); }
+            html[data-theme='auto'] header.is-hero .nav-toggle { background: var(--surface); color: var(--text-dark); border-color: var(--border); }
+            html[data-theme='auto'] header.is-hero .social-links a.social { background-color: var(--surface); border-color: var(--border); }
+            html[data-theme='auto'] header.is-hero .social-links a.instagram { background-image: url('https://api.iconify.design/tabler/brand-instagram.svg?color=%230f172a'); }
+            html[data-theme='auto'] header.is-hero .social-links a.facebook  { background-image: url('https://api.iconify.design/tabler/brand-facebook.svg?color=%230f172a'); }
+            html[data-theme='auto'] header.is-hero .social-links a.whatsapp  { background-image: url('https://api.iconify.design/tabler/brand-whatsapp.svg?color=%230f172a'); }
+            html[data-theme='auto'] header.is-hero .nav-indicator { background: linear-gradient(90deg, var(--secondary), #34d399); box-shadow: 0 4px 18px rgba(0, 191, 166, 0.35); }
+            /* In auto + chiaro, fuori dall'hero usa header pieno e link scuri */
+            html[data-theme='auto'] header.is-scrolled { background: #ffffff; border-bottom-color: var(--border); box-shadow: 0 8px 24px rgba(16,24,40,0.06); }
+            html[data-theme='auto'] header.is-scrolled nav a { color: var(--text-dark); background: transparent; border-color: transparent; }
+            
+            html[data-theme='auto'] header.is-scrolled .nav-toggle { color: var(--text-dark); background: var(--surface); border-color: var(--border); }
+            html[data-theme='auto'] header.is-scrolled .logo-img { filter: none; }
+        }
+        html[data-theme='dark'] header.is-hero {
+            background: linear-gradient(to bottom, rgba(15, 23, 42, 0.28), rgba(15, 23, 42, 0.04));
+            border-bottom-color: transparent;
+            box-shadow: none;
+        }
+
+        html[data-theme='dark'] .card,
+        html[data-theme='dark'] form,
+        html[data-theme='dark'] .contact-info div {
+            background: var(--surface);
+            border-color: var(--border);
+        }
+
+        /* In tema scuro forzato rendi il logo chiaro */
+        html[data-theme='dark'] .logo-img {
+            filter: invert(1) brightness(1.2) contrast(1.05);
+        }
+        /* Manual override: light theme (forces light even if system is dark) */
+        html[data-theme='light'] {
+            --text-dark: #0f172a;
+            --bg-light: #f7f9fc;
+            --surface: #ffffff;
+            --border: #e5e9f2;
+        }
+        html[data-theme='light'] body {
+            color: var(--text-dark);
+            background:
+                radial-gradient(1200px 600px at 100% -50%, rgba(0, 191, 166, 0.08), transparent 60%),
+                linear-gradient(var(--bg-light), var(--bg-light));
+        }
+        html[data-theme='light'] header {
+            background: rgba(255, 255, 255, 0.9);
+            border-bottom-color: var(--border);
+            backdrop-filter: blur(16px);
+        }
+        /* In tema chiaro quando si è fuori dall'hero, usa header pieno e link scuri */
+        html[data-theme='light'] header.is-scrolled { background: #ffffff; border-bottom-color: var(--border); box-shadow: 0 8px 24px rgba(16,24,40,0.06); }
+        html[data-theme='light'] header.is-scrolled nav a { color: var(--text-dark); }
+        html[data-theme='light'] .card,
+        html[data-theme='light'] form,
+        html[data-theme='light'] .contact-info div {
+            background: var(--surface);
+            border-color: var(--border);
+        }
+
+        /* Ripristina hover delle card anche in temi forzati (specificit maggiore) */
+        html[data-theme='light'] .card:hover,
+        html[data-theme='light'] .card:focus-visible {
+            background: rgba(0, 191, 166, 0.06);
+            border-color: var(--secondary);
+        }
+        html[data-theme='dark'] .card:hover,
+        html[data-theme='dark'] .card:focus-visible {
+            background: rgba(0, 191, 166, 0.10);
+            border-color: var(--secondary);
+        }
+
+        /* Icone per i servizi (emoji, senza aggiungere immagini esterne) */
+        .cards-grid .card h3 {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .cards-grid .card h3::before {
+            content: '';
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            flex: 0 0 32px;
+            border-radius: 8px;
+            background: rgba(0, 191, 166, 0.10);
+            color: var(--secondary);
+            font-size: 18px;
+        }
+        /* Icone anche nel dropdown Servizi */
+        .dropdown-menu a::before {
+            content: '';
+            display: inline-block;
+            width: 1.1em;
+            margin-right: 0.5rem;
+        }
+        /* Mappature icone per ogni servizio (disabilitato) */
+        /*
+        .cards-grid a[href$="consulenza-it.html"] h3::before,
+        .dropdown-menu a[href$="consulenza-it.html"]::before { content: 'ðŸ’¡'; }
+
+        .cards-grid a[href$="assistenza-pc-notebook.html"] h3::before,
+        .dropdown-menu a[href$="assistenza-pc-notebook.html"]::before { content: 'ðŸ’»'; }
+
+        .cards-grid a[href$="assistenza-domicilio.html"] h3::before,
+        .dropdown-menu a[href$="assistenza-domicilio.html"]::before { content: 'ðŸ '; }
+
+        .cards-grid a[href$="recupero-dati-backup.html"] h3::before,
+        .dropdown-menu a[href$="recupero-dati-backup.html"]::before { content: 'ðŸ’¾'; }
+
+        .cards-grid a[href$="installazione-software-sistemi.html"] h3::before,
+        .dropdown-menu a[href$="installazione-software-sistemi.html"]::before { content: 'âš™ï¸'; }
+
+        .cards-grid a[href$="configurazione-reti-wifi.html"] h3::before,
+        .dropdown-menu a[href$="configurazione-reti-wifi.html"]::before { content: 'ðŸ“¶'; }
+
+        .cards-grid a[href$="assemblaggio-pc.html"] h3::before,
+        .dropdown-menu a[href$="assemblaggio-pc.html"]::before { content: 'ðŸ› ï¸'; }
+
+        .cards-grid a[href$="ottimizzazione-pc-gaming.html"] h3::before,
+        .dropdown-menu a[href$="ottimizzazione-pc-gaming.html"]::before { content: 'ðŸŽ®'; }
+        */
+        /* Override: usa immagini esterne (Iconify) al posto delle emoji */
+        .cards-grid .card h3::before {
+            width: 28px;
+            height: 28px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 20px 20px;
+        }
+        .dropdown-menu a::before {
+            width: 1.2em;
+            height: 1.2em;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            vertical-align: -0.2em;
+        }
+        /* Mappature con URL remoti (Iconify) */
+        .cards-grid a[href$="consulenza-it.html"] h3::before,
+        .cards-grid .card.consulenza-it h3::before,
+        .dropdown-menu a[href$="consulenza-it.html"]::before { content: ""; background-image: url('https://api.iconify.design/tabler/bulb.svg?color=%2300bfa6'); }
+
+        .cards-grid a[href$="assistenza-pc-notebook.html"] h3::before,
+        .cards-grid .card.assistenza-pc-notebook h3::before,
+        .dropdown-menu a[href$="assistenza-pc-notebook.html"]::before { content: ""; background-image: url('https://api.iconify.design/tabler/device-laptop.svg?color=%2300bfa6'); }
+
+        .cards-grid a[href$="assistenza-domicilio.html"] h3::before,
+        .cards-grid .card.assistenza-domicilio h3::before,
+        .dropdown-menu a[href$="assistenza-domicilio.html"]::before { content: ""; background-image: url('https://api.iconify.design/tabler/home-cog.svg?color=%2300bfa6'); }
+
+        .cards-grid a[href$="recupero-dati-backup.html"] h3::before,
+        .cards-grid .card.recupero-dati-backup h3::before,
+        .dropdown-menu a[href$="recupero-dati-backup.html"]::before { content: ""; background-image: url('https://api.iconify.design/tabler/database.svg?color=%2300bfa6'); }
+
+        .cards-grid a[href$="installazione-software-sistemi.html"] h3::before,
+        .cards-grid .card.installazione-software-sistemi h3::before,
+        .dropdown-menu a[href$="installazione-software-sistemi.html"]::before { content: ""; background-image: url('https://api.iconify.design/tabler/settings.svg?color=%2300bfa6'); }
+
+        .cards-grid a[href$="configurazione-reti-wifi.html"] h3::before,
+        .cards-grid .card.configurazione-reti-wifi h3::before,
+        .dropdown-menu a[href$="configurazione-reti-wifi.html"]::before { content: ""; background-image: url('https://api.iconify.design/tabler/wifi.svg?color=%2300bfa6'); }
+
+        .cards-grid a[href$="assemblaggio-pc.html"] h3::before,
+        .cards-grid .card.assemblaggio-pc h3::before,
+        .dropdown-menu a[href$="assemblaggio-pc.html"]::before { content: ""; background-image: url('https://api.iconify.design/tabler/tools.svg?color=%2300bfa6'); }
+
+        .cards-grid a[href$="ottimizzazione-pc-gaming.html"] h3::before,
+        .cards-grid .card.ottimizzazione-pc-gaming h3::before,
+        .dropdown-menu a[href$="ottimizzazione-pc-gaming.html"]::before { content: ""; background-image: url('https://api.iconify.design/tabler/device-gamepad-2.svg?color=%2300bfa6'); }
+
+        /* Icone per servizi per aziende (accent color) */
+        .cards-grid .card.azienda-siti-vetrina h3::before { content: ""; background-image: url('https://api.iconify.design/tabler/browser.svg?color=%23f59e0b'); }
+        .cards-grid .card.azienda-ecommerce h3::before { content: ""; background-image: url('https://api.iconify.design/tabler/shopping-bag.svg?color=%23f59e0b'); }
+        .cards-grid .card.azienda-social h3::before { content: ""; background-image: url('https://api.iconify.design/tabler/share-3.svg?color=%23f59e0b'); }
+        .cards-grid .card[class*="azienda-"] h3::before { background-color: rgba(245, 158, 11, 0.10); }
+        /* Fix: rimuovi spazio icona nella hero card */
+        .hero-card h3::before { content: none !important; display: none !important; }
+        .hero-card h3 { display: block !important; }
+
+        /* Hero card: effetto diverso (niente tinta verde, solo sottolineatura gradiente) */
+        .hero-card {
+            position: relative;
+            overflow: hidden;
+            cursor: default;
+        }
+        .hero-card::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--secondary), var(--accent));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.25s ease;
+        }
+        .hero-card:hover::after,
+        .hero-card:focus-visible::after,
+        .hero-card:focus-within::after { transform: scaleX(1); }
+        .hero-card:hover,
+        .hero-card:focus-visible {
+            background: var(--surface) !important; /* annulla tinta */
+            transform: translateY(-2px) scale(1.01);
+            border-color: var(--border); /* niente cambio colore bordo */
+            box-shadow: 0 18px 50px rgba(16, 24, 40, 0.18);
+        }
+
+        /* Mantieni il bordo neutro anche con tema forzato */
+        html[data-theme='light'] .hero-card:hover,
+        html[data-theme='light'] .hero-card:focus-visible { border-color: var(--border) !important; }
+        html[data-theme='dark'] .hero-card:hover,
+        html[data-theme='dark'] .hero-card:focus-visible { border-color: var(--border) !important; }
+
+        /* Fix: CTA testo garbled -> testo corretto (unicode escapes) */
+        /* Hero visual + quote overlay */
+        .hero-visual { position: relative; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+        .hero-visual img { display:block; width:100%; height:auto; object-fit: cover; }
+        .hero-quote { position:absolute; left:12px; right:12px; bottom:12px; padding:0.85rem 1rem; border-radius:12px; color:var(--text-light); background: linear-gradient(135deg, rgba(15,23,42,0.76), rgba(0,191,166,0.22)); border:1px solid rgba(255,255,255,0.22); box-shadow: var(--shadow-sm); backdrop-filter: blur(6px); }
+        .hero-quote .text { display:block; font-style: italic; font-weight:500; line-height:1.35; font-size: clamp(0.95rem, 1.6vw, 1.15rem); }
+        .hero-quote .author { display:block; margin-top:0.25rem; font-size:0.9rem; opacity:0.9; }
+
+        /* Audience chooser */
+        .audience-grid { max-width: 1100px; margin: 0 auto; display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:1.5rem; align-items:stretch; }
+        .audience-card { background: var(--surface); border:1px solid var(--border); border-radius: var(--radius); padding:1.5rem; box-shadow: var(--shadow); display:grid; gap:.65rem; text-decoration:none; color:inherit; }
+        .audience-card h3 { margin:0 0 .25rem; display:flex; align-items:center; gap:.5rem; }
+        .audience-card p { margin:0 0 .75rem; color: var(--muted); }
+        .audience-card .btn { justify-self: start; }
+        .audience-card .audience-icon { display:inline-flex; align-items:center; justify-content:center; width:28px; height:28px; flex:0 0 28px; border-radius:8px; background: rgba(0, 191, 166, 0.10); color: var(--secondary); font-size:16px; }
+        .audience-card.audience-azienda .audience-icon { background: rgba(245, 158, 11, 0.10); color: var(--accent); }
+        .audience-card.audience-azienda .btn.btn-outline { border-color: var(--accent); color: var(--accent); }
+        .audience-card.audience-azienda .btn.btn-outline:hover { background: rgba(245, 158, 11, 0.08); }
+
+        /* Dynamic, friendly color for labels */
+        .audience-card .audience-label { font-weight: 700; }
+        @keyframes textGradientSlide { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+        /* Privato: teal gradient text */
+        .audience-card.audience-privato .audience-label { 
+            background: linear-gradient(90deg, var(--secondary), #08e0ca, var(--secondary));
+            -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent;
+            background-size: 200% 100%; animation: textGradientSlide 6s ease-in-out infinite;
+        }
+        /* Azienda: amber gradient text */
+        .audience-card.audience-azienda .audience-label {
+            background: linear-gradient(90deg, var(--accent), #fbbf24, var(--accent));
+            -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent;
+            background-size: 200% 100%; animation: textGradientSlide 6s ease-in-out infinite;
+        }
+
+        /* Section titles colored to match */
+        #servizi .section-header h2 {
+            background: linear-gradient(90deg, var(--secondary), #08e0ca, var(--secondary));
+            -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent;
+            background-size: 200% 100%; animation: textGradientSlide 8s ease-in-out infinite;
+        }
+        #azienda .section-header h2 {
+            background: linear-gradient(90deg, var(--accent), #fbbf24, var(--accent));
+            -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent;
+            background-size: 200% 100%; animation: textGradientSlide 8s ease-in-out infinite;
+        }
+
+        /* Section bands for dynamism */
+        #servizi { background:
+            linear-gradient(180deg, transparent 0%, var(--band-teal) 16%, transparent 66%),
+            linear-gradient(var(--bg-light), var(--bg-light)); }
+        #azienda { background:
+            linear-gradient(180deg, transparent 0%, var(--band-amber) 16%, transparent 66%),
+            linear-gradient(var(--bg-light), var(--bg-light)); }
+        #chi-siamo { background:
+            linear-gradient(180deg, transparent 0%, var(--band-cyan) 16%, transparent 66%),
+            linear-gradient(var(--bg-light), var(--bg-light)); }
+
+        /* Scroll reveal (JS-enabled only) */
+        .js-reveal .reveal { opacity: 0; transform: translateY(22px); transition: transform 700ms cubic-bezier(0.16,1,0.3,1), opacity 700ms cubic-bezier(0.16,1,0.3,1); will-change: transform, opacity; }
+        .js-reveal .reveal.is-visible { opacity: 1; transform: none; }
+        /* Varianti direzionali */
+        .js-reveal .reveal-left { transform: translateX(-24px); }
+        .js-reveal .reveal-right { transform: translateX(24px); }
+        .js-reveal .reveal-zoom { transform: scale(0.96); }
+        .js-reveal .reveal-fade { transform: none; }
+        @media (prefers-reduced-motion: reduce) {
+            .js-reveal .reveal,
+            .js-reveal .reveal-left,
+            .js-reveal .reveal-right,
+            .js-reveal .reveal-zoom,
+            .js-reveal .reveal-fade { transition: none !important; transform: none !important; opacity: 1 !important; }
+        }
+        .cards-grid a.card::after,
+        .cards-grid .card::after { content: none !important; display: none !important; }
+        
+        /* Keep inline hero image visible */
+        /* (background slider is behind all content) */
+
+        /* Floating actions (WhatsApp + Back to Top) */
+        .floating-actions { position: fixed; right: 18px; bottom: 18px; display: grid; gap: 12px; z-index: 1200; padding-bottom: env(safe-area-inset-bottom, 0px); }
+        .fab { width: 64px; height: 64px; border-radius: 999px; display: grid; place-items: center; border: 1px solid var(--border); background: var(--surface); color: var(--text-dark); box-shadow: var(--shadow); cursor: pointer; text-decoration: none; transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease; }
+        .fab:hover { transform: translateY(-2px); box-shadow: 0 18px 50px rgba(16, 24, 40, 0.18); }
+        .fab:focus-visible { outline: none; box-shadow: 0 0 0 6px var(--ring), var(--shadow); }
+        .fab-icon { width: 28px; height: 28px; display: block; }
+
+        .fab-whatsapp { border: 0; background: linear-gradient(135deg, #25D366, #128C7E); color: #fff; box-shadow: 0 14px 30px rgba(37, 211, 102, 0.45); animation: fabPop 700ms cubic-bezier(0.16,1,0.3,1) 600ms both; }
+        .fab-whatsapp:hover { box-shadow: 0 18px 44px rgba(37, 211, 102, 0.6); }
+        .fab-top { background: var(--surface); color: var(--text-dark); border: 1px solid var(--border); backdrop-filter: blur(8px); }
+        #back-to-top { opacity: 0; transform: translateY(8px) scale(0.98); pointer-events: none; transition: opacity 0.2s ease, transform 0.2s ease; }
+        #back-to-top.is-visible { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+
+        @keyframes fabPop { 0% { transform: scale(0.85); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+
+        /* Adjust top icon color in dark contexts */
+        html[data-theme='dark'] .fab-top .fab-icon { filter: invert(1) brightness(1.1); }
+        @media (prefers-color-scheme: dark) { html[data-theme='auto'] .fab-top .fab-icon { filter: invert(1) brightness(1.1); } }
+        
+        /* ==========================
+           Galleria Interventi
+           ========================== */
+        .gallery.section { padding-top: 4rem; }
+        .gallery .section-header { text-align: center; max-width: 860px; margin: 0 auto 2rem; }
+        .gallery .section-header p { color: var(--muted); }
+
+        .gallery-grid {
+            max-width: 1320px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: minmax(0, 1fr);
+            gap: 26px;
+        }
+        .gallery-item {
+            display: flex;
+            flex-direction: column;
+            border-radius: 24px;
+            overflow: hidden;
+            background: var(--surface);
+            border: 1px solid rgba(15, 23, 42, 0.08);
+            box-shadow: 0 24px 65px rgba(15, 23, 42, 0.12);
+            cursor: zoom-in;
+            transition: transform .22s ease, box-shadow .32s ease;
+        }
+        .gallery-item:hover,
+        .gallery-item:focus-within {
+            transform: translateY(-6px);
+            box-shadow: 0 32px 90px rgba(15, 23, 42, 0.2);
+        }
+        .gallery-media {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 5 / 4;
+        }
+        .gallery-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform .45s ease;
+        }
+        .gallery-item:hover .gallery-media img,
+        .gallery-item:focus-within .gallery-media img {
+            transform: scale(1.06);
+        }
+        .zoom-hint {
+            position: absolute;
+            left: 16px;
+            top: 16px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 5px 11px;
+            border-radius: 999px;
+            background: rgba(15, 23, 42, 0.72);
+            color: #fff;
+            font-size: 0.72rem;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            transition: opacity .2s ease, transform .2s ease;
+            box-shadow: 0 8px 26px rgba(15, 23, 42, 0.35);
+        }
+        .zoom-hint::before {
+            content: '↗';
+            font-size: 0.9rem;
+        }
+        .gallery-item:hover .zoom-hint,
+        .gallery-item:focus-within .zoom-hint {
+            transform: translateY(-2px);
+            opacity: 1;
+        }
+        .gallery-item .caption {
+            padding: 10px 14px 14px;
+            font-size: 0.85rem;
+            color: var(--text-dark);
+            line-height: 1.35;
+            background: rgba(255, 255, 255, 0.96);
+            border-top: 1px solid rgba(15, 23, 42, 0.08);
+            white-space: pre-line;
+        }
+        html[data-theme='dark'] .gallery-item .caption {
+            background: rgba(15, 23, 42, 0.88);
+            color: #f8fafc;
+            border-top-color: rgba(248, 250, 252, 0.08);
+        }
+        @media (prefers-color-scheme: dark) {
+            html[data-theme='auto'] .gallery-item .caption {
+                background: rgba(15, 23, 42, 0.88);
+                color: #f8fafc;
+                border-top-color: rgba(248, 250, 252, 0.08);
+            }
+        }
+        .gallery-empty { text-align: center; color: var(--muted); margin: 1.5rem 0 0; }
+        @media (min-width: 680px) {
+            .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        }
+        @media (min-width: 1200px) {
+            .gallery-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+        }
+        @media (max-width: 640px) {
+            .gallery-item { border-radius: 18px; }
+        }
+
+        /* Lightbox */
+        .lightbox { 
+            position: fixed; inset: 0; background: rgba(0,0,0,.85); 
+            display: none; place-items: center; z-index: 1000; 
+            padding: 24px; backdrop-filter: blur(2px);
+        }
+        .lightbox.is-open { display: grid; }
+        .lightbox img { max-width: 92vw; max-height: 82vh; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,.6); }
+        .lightbox .lb-close,
+        .lightbox .lb-prev,
+        .lightbox .lb-next {
+            position: absolute;
+            width: 44px;
+            height: 44px;
+            border-radius: 999px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255,255,255,.15);
+            color: #fff;
+            border: 1px solid rgba(255,255,255,.3);
+            backdrop-filter: blur(6px);
+        }
+        .lightbox .lb-close {
+            top: 18px;
+            right: 18px;
+            width: auto;
+            height: 46px;
+            padding: 0 18px;
+            gap: 10px;
+            text-transform: uppercase;
+            font-size: 0.82rem;
+            letter-spacing: 0.12em;
+            font-weight: 600;
+        }
+        .lightbox .lb-close .lb-close-icon {
+            font-size: 1.4rem;
+            line-height: 1;
+        }
+        .lightbox .lb-prev { left: 18px; top: 50%; transform: translateY(-50%); }
+        .lightbox .lb-next { right: 18px; top: 50%; transform: translateY(-50%); }
+        .lightbox button:hover { background: rgba(255,255,255,.25); }
+        .lightbox button img { filter: drop-shadow(0 1px 2px rgba(0,0,0,.4)); }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <a class="logo" href="#home" aria-label="PCtek Pro - di Bolli Federico">
+                <img class="logo-img" src="assets/logo-pctekpro.svg" alt="PCtek Pro" decoding="async" loading="eager">
+            </a>
+            <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Apri menu" title="Apri menu">
+                <svg class="nav-toggle-icon" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+                    <path class="line line1" d="M4 7h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <path class="line line2" d="M4 12h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <path class="line line3" d="M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+            <nav id="site-nav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#servizi">Servizi per te</a></li>
+                    <li><a href="#azienda">Servizi per aziende</a></li>
+                    <li><a href="#chi-siamo">Chi sono</a></li>
+                    <li><a href="#interventi">Gallery</a></li>
+                    <li><a href="#contatti">Contatti</a></li>
+                </ul>
+                <span class="nav-indicator" id="nav-indicator" aria-hidden="true"></span>
+            </nav>
+            <div class="right-tools">
+                <div class="social-links" aria-label="PCtek Pro sui social">
+                    <a class="social instagram" href="https://www.instagram.com/pctek_pro?igsh=MzB0MWpsYWR5c2p0&utm_source=qr" target="_blank" rel="noopener" aria-label="Instagram"></a>
+                    <a class="social facebook" href="https://www.facebook.com/share/1AVk7xw67i/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook"></a>
+                    
+                    <a class="social whatsapp" href="https://wa.me/393339914498?text=Ciao%2C%20ho%20bisogno%20di%20assistenza%20PC." target="_blank" rel="noopener" aria-label="WhatsApp"></a>
+                </div>
+                
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-bg" aria-hidden="true">
+                <div class="hero-bg-fade" style="background-image:url('assets/hero1.png')"></div>
+                <div class="hero-bg-fade" style="background-image:url('assets/hero2.png')"></div>
+                <div class="hero-bg-fade" style="background-image:url('assets/hero3.png')"></div>
+                <div class="hero-bg-fade" style="background-image:url('assets/hero4.png')"></div>
+                <div class="hero-bg-fade" style="background-image:url('assets/hero5.png')"></div>
+            </div>
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1>Soluzioni informatiche su misura per te o per la tua azienda</h1>
+                    <p>PCtek Pro ti aiuta nel risolvere qualsiasi problema informatico dal livello hardware al livello software con un'assistenza tecnica di livello.</p>
+                    <div class="hero-cta">
+                        <a class="btn btn-primary" href="#contatti">Prenota un'assistenza</a>
+                    </div>
+                </div>
+                <figure class="hero-visual" aria-label="Assistenza informatica su laptop">
+                    <img src="assets/hero.jpg" alt="Assistenza informatica su laptop" decoding="async" loading="eager">
+                    <figcaption class="hero-quote">
+                        <span class="text">&ldquo;La semplicit&agrave; &egrave; il massimo della raffinatezza&rdquo;</span>
+                        <span class="author">&mdash; Steve Jobs</span>
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+        
+        <section class="section audience" id="per-chi">
+            <div class="section-header">
+                <h2>Scopri la sezione fatta per te!</h2>
+                <p>Scegli il tuo profilo e accedi subito alle informazioni più utili</p>
+            </div>
+            <div class="audience-grid">
+                <a class="audience-card reveal audience-privato" href="#servizi">
+                    <h3><span class="audience-icon" aria-hidden="true">&#128100;</span><span class="audience-label">Privato</span></h3>
+                    <p>Assistenza PC e notebook, reti domestiche, backup, ottimizzazioni.</p>
+                    <span class="btn btn-primary">Servizi per te</span>
+                </a>
+                <a class="audience-card reveal audience-azienda" href="#azienda">
+                    <h3><span class="audience-icon" aria-hidden="true">&#127970;</span><span class="audience-label">Azienda</span></h3>
+                    <p>Siti web, e-commerce, gestione social e consulenza per la tua attivit&agrave;.</p>
+                    <span class="btn btn-outline">Servizi per aziende</span>
+                </a>
+            </div>
+        </section>
+
+        <section class="section" id="servizi">
+            <div class="section-header">
+                <h2>I nostri servizi per te</h2>
+                <p>Ci occupiamo di tutto ciò che riguarda il mondo dell'informatica, offrendo assistenza completa e su misura per ogni esigenza.</p>
+            </div>
+            <div class="cards-grid">
+                <div class="card consulenza-it" tabindex="0">
+                    <h3>Consulenza IT GRATUITA</h3>
+                    <p>Consigli per aggiornare, acquistare o migliorare i tuoi dispositivi.</p>
+                </div>
+                <div class="card assistenza-pc-notebook" tabindex="0">
+                    <h3>Assistenza PC e notebook</h3>
+                    <p>Riparazioni, formattazioni, aggiornamenti e ottimizzazione delle prestazioni.</p>
+                </div>
+                <div class="card assistenza-domicilio" tabindex="0">
+                    <h3>Assistenza a domicilio</h3>
+                    <p>Veniamo direttamente da te per risolvere tutto sul posto o anche da remoto.</p>
+                </div>
+                <div class="card recupero-dati-backup" tabindex="0">
+                    <h3>Recupero dati e backup</h3>
+                    <p>Salvataggio e recupero file da hard disk, chiavette o SSD.</p>
+                </div>
+                <div class="card installazione-software-sistemi" tabindex="0">
+                    <h3>Installazione software e sistemi operativi</h3>
+                    <p>Windows, Linux, antivirus, driver e programmi vari.</p>
+                </div>
+                <div class="card configurazione-reti-wifi" tabindex="0">
+                    <h3>Configurazione reti e Wi-Fi</h3>
+                    <p>Impostazione modem, rete domestica o aziendale stabile e sicura.</p>
+                </div>
+                <div class="card assemblaggio-pc" tabindex="0">
+                    <h3>Assemblaggio PC su misura</h3>
+                    <p>Per gaming, studio o lavoro, con componenti scelti insieme.</p>
+                </div>
+                <div class="card ottimizzazione-pc-gaming" tabindex="0">
+                    <h3>Ottimizzazione PC gaming</h3>
+                    <p>installazione driver, impostazioni performance, FPS boost e consigli hardware.</p>
+                </div>
+            </div>
+            <div class="section-cta">
+                <button type="button" class="btn btn-primary js-cta-toggle" data-cta="assistenza" aria-expanded="false" aria-controls="cta-assistenza">Richiedi un'assistenza</button>
+            </div>
+            <div class="cta-expander" id="cta-assistenza" aria-hidden="true">
+                <div class="cta-actions">
+                    <a class="btn btn-soft" href="https://wa.me/393339914498?text=Ciao%20PCtek%20Pro%2C%20avrei%20bisogno%20di%20assistenza%20per%20il%20mio%20PC." target="_blank" rel="noopener">WhatsApp</a>
+                    <a class="btn btn-soft" href="https://www.instagram.com/pctek_pro?igsh=MzB0MWpsYWR5c2p0&utm_source=qr" target="_blank" rel="noopener">Instagram</a>
+                    <a class="btn btn-soft" href="https://mail.google.com/mail/?view=cm&fs=1&to=pctekpro@gmail.com&su=Richiesta%20assistenza%20PC&body=Ciao%20PCtek%20Pro%2C%20ho%20bisogno%20di%20assistenza%20per%3A%20" target="_blank" rel="noopener">Email</a>
+                    <a class="btn btn-soft" href="#contatti">Modulo contatti</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="azienda">
+            <div class="section-header">
+                <h2>I nostri servizi per aziende</h2>
+                <p>Soluzioni digitali per far crescere la tua attivit&agrave;: siti vetrina, e-commerce e presenza social.</p>
+            </div>
+            <div class="cards-grid">
+                <div class="card reveal azienda-siti-vetrina" tabindex="0">
+                    <h3>Creazione siti vetrina</h3>
+                    <p>Siti moderni, veloci e ottimizzati SEO locale, facili da aggiornare.</p>
+                </div>
+                <div class="card reveal azienda-ecommerce" tabindex="0">
+                    <h3>E-commerce modulare</h3>
+                    <p>Catalogo prodotti, pagamenti online, click&collect: cresci nel tempo.</p>
+                </div>
+                <div class="card reveal azienda-social" tabindex="0">
+                    <h3>Gestione social media</h3>
+                    <p>Whatsapp Business, Instagram e Facebook: presidia i canali giusti.</p>
+                </div>
+            </div>
+            <div class="section-cta">
+                <button type="button" class="btn btn-primary js-cta-toggle" data-cta="consulenza" aria-expanded="false" aria-controls="cta-consulenza">Richiedi una consulenza</button>
+            </div>
+            <div class="cta-expander" id="cta-consulenza" aria-hidden="true">
+                <div class="cta-actions">
+                    <a class="btn btn-soft" href="https://wa.me/393339914498?text=Ciao%20PCtek%20Pro%2C%20vorrei%20richiedere%20una%20consulenza%20per%20la%20mia%20attivit%C3%A0." target="_blank" rel="noopener">WhatsApp</a>
+                    <a class="btn btn-soft" href="https://www.instagram.com/pctek_pro?igsh=MzB0MWpsYWR5c2p0&utm_source=qr" target="_blank" rel="noopener">Instagram</a>
+                    <a class="btn btn-soft" href="https://mail.google.com/mail/?view=cm&fs=1&to=pctekpro@gmail.com&su=Richiesta%20consulenza&body=Ciao%20PCtek%20Pro%2C%20mi%20servirebbe%20una%20consulenza%20su%3A%20" target="_blank" rel="noopener">Email</a>
+                    <a class="btn btn-soft" href="#contatti">Modulo contatti</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="chi-siamo">
+            <div class="section-header">
+                <h2>Chi sono</h2>
+                <p>Sono Federico Bolli, perito in informatica e telecomunicazioni, un ragazzo giovane ma con molta passione e dedizione per tutto il mondo dell'informatica. Mi piacciono le sfide e questo è ciò che inspira PCtek pro, una piccola rete di servizi che ha l'obiettivo di diventare protagonista</p>
+            </div>
+            <div class="about-section">
+                <div class="about-image" tabindex="0" aria-label="PCtek Pro — immagine attività">
+                    <img src="assets/logo-pctekpro.png" alt="PCtek Pro — la tua attività" loading="lazy" decoding="async">
+                </div>
+                <div>
+                    <h3>Il mio approccio</h3>
+                    <p>Partiamo dall'ascolto delle esigenze e costruiamo soluzioni concrete, scalabili e misurabili. Collaboriamo a stretto contatto con il cliente per ridurre la complessit&agrave; e generare un valore futuro del nostro rapporto.</p>
+                    <ul>
+                        <li>Metodologia agile e trasparenza in ogni fase</li>
+                        <li>Assistenza duratura nel tempo</li>
+                        <li>Curare al 100% il rapporto con il cliente</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section gallery" id="interventi">
+            <div class="section-header">
+                <h2>Gallery</h2>
+                <p>Una selezione di lavori reali: pulizia, upgrade, riparazioni e assemblaggi.</p>
+            </div>
+            <div class="gallery-grid" id="gallery-grid" aria-live="polite">
+                <!-- Popolata dinamicamente -->
+            </div>
+            <p class="gallery-empty" id="gallery-empty" hidden>Nessuna foto disponibile al momento.</p>
+        </section>
+
+        <section class="section">
+            <div class="cta-section">
+                <h3>Un problema al PC? Risolviamolo subito insieme.</h3>
+                <p>Fissa subito un appuntamento: analizzerò personalmente la tua situazione e preparerò una proposta personalizzata in meno di 24 ore.</p>
+                <a class="btn btn-primary" href="#contatti">Richiedi un'assistenza</a>
+            </div>
+        </section>
+<section class="section contact" id="contatti">
+            <div class="section-header">
+                <h2>Contattami</h2>
+                <p>Hai bisogno di assistenza immediata con il tuo PC o la rete di casa? Scrivimi con il modulo o usa i recapiti qui accanto.</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div>
+                        <strong>Telefono</strong>
+                        <span>+39 333 991 4498 (anche WhatsApp)</span>
+                    </div>
+                    <div>
+                        <strong>Email</strong>
+                        <span><a href="mailto:pctekpro@gmail.com">pctekpro@gmail.com</a></span>
+                    </div>
+                    <div>
+                        <strong>Area di intervento</strong>
+                        <span>Provincia di Ancona</span>
+                    </div>
+                    <div>
+                        <strong>Disponibilit&agrave;</strong>
+                        <span>Luned&igrave; - Sabato &middot; 8:00 - 19:00</span>
+                    </div>
+                    <div>
+                        <strong>Assistenza remota</strong>
+                        <span>TeamViewer / AnyDesk &middot; Codice su richiesta telefonica</span>
+                    </div>
+                </div>
+                <form id="contact-form" action="https://formsubmit.co/pctekpro@gmail.com" method="POST" enctype="multipart/form-data">
+                    <input type="hidden" name="_subject" value="Nuovo messaggio dal sito pctekpro.it">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_next" id="form-next" value="">
+                    <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+                    <div>
+                        <label for="nome">Nome e cognome</label>
+                        <input id="nome" name="nome" type="text" placeholder="Inserisci il tuo nome" autocomplete="name" required>
+                    </div>
+                    <div>
+                        <label for="email">Email</label>
+                        <input id="email" name="email" type="email" placeholder="nome@email.com" autocomplete="email" required>
+                    </div>
+                    <div>
+                        <label for="telefono">Telefono (facoltativo)</label>
+                        <input id="telefono" name="telefono" type="tel" placeholder="es. 333 1234567" autocomplete="tel">
+                    </div>
+                    <div>
+                        <label for="messaggio">Messaggio</label>
+                        <textarea id="messaggio" name="messaggio" placeholder="Raccontami come posso aiutarti" required></textarea>
+                    </div>
+                    
+                    <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+                    <button class="btn btn-primary" type="submit">Invia messaggio</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div>
+                <img class="footer-logo" src="assets/logo-pctekpro.svg" alt="PCtek Pro">
+                <h4 class="sr-only">PCtek Pro</h4>
+                <p>Partner tecnologico. Supportiamo la tua crescita con tecnologia affidabile e passione.</p>
+            </div>
+            <div>
+                <h4>Link utili</h4>
+                <ul class="footer-links">
+                    <li><a href="#servizi">Servizi</a></li>
+                    <li><a href="#contatti">Richiedi un preventivo</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Social</h4>
+                <ul class="footer-links">
+                    <li><a href="https://www.instagram.com/pctek_pro?igsh=MzB0MWpsYWR5c2p0&utm_source=qr" target="_blank" rel="noopener">Instagram</a></li>
+                    <li><a href="#" target="_blank" rel="noopener">Facebook</a></li>
+                    
+                    <li><a href="https://wa.me/393339914498?text=Ciao%2C%20ho%20bisogno%20di%20assistenza%20PC." target="_blank" rel="noopener">WhatsApp</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; <span id="year"></span> PCtek Pro &middot; Tutti i diritti riservati
+        </div>
+    </footer>
+<script>
+        // Invio modulo tramite FormSubmit (submit classico con redirect)
+
+        const contactForm = document.getElementById('contact-form');
+        const formStatus = document.getElementById('form-status');
+
+        if (contactForm) {
+            // Se la pagina è aperta come file locale, l'invio non funziona
+            if (window.location.protocol === 'file:') {
+                formStatus.textContent = "Per inviare il modulo, apri il sito tramite un server locale (es. Live Server) o pubblica su HTTP/HTTPS.";
+                formStatus.className = "form-status error is-visible";
+                const submitBtn = contactForm.querySelector('button[type="submit"]');
+                if (submitBtn) submitBtn.disabled = true;
+            }
+            contactForm.addEventListener('submit', (event) => {
+                // Messaggio stato e disabilita pulsante per evitare doppi invii
+                formStatus.textContent = "Invio in corso...";
+                formStatus.className = "form-status is-visible";
+                const submitBtn = contactForm.querySelector('button[type="submit"]');
+                if (submitBtn) submitBtn.disabled = true;
+
+                
+
+                // Imposta redirect di ritorno alla stessa pagina con query di conferma
+                const nextField = document.getElementById('form-next');
+                if (nextField) {
+                    try {
+                        const url = new URL(window.location.href);
+                        url.searchParams.set('sent', '1');
+                        url.hash = 'contatti';
+                        nextField.value = url.toString();
+                    } catch (e) {}
+                }
+                // Nessun preventDefault: lasciare che il browser invii il form
+            });
+        }
+
+        // Mostra conferma se si torna dal redirect con ?sent=1
+        try {
+            const url = new URL(window.location.href);
+            if (url.searchParams.get('sent') === '1' && formStatus) {
+                formStatus.textContent = "Messaggio inviato con successo! Ti risponderò al più presto.";
+                formStatus.className = "form-status success is-visible";
+                // Pulisci la query per non ripetere il messaggio al refresh
+                url.searchParams.delete('sent');
+                history.replaceState(null, '', url.pathname + url.hash);
+            }
+        } catch (e) {}
+
+        // Aggiorna automaticamente l'anno nel footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+        
+        // Menu a tendina "Servizi" (mobile-friendly)
+        document.querySelectorAll('.nav-item-dropdown > a.has-caret').forEach((trigger) => {
+            trigger.addEventListener('click', (e) => {
+                const item = trigger.parentElement;
+                const isOpen = item.classList.contains('open');
+                if (!isOpen) {
+                    e.preventDefault();
+                    item.classList.add('open');
+                    trigger.setAttribute('aria-expanded', 'true');
+                    const onDocClick = (ev) => {
+                        if (!item.contains(ev.target)) {
+                            item.classList.remove('open');
+                            trigger.setAttribute('aria-expanded', 'false');
+                            document.removeEventListener('click', onDocClick);
+                        }
+                    };
+                    setTimeout(() => document.addEventListener('click', onDocClick), 0);
+                }
+            });
+        });
+    </script>
+    <script>
+    (function(){
+        function closeAll(){
+            document.querySelectorAll('.cta-expander.is-open').forEach(function(p){
+                p.classList.remove('is-open');
+                p.setAttribute('aria-hidden','true');
+            });
+            document.querySelectorAll('.js-cta-toggle[aria-expanded="true"]').forEach(function(b){
+                b.setAttribute('aria-expanded','false');
+            });
+        }
+        document.addEventListener('click', function(e){
+            if (!e.target.closest('.section-cta') && !e.target.closest('.cta-expander')) {
+                closeAll();
+            }
+        });
+        document.addEventListener('DOMContentLoaded', function(){
+            document.querySelectorAll('.js-cta-toggle').forEach(function(btn){
+                btn.addEventListener('click', function(){
+                    var key = btn.getAttribute('data-cta');
+                    var panel = document.getElementById('cta-' + key);
+                    var willOpen = !(panel && panel.classList.contains('is-open'));
+                    closeAll();
+                    if (panel && willOpen) {
+                        panel.classList.add('is-open');
+                        panel.setAttribute('aria-hidden','false');
+                        btn.setAttribute('aria-expanded','true');
+                        try { panel.scrollIntoView({ behavior: 'smooth', block: 'center' }); } catch(e) {}
+                    }
+                });
+            });
+            document.addEventListener('keydown', function(ev){
+                if (ev.key === 'Escape') { closeAll(); }
+            });
+        });
+    })();
+    </script>
+    <script>
+    // Galleria Interventi dinamica + Lightbox
+    window.addEventListener('DOMContentLoaded', function(){
+        const grid = document.getElementById('gallery-grid');
+        if (!grid) return;
+        const emptyMsg = document.getElementById('gallery-empty');
+        const manifestUrl = 'assets/interventi.json';
+
+        function toArray(v){ return Array.isArray(v) ? v : []; }
+
+        // Anteprima locale (apertura come file://): prova a leggere il JSON, poi fallback a esempi
+        if (window.location.protocol === 'file:') {
+            const fallback = [
+                {
+                    src: 'assets/interventi/pcfede.png',
+                    thumb: 'assets/interventi/pcfede.png',
+                    title: 'CPU: Ryzen 7 5700X3D\nGPU: RTX 3060 Ti\nRAM: 32GB DDR4\nSSD: 1TB NVMe\nPSU: 750W Silent Storm Sharkoon\nCase: Cooler Master TD500 Mesh V2\nLiquid Cooling: Masterliquid PL240'
+                },
+                {
+                    src: 'assets/interventi/pcmara.png',
+                    thumb: 'assets/interventi/pcmara.png',
+                    title: 'Buon computer da ufficio'
+                },
+                {
+                    src: 'assets/interventi/pcgioele.jpg',
+                    thumb: 'assets/interventi/pcgioele.jpg',
+                    title: 'CPU: Ryzen 7 7700X\nGPU: RTX 4070 Super OC Edition\nRAM: 32GB Corsair DDR4\nMemoria: Samsung 970 EVO Plus NVMe\nScheda Madre: Gigabyte B650 Gaming X AX V2\nPSU: Corsair RM850E\nLiquid Cooling: Corsair iCUE Link H115i RGB\nCase: iCUE 4000X RGB'
+                },
+                {
+                    src: 'assets/interventi/pcdavi.jpg',
+                    thumb: 'assets/interventi/pcdavi.jpg',
+                    title: 'CPU: Ryzen 5 5600X\nGPU: MSI RTX 3060 Ventus\nRAM: 16GB Corsair Vengeance RGB Pro 3200MHz\nScheda Madre: MSI MPG B550\nSSD: WD Black SN750 SE 1TB + WD Blue 1TB\nPSU: Cooler Master 750W Gold\nCase: Thermaltake H200 TG Snow\nVentole: 3x Be Quiet!\nAudio: SoundBlasterX AE-5 Plus'
+                }
+            ];
+            fetch(manifestUrl).then(r => r.ok ? r.json() : Promise.reject())
+                .then(data => { const items = toArray(data); build(items.length ? items : fallback); })
+                .catch(() => build(fallback));
+            return;
+        }
+
+        fetch(manifestUrl, { cache: 'no-cache' })
+            .then(r => r.ok ? r.json() : [])
+            .then(data => {
+                const items = toArray(data);
+                if (!items.length) { if (emptyMsg) emptyMsg.hidden = false; return; }
+                build(items);
+            })
+            .catch(() => { if (emptyMsg) emptyMsg.hidden = false; });
+
+        // Lightbox elements
+        const lb = document.createElement('div');
+        lb.className = 'lightbox';
+        lb.setAttribute('role','dialog');
+        lb.setAttribute('aria-modal','true');
+        lb.setAttribute('aria-label','Galleria immagini');
+        lb.innerHTML = `
+            <button class="lb-close" type="button" aria-label="Chiudi">
+                <span class="lb-close-text">Chiudi</span>
+                <span class="lb-close-icon" aria-hidden="true">&times;</span>
+            </button>
+            <button class="lb-prev" aria-label="Precedente">
+                <img src="https://api.iconify.design/tabler/chevron-left.svg?color=white" alt="" width="28" height="28"/>
+            </button>
+            <img class="lb-img" alt=""/>
+            <button class="lb-next" aria-label="Successiva">
+                <img src="https://api.iconify.design/tabler/chevron-right.svg?color=white" alt="" width="28" height="28"/>
+            </button>`;
+        document.body.appendChild(lb);
+        const lbImg = lb.querySelector('.lb-img');
+        const btnClose = lb.querySelector('.lb-close');
+        const btnPrev = lb.querySelector('.lb-prev');
+        const btnNext = lb.querySelector('.lb-next');
+        let current = -1;
+        let list = [];
+
+        function open(i){
+            if (!list.length) return;
+            current = (i + list.length) % list.length;
+            const it = list[current] || {};
+            lbImg.src = it.src || it.thumb || '';
+            lbImg.alt = it.alt || it.title || 'Foto intervento';
+            lb.classList.add('is-open');
+            document.body.style.overflow = 'hidden';
+            try { btnClose.focus({ preventScroll: true }); } catch(e) {}
+        }
+        function close(){ lb.classList.remove('is-open'); document.body.style.overflow = ''; }
+        function prev(){ open(current - 1); }
+        function next(){ open(current + 1); }
+        btnClose.addEventListener('click', close);
+        btnPrev.addEventListener('click', prev);
+        btnNext.addEventListener('click', next);
+        lb.addEventListener('click', (e) => { if (e.target === lb) close(); });
+        document.addEventListener('keydown', (e) => {
+            if (!lb.classList.contains('is-open')) return;
+            if (e.key === 'Escape') close();
+            else if (e.key === 'ArrowLeft') prev();
+            else if (e.key === 'ArrowRight') next();
+        });
+
+        function build(items){
+            list = items;
+            grid.innerHTML = '';
+            if (emptyMsg) emptyMsg.hidden = true;
+            items.forEach((it, idx) => {
+                const fig = document.createElement('figure');
+                fig.className = 'gallery-item';
+                fig.tabIndex = 0;
+
+                const media = document.createElement('div');
+                media.className = 'gallery-media';
+
+                const img = document.createElement('img');
+                img.loading = 'lazy';
+                img.decoding = 'async';
+                img.src = it.thumb || it.src;
+                img.alt = it.alt || it.title || 'Intervento';
+
+                media.appendChild(img);
+                const hint = document.createElement('span');
+                hint.className = 'zoom-hint';
+                hint.textContent = 'Apri';
+                media.appendChild(hint);
+
+                const cap = document.createElement('figcaption');
+                cap.className = 'caption';
+                const desc = (it.title || '').trim();
+                cap.textContent = desc || 'Intervento PCtek Pro';
+
+                fig.appendChild(media);
+                fig.appendChild(cap);
+
+                fig.addEventListener('click', () => open(idx));
+                fig.addEventListener('keydown', (ev) => {
+                    if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); open(idx); }
+                });
+
+                // Reveal animation compatibility
+                fig.classList.add('reveal');
+                (idx % 2 === 0 ? fig.classList.add('reveal-left') : fig.classList.add('reveal-right'));
+                fig.style.transitionDelay = (idx * 90) + 'ms';
+                setTimeout(() => fig.classList.add('is-visible'), 60);
+
+                grid.appendChild(fig);
+            });
+        }
+    });
+    </script>
+    <!-- Floating quick actions: WhatsApp + Back to top -->
+    <div class="floating-actions" aria-label="Azioni rapide">
+        <a class="fab fab-whatsapp" href="https://wa.me/393339914498?text=Ciao%2C%20ho%20bisogno%20di%20assistenza%20PC." target="_blank" rel="noopener" aria-label="Chat su WhatsApp" title="Chat su WhatsApp">
+            <img class="fab-icon" src="https://api.iconify.design/tabler/brand-whatsapp.svg?color=white" alt="" aria-hidden="true" width="28" height="28">
+        </a>
+        <button id="back-to-top" class="fab fab-top" type="button" aria-label="Torna in cima" title="Torna in cima">
+            <img class="fab-icon" src="https://api.iconify.design/tabler/chevron-up.svg?color=%230f172a" alt="" aria-hidden="true" width="28" height="28">
+        </button>
+    </div>
+
+    <script>
+    // Back-to-top visibility + smooth scroll
+    (function(){
+        var topBtn = document.getElementById('back-to-top');
+        if (!topBtn) return;
+        function toggle(){
+            var y = window.scrollY || document.documentElement.scrollTop || 0;
+            if (y > 400) { topBtn.classList.add('is-visible'); } else { topBtn.classList.remove('is-visible'); }
+        }
+        window.addEventListener('scroll', toggle, { passive: true });
+        window.addEventListener('load', toggle, { once: true });
+        topBtn.addEventListener('click', function(){
+            try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch(e) { window.scrollTo(0, 0); }
+        });
+    })();
+    </script>
+</body>
+</html>
+
+
+
+
+
