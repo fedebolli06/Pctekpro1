@@ -1,9 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://pctekpro.it/sitemap.xml
-User-agent: *
-Allow: /
-
-# Sitemap location for search engines
-Sitemap: https://pctekpro.it/sitemap.xml
+Sitemap: http://alessandrabollihair.it/sitemap.xml
